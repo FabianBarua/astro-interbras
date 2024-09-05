@@ -1,14 +1,66 @@
 ---
-import { getI18NGlobal } from "@/i18n";
-
+import { getI18NProducts, getI18NGlobal } from "@/i18n";
+import { getUrls } from "@/shared/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
 const { currentLocale } = Astro;
 
 const i18n = getI18NGlobal({ currentLocale });
+const i18n2: Record<string, any> = getI18NProducts({ currentLocale });
+
+const urls = getUrls();
+
+const getName = (name: string): any => {
+  return name.split(".").reduce((acc, key) => acc?.[key], i18n2) || name;
+};
 ---
 
-<div
-  id="WeProductsSection"
-  class="h-full w-full hidden justify-center lg:justify-between"
->
-  PRODUCTOS
+<div id="WeProductsSection" class="hidden justify-center items-center h-full">
+  <div
+    class="mt-5 lg:mt-auto lg:mx-0 text-white flex lg:my-auto lg:flex-row flex-col gap-6 mx-auto"
+  >
+    <img src="/productosHeader.webp" class="h-64" alt="Arrow" />
+    <div class="flex flex-col items-left">
+      <h3 class="text-lg font-bold">
+        {i18n.header.products.text}
+      </h3>
+      <div class="flex gap-16 mt-2">
+        <div class="flex-col flex">
+          {
+            urls.slice(0, 8).map((url) => {
+              const name: string | undefined = getName(url.name);
+
+              return (
+                <a
+                  href={getRelativeLocaleUrl(
+                    currentLocale ? currentLocale : "es",
+                    url.url,
+                  )}
+                >
+                  {name}
+                </a>
+              );
+            })
+          }
+        </div>
+        <div class="flex-col flex">
+          {
+            urls.slice(8, urls.length).map((url) => {
+              const name: string | undefined = getName(url.name);
+
+              return (
+                <a
+                  href={getRelativeLocaleUrl(
+                    currentLocale ? currentLocale : "es",
+                    url.url,
+                  )}
+                >
+                  {name}
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
