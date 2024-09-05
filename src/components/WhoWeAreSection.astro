@@ -1,0 +1,14 @@
+---
+import { getI18NGlobal } from "@/i18n";
+
+const { currentLocale } = Astro;
+
+const i18n = getI18NGlobal({ currentLocale });
+---
+
+<div
+  id="WhoWeAreSection"
+  class="h-full w-full hidden justify-center lg:justify-between"
+>
+  QUIENES SOMOS
+</div>

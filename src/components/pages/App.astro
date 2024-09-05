@@ -1,0 +1,171 @@
+---
+import { getI18NGlobal } from "@/i18n";
+import Logo from "../Logo.astro";
+
+import Layout from "@/layouts/Layout.astro";
+import WhereWeAreSection from "@/components/WhereWeAreSection.astro";
+import WeProductsSection from "@/components/WeProductsSection.astro";
+import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
+
+const { currentLocale } = Astro;
+
+const i18n = getI18NGlobal({ currentLocale });
+---
+
+<Layout title="Interbras">
+  <main>
+    <header
+      id="header-client"
+      class="fixed w-full z-[40] flex flex-col min-h-20 pt-5 transition-all backdrop-blur bg-interbrasGreen-500 text-white"
+    >
+      <nav class="w-full flex relative">
+        <div class="absolute right-3 lg:right-8 top-1/2 -translate-y-1/2">
+          <div class="relative z-40">
+            <div class="">
+              <button
+                class="text-white
+                          bg-interbrasGreen-900
+                          rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
+                ><img src="/paraguay_flag.svg" alt="bandera de PY" />PY</button
+              >
+            </div>
+          </div>
+        </div>
+        <ul
+          class="flex mx-auto justify-center text-nowrap items-center gap-14 w-full"
+        >
+          <div class="w-full flex max-w-96 justify-end gap-8">
+            <li class="lg:block hidden">
+              <button id="whereWeAre">Donde estamos</button>
+            </li>
+            <li class="lg:block hidden">
+              <button id="weProducts">Productos</button>
+            </li>
+          </div>
+          <li>
+            <a aria-label="Logo Interbras" class="cursor-pointer" href="/">
+              <Logo />
+            </a>
+          </li>
+          <div class="w-full flex max-w-96 justify-start gap-8">
+            <li class="lg:block hidden">
+              <a href="/downloads">
+                <p>Descargas</p>
+              </a>
+            </li>
+            <li class="lg:block hidden">
+              <button id="whoWeAre">Quienes somos</button>
+            </li>
+          </div>
+        </ul>
+      </nav>
+
+      <div id="section-nav-items" class="transition-all duration-700">
+        <WhereWeAreSection />
+        <WeProductsSection />
+        <WhoWeAreSection />
+      </div>
+    </header>
+  </main>
+
+  <script>
+    import { motion } from "framer-motion";
+
+    let selectedNavItem: null | Element = null;
+
+    const sectionNavItems = document.getElementById("section-nav-items");
+    const whereWeAre = document.getElementById("whereWeAre");
+    const whereWeAreSection = document.getElementById("WhereWeAreSection");
+    const headerClient = document.getElementById("header-client");
+
+    const whoWeAre = document.getElementById("whoWeAre");
+    const weProducts = document.getElementById("weProducts");
+
+    const init = () => {
+      if (
+        !whereWeAre ||
+        !whereWeAreSection ||
+        !sectionNavItems ||
+        !whoWeAre ||
+        !weProducts ||
+        !headerClient
+      )
+        return;
+
+      headerClient.addEventListener("mouseleave", () => {
+        sectionNavItems.style.height = "0rem";
+        selectedNavItem = null;
+        updateSelectedNavItem();
+      });
+
+      whereWeAre.addEventListener("mouseenter", () => {
+        sectionNavItems.style.height = "24rem";
+        if (selectedNavItem === whereWeAreSection) return;
+        selectedNavItem = whereWeAreSection;
+        updateSelectedNavItem();
+      });
+
+      whoWeAre.addEventListener("mouseenter", () => {
+        sectionNavItems.style.height = "24rem";
+        selectedNavItem = document.querySelector("#WhoWeAreSection");
+        updateSelectedNavItem();
+      });
+
+      weProducts.addEventListener("mouseenter", () => {
+        sectionNavItems.style.height = "24rem";
+        selectedNavItem = document.querySelector("#WeProductsSection");
+        updateSelectedNavItem();
+      });
+    };
+
+    const updateSelectedNavItem = () => {
+      const selectedNavItemHidden = document.querySelector(
+        "#section-nav-items > div:not(.hidden)",
+      );
+
+      if (selectedNavItemHidden) {
+        selectedNavItemHidden.classList.add("hidden");
+        selectedNavItemHidden.classList.remove("flex");
+        selectedNavItemHidden.classList.remove("fadeIn");
+      }
+
+      if (selectedNavItem) {
+        selectedNavItem.classList.remove("hidden");
+        selectedNavItem.classList.add("flex");
+        selectedNavItem.classList.add("fadeIn");
+      }
+    };
+
+    init();
+  </script>
+
+  <style is:global>
+    .fadeIn {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .fadeOut {
+      animation: fadeOut 0.3s ease-in-out;
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</Layout>

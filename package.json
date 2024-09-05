@@ -7,11 +7,24 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" "
   },
   "dependencies": {
-    "astro": "^4.15.2",
     "@astrojs/check": "^0.9.3",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@uidotdev/usehooks": "^2.4.1",
+    "astro": "^4.15.2",
+    "framer-motion": "^11.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

@@ -1,0 +1,116 @@
+{
+  "header":{
+    "whereWeAre": {
+      "title": "Donde estamos",
+      "line1": "En las mejores tiendas",
+      "line2": "de ",
+      "line3" : "Paraguay! "
+    },
+    "products": {
+      "title": "Productos",
+      "text": "Nuestros productos"
+    },
+    "download": "Descargas",
+    "whoWeAre": {
+      "title": "Quienes somos",
+      "line1": "Somos una empresa multinacional ",
+      "line2": "apasionada por mejorar la vida en el",
+      "line3": "hogar."
+    }
+  },
+  "home":{
+    "title":{
+      "primary": "Tu marca",
+      "secondary": "favorita"
+    },
+    "airFryersSection":{
+      "text":"Nueva tendencia en cocina saludable y rápida."
+    },
+    "animatedSection": {
+      "1":{
+        "id": "productSlide1",
+        "name": "TVs",
+        "description": "Innovación en pantallas de alta definición."
+      },
+      "2":{
+        "id": "productSlide2",
+        "name": "Aires Acondicionados",
+        "description": "La nueva generación en climatización."
+      },
+      "3":{
+        "id": "productSlide3",
+        "name": "Scooters",
+        "description": "La nueva forma de movilidad urbana."
+      }
+    },
+    "MixSection":{
+      "title": "Mixteras & Parrilla Grill",
+      "description": "Sándwiches perfectos, sin esfuerzo."
+    },
+    "CocinasSection":{
+      "title": "Cocinas Eléctricas",
+      "description": "Innovación compacta para tu cocina en tu mesa."
+    },
+    "HervidorasAndCafeterasSection":{
+      "1":{
+        "title": "Hervidoras"
+      },
+      "2":{
+        "title": "Cafeteras"
+      }
+    },
+    "OtherProductsSection":{
+      "1": "Planchas",
+      "2": "Licuadoras",
+      "3": "Beauty",
+      "4": "Batidoras",
+      "5": "Ollas",
+      "6": "Bebederos"
+    }
+  },
+  "primaryButton":{ 
+    "text": "Ver más"
+  },
+  "moreProducts": "Más productos",
+  "footer":{
+    "copy": "Copyright © 2024 Interbras. Todos los derechos reservados."
+  },
+  "productPage":{
+    "review": "Descripcion",
+    "whatAreIncluded": "¿Que hay en la caja?",
+    "specs": "Especificaciones"
+  },
+  "alert":{
+    "info":{
+      "download": "Descargar aplicación",
+      "no": "No, gracias"
+    },
+    "scooters":{
+      "title": "Descargar la aplicacion",
+      "message": "¿Estás intentando descargar la aplicación de scooters? La app está disponible para versiones de 8.5 y 10.5. "
+    }
+    },
+    "notFound":{
+      "title": "Página no encontrada",
+      "message": "Lo sentimos, la página que buscas no existe. Aqui hay algunos links que te pueden ayudar:",
+      "goBack": "Ir atras",
+      "home": "Ir al inicio"
+    },
+  "downloads":{
+    "download" : "Descargar",
+    "title": " Archivos de\ndescarga",
+    "p1": "Bienvenido a nuestra sección de descargas.\nAquí encontrará una selección de archivos.",
+    "callToAction": "Ver aplicaciones",
+    "scroll" : "Descargar archivos",
+    "close": "Salir",
+    "selectFile": "Selecciona el archivo",
+    "files":{
+      "scooter105y85": {
+        "1": "Archivo .Apk",
+        "2": "App para Iphone"
+      }
+    }
+  }
+}
+
+  
