@@ -1,0 +1,11 @@
+---
+interface ProductPage {
+  category: string;
+}
+
+const { category } = Astro.props;
+---
+
+<p>
+  This is the <strong>{category}</strong> category page.
+</p>

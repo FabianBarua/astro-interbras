@@ -1,0 +1,28 @@
+---
+import ProductPage from "@/components/pages/ProductPage.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getCategories } from "@/shared/utils";
+import { getI18NProducts, getValueFromKey } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18NProducts({ currentLocale });
+const categories = getCategories();
+
+export const getStaticPaths = () => {
+  const params = getCategories().map((category) => {
+    return {
+      params: {
+        category: category.id,
+      },
+    };
+  });
+  return params;
+};
+
+const { category } = Astro.params;
+const categorySelected = categories.find((c) => c.id === category);
+---
+
+<Layout title={getValueFromKey(categorySelected?.name || "", i18n)}>
+  <ProductPage category={category} />
+</Layout>

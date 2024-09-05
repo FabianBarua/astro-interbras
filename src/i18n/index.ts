@@ -31,3 +31,7 @@ export const getI18NProducts = ({
     return { ...portugueseProducts, ...spanishProducts };
   return spanishProducts;
 };
+
+export const getValueFromKey = (key: string, obj: any) => {
+  return key.split(".").reduce((o, i) => o[i], obj);
+};

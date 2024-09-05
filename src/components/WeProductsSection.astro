@@ -1,5 +1,5 @@
 ---
-import { getI18NProducts, getI18NGlobal } from "@/i18n";
+import { getI18NProducts, getI18NGlobal, getValueFromKey } from "@/i18n";
 import { getUrls } from "@/shared/utils";
 import { getRelativeLocaleUrl } from "astro:i18n";
 const { currentLocale } = Astro;
@@ -8,10 +8,6 @@ const i18n = getI18NGlobal({ currentLocale });
 const i18n2: Record<string, any> = getI18NProducts({ currentLocale });
 
 const urls = getUrls();
-
-const getName = (name: string): any => {
-  return name.split(".").reduce((acc, key) => acc?.[key], i18n2) || name;
-};
 ---
 
 <div id="WeProductsSection" class="hidden justify-center items-center h-full">
@@ -27,7 +23,7 @@ const getName = (name: string): any => {
         <div class="flex-col flex">
           {
             urls.slice(0, 8).map((url) => {
-              const name: string | undefined = getName(url.name);
+              const name: string | undefined = getValueFromKey(url.name, i18n2);
 
               return (
                 <a
@@ -45,7 +41,7 @@ const getName = (name: string): any => {
         <div class="flex-col flex">
           {
             urls.slice(8, urls.length).map((url) => {
-              const name: string | undefined = getName(url.name);
+              const name: string | undefined = getValueFromKey(url.name, i18n2);
 
               return (
                 <a

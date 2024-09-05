@@ -7,6 +7,5 @@ export default defineConfig({
     locales: ["es", "pt"],
     prefixDefaultLocale: true
   },
-
   integrations: [tailwind(), react()]
 })
