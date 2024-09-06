@@ -1,0 +1,91 @@
+---
+const { currentLocale } = Astro;
+
+const langs = [
+  {
+    id: "es",
+    name: "Español",
+    slug: "PY",
+    flag: "/paraguay_flag.svg",
+    alt: "bandera de PY",
+  },
+  {
+    id: "pt",
+    name: "Português",
+    slug: "BR",
+    flag: "/brasil_flag.svg",
+    alt: "bandera de BR",
+  },
+];
+
+const langSelected =
+  langs.find((lang) => lang.id === currentLocale) || langs[0];
+---
+
+<div class="">
+  <button
+    id="selected"
+    data-lang={langSelected.id}
+    class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
+  >
+    <img src={langSelected.flag} alt={langSelected.alt} />
+    {langSelected.slug}
+  </button>
+</div>
+
+<div
+  class="absolute gap-1 top-[120%] text-white hidden"
+  style="opacity: 1; will-change: auto; transform: none;"
+  id="submenu"
+>
+  {
+    langs.map((lang) => {
+      if (lang.id === currentLocale) return;
+
+      return (
+        <div class="">
+          <button
+            id={`select-${lang.id}`}
+            class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
+          >
+            <img src={lang.flag} alt={lang.alt} />
+            {lang.slug}
+          </button>
+        </div>
+      );
+    })
+  }
+</div>
+
+<script>
+  const init = () => {
+    function getRoute(url: string) {
+      const route = new URL(url).pathname;
+      const segments = route
+        .split("/")
+        .filter((segment) => segment && !["es", "pt"].includes(segment));
+
+      const cleanedSegments = segments.filter((segment) => segment !== "");
+
+      return "/" + cleanedSegments.join("/");
+    }
+
+    const selected = document.getElementById("selected");
+    const submenu = document.getElementById("submenu");
+
+    if (!selected || !submenu) return;
+
+    selected.addEventListener("click", () => {
+      submenu.classList.toggle("hidden");
+    });
+
+    submenu.addEventListener("click", (e) => {
+      const lang = (e.target as HTMLElement)
+        .closest("button")
+        ?.id.split("-")[1];
+      window.location.href = `${lang === "es" ? "" : `/${lang}`}${getRoute(window.location.href)}`;
+    });
+  };
+
+  init();
+</script>

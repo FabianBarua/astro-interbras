@@ -4,6 +4,9 @@ import Logo from "@/components/Logo.astro";
 import WhereWeAreSection from "@/components/WhereWeAreSection.astro";
 import WeProductsSection from "@/components/WeProductsSection.astro";
 import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
+import SwitchButton from "@/components/SwitchButton.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const { currentLocale } = Astro;
 ---
 
 <header
@@ -14,14 +17,7 @@ import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
   <nav class="w-full flex relative">
     <div class="absolute right-3 lg:right-8 top-1/2 -translate-y-1/2">
       <div class="relative z-40">
-        <div class="">
-          <button
-            class="text-white
-                  bg-interbrasGreen-900
-                  rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
-            ><img src="/paraguay_flag.svg" alt="bandera de PY" />PY</button
-          >
-        </div>
+        <SwitchButton />
       </div>
     </div>
     <ul
@@ -36,13 +32,17 @@ import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
         </li>
       </div>
       <li>
-        <a aria-label="Logo Interbras" class="cursor-pointer" href="/">
+        <a
+          aria-label="Logo Interbras"
+          class="cursor-pointer"
+          href={getRelativeLocaleUrl(currentLocale || "es", "/")}
+        >
           <Logo />
         </a>
       </li>
       <div class="w-full flex max-w-96 justify-start gap-8">
         <li class="lg:block hidden">
-          <a href="/downloads">
+          <a href={getRelativeLocaleUrl(currentLocale || "/downloads")}>
             <p>Descargas</p>
           </a>
         </li>
@@ -52,44 +52,36 @@ import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
       </div>
     </ul>
   </nav>
-
   <div id="section-nav-items" class="transition-all duration-700">
     <WhereWeAreSection />
     <WeProductsSection />
     <WhoWeAreSection />
   </div>
 </header>
-
 <script is:inline data-astro-rerun>
   const init = () => {
     let selectedNavItem = null;
-
     const sectionNavItems = document.getElementById("section-nav-items");
     const whereWeAre = document.getElementById("whereWeAre");
     const whereWeAreSection = document.getElementById("WhereWeAreSection");
     const headerClient = document.getElementById("header-client");
-
     const whoWeAre = document.getElementById("whoWeAre");
     const weProducts = document.getElementById("weProducts");
-
     const updateSelectedNavItem = () => {
       const selectedNavItemHidden = document.querySelector(
         "#section-nav-items > div:not(.hidden)",
       );
-
       if (selectedNavItemHidden) {
         selectedNavItemHidden.classList.add("hidden");
         selectedNavItemHidden.classList.remove("flex");
         selectedNavItemHidden.classList.remove("fadeIn");
       }
-
       if (selectedNavItem) {
         selectedNavItem.classList.remove("hidden");
         selectedNavItem.classList.add("flex");
         selectedNavItem.classList.add("fadeIn");
       }
     };
-
     if (
       !whereWeAre ||
       !whereWeAreSection ||
@@ -99,36 +91,30 @@ import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
       !headerClient
     )
       return;
-
     headerClient.addEventListener("mouseleave", () => {
       sectionNavItems.style.height = "0rem";
       selectedNavItem = null;
       updateSelectedNavItem();
     });
-
     whereWeAre.addEventListener("mouseenter", () => {
       sectionNavItems.style.height = "24rem";
       if (selectedNavItem === whereWeAreSection) return;
       selectedNavItem = whereWeAreSection;
       updateSelectedNavItem();
     });
-
     whoWeAre.addEventListener("mouseenter", () => {
       sectionNavItems.style.height = "24rem";
       selectedNavItem = document.querySelector("#WhoWeAreSection");
       updateSelectedNavItem();
     });
-
     weProducts.addEventListener("mouseenter", () => {
       sectionNavItems.style.height = "24rem";
       selectedNavItem = document.querySelector("#WeProductsSection");
       updateSelectedNavItem();
     });
   };
-
   init();
 </script>
-
 <style is:global>
   .fadeIn {
     animation: fadeIn 0.5s ease-in-out;
@@ -142,6 +128,7 @@ import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
     0% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
@@ -151,10 +138,12 @@ import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
     0% {
       opacity: 0;
     }
+
     50% {
       opacity: 0;
       transform: translateY(10px);
     }
+
     100% {
       opacity: 1;
       transform: translateY(0);
