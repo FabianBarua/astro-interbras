@@ -23,6 +23,6 @@ const { category } = Astro.params;
 const categorySelected = categories.find((c) => c.id === category);
 ---
 
-<Layout title={getValueFromKey(categorySelected?.name || "", i18n)}>
+<Layout title={getValueFromKey(categorySelected?.name || "", i18n) + " - Interbras"}>
   <ProductPage category={category} />
 </Layout>

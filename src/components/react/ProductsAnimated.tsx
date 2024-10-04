@@ -35,20 +35,20 @@ const getDelay = (
   return (i - mitad) * 0.2 + (mitadRow === j ? 0 : mitadRow > j ? 0.1 : 0.2);
 };
 
-export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
+export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
   const lang = getLangFromUrl(new URL(currentUrl));
 
   const products: ProductItemHome[][] = [
     [
       {
         name: "airfryer",
-        url: "/product/airfryer",
+        url: "/productos/airfryer",
         photo: "/home/5.webp",
         isMagic: false,
       },
       {
         name: "hervidoras",
-        url: "/product/hervidoras",
+        url: "/productos/hervidoras",
         photo: "/home/13.webp",
         isMagic: false,
       },
@@ -56,19 +56,19 @@ export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
     [
       {
         name: "airfryer",
-        url: "/product/airfryer",
+        url: "/productos/airfryer",
         photo: "/home/6.webp",
         isMagic: false,
       },
       {
         name: "airfryer",
-        url: "/product/airfryer",
+        url: "/productos/airfryer",
         photo: "/home/3.webp",
         isMagic: false,
       },
       {
         name: "arroceras",
-        url: "/product/arroceras",
+        url: "/productos/arroceras",
         photo: "/home/11.webp",
         isMagic: false,
       },
@@ -76,19 +76,19 @@ export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
     [
       {
         name: "airfryer",
-        url: "/product/airfryer",
+        url: "/productos/airfryer",
         photo: "/home/2.webp",
         isMagic: false,
       },
       {
         name: "arroceras",
-        url: "/product/arroceras",
+        url: "/productos/arroceras",
         photo: "/home/10.webp",
         isMagic: false,
       },
       {
         name: "scooters",
-        url: "/product/scooters",
+        url: "/productos/scooters",
         photo: "/home/14.webp",
         isMagic: false,
       },
@@ -96,7 +96,7 @@ export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
     [
       {
         name: "hervidoras",
-        url: "/product/aires",
+        url: "/productos/aires",
         photo: "/home/15.webp",
         isMagic: false,
       },
@@ -108,7 +108,7 @@ export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
       },
       {
         name: "airfryer",
-        url: "/product/airfryer",
+        url: "/productos/airfryer",
         photo: "/home/4.webp",
         isMagic: false,
       },
@@ -116,19 +116,19 @@ export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
     [
       {
         name: "licuadora",
-        url: "/product/licuadoras",
+        url: "/productos/licuadoras",
         photo: "/home/9.webp",
         isMagic: false,
       },
       {
         name: "hervidoras",
-        url: "/product/hervidoras",
+        url: "/productos/hervidoras",
         photo: "/home/12.webp",
         isMagic: false,
       },
       {
         name: "beauty",
-        url: "/product/beauty",
+        url: "/productos/beauty",
         photo: "/home/20.webp",
         isMagic: false,
       },
@@ -136,19 +136,19 @@ export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
     [
       {
         name: "beauty",
-        url: "/product/beauty",
+        url: "/productos/beauty",
         photo: "/home/17.webp",
         isMagic: false,
       },
       {
         name: "planchas",
-        url: "/product/planchas",
+        url: "/productos/planchas",
         photo: "/home/19.webp",
         isMagic: false,
       },
       {
         name: "cocinas",
-        url: "/product/cocinas",
+        url: "/productos/cocinas",
         photo: "/home/18.webp",
         isMagic: false,
       },
@@ -156,63 +156,74 @@ export const ProductsAnimated = ({ currentUrl }: { currentUrl: URL }) => {
     [
       {
         name: "licuadora",
-        url: "/product/licuadoras",
+        url: "/productos/licuadoras",
         photo: "/home/7.webp",
         isMagic: false,
       },
       {
         name: "airfryer",
-        url: "/product/tvs",
+        url: "/productos/tvs",
         photo: "/home/16.webp",
         isMagic: false,
       },
     ],
   ];
 
+  const verifyDisplay = (index: number) => {
+
+    const isDeskTop = window.innerWidth > 640;
+    if (isDeskTop) return "flex";
+
+    if (index === 2 || index === 3 || index === 4) return "flex";
+
+
+    return "none";
+  }
+
   return (
-    <div className="  h-full  w-full py-12 flex   justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8 ">
-      {products.map((productRow, i) => (
-        <div
-          key={i}
-          className={` flex flex-col items-center justify-center custom-gap-${i} 
-                        ${
-                          i === 0 || i === 6 || i === 1 || i === 5
-                            ? " sm:flex hidden"
-                            : " "
-                        }
-              `}
-        >
-          {productRow.map((product, j) => (
-            <motion.div
-              key={j}
-              initial={{
-                opacity: 0,
-                y: 10,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: getDelay(
-                  i + 1,
-                  j + 1,
-                  products.length,
-                  productRow.length,
-                ),
-              }}
+
+
+    <>
+    {
+        products.map((productColumn, ColumnIndex) => (
+
+          <div 
+            key={ColumnIndex} 
+            className=" flex-col gap-3 md:gap-4 lg:gap-6 xl:gap-8 justify-center "
+            style={
+              {
+                display: verifyDisplay(ColumnIndex)
+              }
+            }
             >
-              <HomeProductCard
-                lang={lang}
-                name={product.name}
-                url={product.url}
-                photo={product.photo}
-                isMagic={product.isMagic}
-              />
-            </motion.div>
-          ))}
-        </div>
-      ))}
-    </div>
+            {
+              productColumn.map((productRow, RowIndex) => (
+                <motion.div
+                  key={RowIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 
+                    getDelay(
+                      ColumnIndex + 1,
+                      RowIndex + 1,
+                      products.length,
+                      productColumn.length,
+                    )
+                   }}
+                >
+                  <HomeProductCard
+                    {...productRow}
+                    lang={lang}
+                  />
+                </motion.div>
+              ))
+            }
+          </div>
+
+
+        ))
+      }
+    </>
+
   );
 };
