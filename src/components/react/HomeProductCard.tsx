@@ -35,6 +35,7 @@ export const HomeProductCard = ({
           className=" "
           src={photo}
           alt={typeof name === "string" ? name : ""}
+          loading="lazy"
         />
       </a>
       {isMagic && (

@@ -1,5 +1,7 @@
 ---
 import { ProductsAnimated } from "@/components/react/ProductsAnimated";
+import { ProductsAnimated2 } from "@/components/react/ProductsAnimated2";
+
 import AirFryerSection from "../AirFryerSection.astro";
 import MixSection from "../MixSection.astro";
 import CocinasSection from "../CocinasSection.astro";
@@ -10,14 +12,32 @@ import OtherProductsSection from "../OtherProductsSection.astro";
 const currentPath = Astro.url;
 ---
 
-<ProductsAnimated currentUrl={currentPath} client:load />
+<div class=" sm:h-[450px] h-auto my-12 flex justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8 ">
+  <ProductsAnimated2 client:only="react" currentUrl={currentPath} />
+</div>
 
 <main class="sm:w-[80%] w-[90%] flex flex-col gap-6 mx-auto">
-  <!-- <AirFryerSection />
-  <MixSection />
-  <CocinasSection />
-  <HervidorasAndCafeterasSection />
-  <OtherProductsSection /> -->
+
+  <div class=" h-[25rem] md:h-[30rem] ">
+    <AirFryerSection />
+  </div>
+
+  <div class=" h-[25rem] md:h-[30rem] ">
+    <MixSection />
+  </div>
+
+  <div class=" lg:h-[30rem] ">
+    <CocinasSection />
+  </div>
+
+  <div class=" lg:h-[30rem] sm:h-auto ">
+    <HervidorasAndCafeterasSection />
+  </div>
+
+  <div class="lg:h-[30rem] h-[20rem] flex gap-4 flex-col ">
+    <OtherProductsSection />
+  </div>
+
 </main>
 
 <style is:global>
