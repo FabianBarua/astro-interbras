@@ -1,0 +1,62 @@
+---
+import { motion } from 'framer-motion'
+import PrimaryButton from './PrimaryButton.astro'
+
+import { getI18NGlobal, getValueFromKey } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18NGlobal({ currentLocale });
+
+const t = (key: string) => {
+  return getValueFromKey(key, i18n);
+};
+---
+
+<section class=' lg:h-[30rem] sm:h-auto flex-col lg:flex-row flex  gap-6 '>
+    <motion.div
+      initial='hidden' client:idle
+ client:idle
+
+      whileInView='visible'
+      viewport={{ once: true }}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 40 }
+      }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      className=' w-full h-[20rem] lg:h-full relative bg-interbrasGray rounded-[40px] overflow-hidden'
+    >
+      <img src='/home/KettleAndCafeterasSection/1.webp' class='  h-[115%] top-1/2 -translate-y-[55%] absolute right-0' alt='hervidoras interbras' />
+      <div class=' absolute lg:bottom-10 lg:left-10 left-5 bottom-5'>
+        <h2 class='text-3xl md:text-4xl mb-3 font-bold text-white'>
+          {t('home.HervidorasAndCafeterasSection.1.title')}
+        </h2>
+        <PrimaryButton
+          class=' w-min'
+          to='/product/hervidoras'
+        />
+      </div>
+    </motion.div>
+    <motion.div
+      initial='hidden' client:idle
+
+      whileInView='visible'
+      viewport={{ once: true }}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 40 }
+      }}
+      transition={{ duration: 0.5, delay: 0.7 }}
+      className=' w-full h-[20rem] lg:h-full relative bg-interbrasGray rounded-[40px] overflow-hidden'
+    >        <img src='/home/KettleAndCafeterasSection/2.webp' class='  h-[110%] top-1/2 -translate-y-[52%] absolute left-0' alt='hervidoras interbras' />
+
+      <div class=' absolute lg:bottom-10 bottom-5 lg:right-10 right-5 '>
+        <h2 class='text-3xl md:text-4xl  mb-3 font-bold text-white'>
+          {t('home.HervidorasAndCafeterasSection.2.title')}
+        </h2>
+        <PrimaryButton
+          class=' ml-auto w-min'
+          to='/product/cafeteras'
+        />
+      </div>
+    </motion.div>
+  </section>

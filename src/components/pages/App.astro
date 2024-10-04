@@ -2,6 +2,9 @@
 import { ProductsAnimated } from "@/components/react/ProductsAnimated";
 import AirFryerSection from "../AirFryerSection.astro";
 import MixSection from "../MixSection.astro";
+import CocinasSection from "../CocinasSection.astro";
+import HervidorasAndCafeterasSection from "../HervidorasAndCafeterasSection.astro";
+import OtherProductsSection from "../OtherProductsSection.astro";
 
 // const url
 const currentPath = Astro.url;
@@ -10,8 +13,11 @@ const currentPath = Astro.url;
 <ProductsAnimated currentUrl={currentPath} client:load />
 
 <main class="sm:w-[80%] w-[90%] flex flex-col gap-6 mx-auto">
-  <AirFryerSection />
+  <!-- <AirFryerSection />
   <MixSection />
+  <CocinasSection />
+  <HervidorasAndCafeterasSection />
+  <OtherProductsSection /> -->
 </main>
 
 <style is:global>
