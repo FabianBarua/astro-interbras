@@ -1190,7 +1190,7 @@ export const getCategory = ({ id }: { id: string }): Category => {
   return product as Category;
 };
 
-export const getProductsByCategory = ({ id }: { id: string }): Category => {
+export const  getProductsByCategory = ({ id }: { id: string }): Category => {
   const products = data.products.filter((product) => product.id === id)[0];
   return products;
 };

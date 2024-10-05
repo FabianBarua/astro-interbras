@@ -1,12 +1,20 @@
 ---
-interface ProductPage {
+import { getCategory } from "@/shared/utils";
+import  { ProductPage as ReactProductPage } from "@/components/react/ProductPage";
+
+interface Props {
   category: string;
 }
 
 const { category } = Astro.props;
+
+const categorySelected = getCategory({
+  id: category,
+})
+
+const { currentLocale } = Astro;
+const lang = currentLocale? currentLocale : '';
+
 ---
 
-
-<p>
-  This is the <strong>{category}</strong> category page.
-</p>
+<ReactProductPage category={categorySelected} lang={lang} client:idle/>
