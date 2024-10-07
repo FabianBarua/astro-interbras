@@ -4,9 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { useState } from 'react'
 import { getCategories } from '@/shared/utils'
 
-import {
-  getRelativeLocaleUrl
-} from 'astro:i18n'
+import {getRelativeLocaleUrl} from 'astro:i18n'
 
 
 interface CarrouselCategoryProps {
