@@ -29,15 +29,6 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
 <meta charset="UTF-8" />
 <meta name="description" content={description} />
 
-<link rel="preconnect" href="https://cdn.lavelada.dev" />
-<link
-	rel="preload"
-	href={"https://cdn.lavelada.dev/fonts/font-atomic.woff2"}
-	as="font"
-	type="font/woff2"
-	crossorigin
-/>
-
 <link rel="canonical" href={canonicalURL} />
 <meta name="viewport" content="width=device-width" />
 <meta name="theme-color" content="#36a53c" />

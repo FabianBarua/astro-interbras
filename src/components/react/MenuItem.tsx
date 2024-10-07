@@ -20,7 +20,6 @@ interface MenuItemProps {
     )
 
 
-
     if (link !== undefined) {
       return (
         <motion.li
