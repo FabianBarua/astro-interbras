@@ -1,8 +1,15 @@
 ---
 import { VelocityScroll } from "@/components/react/VelocityScroll";
 import { AppsSection } from "@/components/react/AppsSection";
+import { getI18NGlobal, getValueFromKey } from "@/i18n";
 
 const { currentLocale } = Astro;
+
+const i18n = getI18NGlobal({ currentLocale });
+
+const t = (key: string) => {
+  return getValueFromKey(key, i18n);
+};
 
 ---
 <div
@@ -27,18 +34,32 @@ const { currentLocale } = Astro;
                />
          </div>
          <h1 class="text-5xl font-bold mt-0 lg:mt-5">
-            <span class="block"> Archivos de</span><span class="block"
-               >descarga</span>
+
+            {
+               t('downloads.title').split('\n').map((line:string) => (
+                 <span class='block'>
+                   {line}
+                 </span>
+               ))
+             }
+
          </h1>
          <p class="text-balance leading-5 text-black/65 mt-3">
-            <span class="block">Bienvenido a nuestra sección de descargas.</span
-               ><span class="block">Aquí encontrará una selección de archivos.</span>
+           
+            {t('downloads.p1').split('\n').map((line:string) => (
+            <span class='block'>
+              {line}
+            </span>
+          ))}
+
          </p>
          <a
             href="#apps"
             class="mx-auto lg:mx-0 w-min mt-10 bg-interbrasGreen-500 text-white inline-flex items-center justify-center whitespace-nowrap text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary shadow hover:bg-primary/90 h-9 px-12 py-2 translate-y-[-1rem] animate-fade-in gap-1 rounded-lg ease-in-out [--animation-delay:600ms]"
             >
-            <span>Ver aplicaciones</span>
+            <span>
+               {t('downloads.callToAction')}
+            </span>
             <svg
                width="15"
                height="15"
@@ -115,7 +136,7 @@ const { currentLocale } = Astro;
    </main>
    <div class="text-5xl lg:my-32 my-10 relative">
       <VelocityScroll 
-         text="Ver aplicaciones"
+         text={t('downloads.callToAction')}
          client:only="react"
          />
    </div>
