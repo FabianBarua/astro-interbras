@@ -26,10 +26,8 @@ const { title, description, canonical, image } = Astro.props
 <html lang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta property='og:locale' content={currentLocale === 'es' ? 'es_ES' : currentLocale === 'pt' ? 'pt_BR' : 'en_US'}/>
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
