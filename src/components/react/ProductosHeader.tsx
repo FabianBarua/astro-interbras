@@ -11,13 +11,13 @@ interface ProductosHeaderProps {
 interface LinkItemProps {
   to: string
   children: React.ReactNode
-
+  lang: string
   clicked?: () => void
 }
 
-const LinkItem: React.FC<LinkItemProps> = ({ to, children, clicked }) => {
+const LinkItem: React.FC<LinkItemProps> = ({ to, children, clicked, lang }) => {
   return (
-    <a
+    <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
       className=' opacity-55 hover:opacity-100 transition-colors'
       href={to}
       onClick={
@@ -77,6 +77,7 @@ export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
               {
                 urls.slice(0, 8).map(url => (
                   <LinkItem
+                    lang={lang}
                     clicked={clicked} to={url.url}
                     key={'id-header-' + t2(url.name)}
                   >
@@ -89,6 +90,7 @@ export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
               {
                 urls.slice(8, urls.length).map(url => (
                   <LinkItem
+                    lang={lang}
                     clicked={clicked} to={url.url}
                     key={'id-header-' + url.name}
                   >

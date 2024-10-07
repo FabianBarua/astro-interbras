@@ -63,7 +63,7 @@ const t = (key: string) => {
               }
             </span>
           </button>
-          <a class='w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-interbrasGreen-500 rounded-lg shrink-0 sm:w-auto hover:bg-interbrasGreen-600 :hover:bg-interbrasGreen-500 :bg-interbrasGreen-600' href='/'>
+          <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}  class='w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-interbrasGreen-500 rounded-lg shrink-0 sm:w-auto hover:bg-interbrasGreen-600 :hover:bg-interbrasGreen-500 :bg-interbrasGreen-600' href='/'>
             {
               t('notFound.home')
             }

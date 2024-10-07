@@ -42,17 +42,18 @@ const t = (key: string) => {
       </div>
     </li>
       <li>
-        <a
+        <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"} 
           aria-label="Logo Interbras"
           class="cursor-pointer"
           href={getRelativeLocaleUrl(currentLocale || "es", "/")}
+          hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}
         >
           <Logo />
         </a>
       </li>
       <div class="w-full flex max-w-96 justify-start gap-8">
         <li class="lg:block hidden">
-          <a href={getRelativeLocaleUrl(currentLocale || "", "/downloads")}>
+          <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}  href={getRelativeLocaleUrl(currentLocale || "", "/downloads")}>
             <p>{t('header.download')}</p>
           </a>
         </li>

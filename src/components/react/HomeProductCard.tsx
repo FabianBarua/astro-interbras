@@ -21,7 +21,7 @@ export const HomeProductCard = ({
           
           `}
     >
-      <a
+      <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
         onClick={() => {
           window.scrollTo(0, 0);
         }}

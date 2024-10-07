@@ -52,7 +52,8 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({ lang }) => {
         <div className=' absolute z-10 left-1/2 -translate-x-1/2 bottom-4 bg-interbrasGray p-3 flex  gap-4 rounded-xl shadow-xl'>
           {
             productsSlide.map((product) => (
-              <a
+              <a 
+                hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
                 onClick={
                 () => {
                   window.scrollTo(0, 0)

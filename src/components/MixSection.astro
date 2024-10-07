@@ -69,7 +69,7 @@ const t = (key: string) => {
   >
     {
       mixers.map((mixer) => (
-        <a
+        <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"} 
           href={getRelativeLocaleUrl(currentLocale || "es", mixer.url || "/")}
           class={`
             absolute transition-all rounded-[40px]  shadow-xl  flex justify-center items-center size-64 bg-white hover:bg-interbrasGreen-500 

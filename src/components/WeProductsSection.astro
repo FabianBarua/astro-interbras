@@ -26,7 +26,7 @@ const urls = getUrls();
               const name: string | undefined = getValueFromKey(url.name, i18n2);
 
               return (
-                <a
+                <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"} 
                   href={getRelativeLocaleUrl(
                     currentLocale ? currentLocale : "es",
                     url.url,
@@ -44,7 +44,7 @@ const urls = getUrls();
               const name: string | undefined = getValueFromKey(url.name, i18n2);
 
               return (
-                <a
+                <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"} 
                   href={getRelativeLocaleUrl(
                     currentLocale ? currentLocale : "es",
                     url.url,

@@ -105,7 +105,7 @@ export const CarrouselCategory: React.FC<CarrouselCategoryProps> = ({lang}) => {
           >
             {t(item.shortDescription)}
           </p>
-          <a
+          <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
             href={
               getRelativeLocaleUrl(
                 lang,

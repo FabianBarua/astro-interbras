@@ -36,7 +36,7 @@ interface MenuItemProps {
           }
 
         >
-          <a href={
+          <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"}  href={
             getRelativeLocaleUrl(
             lang,
               link

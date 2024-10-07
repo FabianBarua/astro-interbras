@@ -104,7 +104,7 @@ interface DownloadModalCardProps {
             </div>
           </div>
         </div>
-        <a
+        <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
           href={url}
           target='_blank'
           className=' p-2 w-full lg:w-auto my-auto h-full justify-center items-center flex ml-auto transition-colors text-black/70 hover:text-black/90 bg-black/10 hover:bg-black/20 rounded-lg px-5 gap-2'
