@@ -6,8 +6,10 @@ import WeProductsSection from "@/components/WeProductsSection.astro";
 import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
 import SwitchButton from "@/components/SwitchButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { MobileNav } from "./react/MobileNav";
 const { currentLocale } = Astro;
 ---
+
 
 <header
   transition:persist="true"
@@ -57,7 +59,12 @@ const { currentLocale } = Astro;
     <WeProductsSection />
     <WhoWeAreSection />
   </div>
+
+  
+<MobileNav client:only="react" />
+
 </header>
+
 <script is:inline data-astro-rerun>
   const init = () => {
     let selectedNavItem = null;
@@ -116,6 +123,30 @@ const { currentLocale } = Astro;
   init();
 </script>
 <style is:global>
+
+  /* hidden for 1 seccond with displaynone and before flex */
+
+  .hiddenTemp {
+    display: flex;
+    animation: hiddenTempAnimation .4s forwards;
+  }
+
+  @keyframes hiddenTempAnimation {
+    0% {
+      display: none;
+    }
+
+    90% {
+      display: none;
+    }
+
+    100% {
+      display: flex;
+    }
+  }
+
+
+
   .fadeIn {
     animation: fadeIn 0.5s ease-in-out;
   }

@@ -19,7 +19,7 @@ interface ProductPageProps {
 
 export const ProductPage: React.FC<ProductPageProps> = ({ category, lang }) => {
 
-  console.log('ProductPage', category)
+
 
   const productSelected = category
 
@@ -44,7 +44,6 @@ export const ProductPage: React.FC<ProductPageProps> = ({ category, lang }) => {
     if (model) {
       const child = productSelected.children.find((child) => child.id === model)
       if (child) {
-        console.log('child', child)
         setChildSelected(child)
       }
     }
