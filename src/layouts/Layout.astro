@@ -34,12 +34,12 @@ const { title, description, canonical, image } = Astro.props
     <meta property='og:locale' content={currentLocale === 'es' ? 'es_ES' : currentLocale === 'pt' ? 'pt_BR' : 'en_US'}/>
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 		
-    <!-- <SEO
+    <SEO
 			canonical={canonical}
 			description={description}
 			image={image}
 			title={title}
-		/> -->
+		/> 
 
     <ViewTransitions fallback="none" />
   </head>
