@@ -18,7 +18,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
