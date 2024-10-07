@@ -57,7 +57,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ category, lang }) => {
 
     const urlParams = new URLSearchParams(window.location.search);
     urlParams.set('model', childSelected.id)
-    window.history.pushState({}, '', `${window.location.pathname}?${urlParams.toString()}`);
+    window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);
 
     
   },[

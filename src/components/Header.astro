@@ -7,7 +7,15 @@ import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
 import SwitchButton from "@/components/SwitchButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { MobileNav } from "./react/MobileNav";
+import { getI18NGlobal, getValueFromKey } from "@/i18n";
+
 const { currentLocale } = Astro;
+const i18n = getI18NGlobal({ currentLocale });
+
+const t = (key: string) => {
+  return getValueFromKey(key, i18n);
+};
+
 ---
 
 
@@ -25,14 +33,14 @@ const { currentLocale } = Astro;
     <ul
       class="flex mx-auto justify-center text-nowrap items-center gap-14 w-full"
     >
-      <div class="w-full flex max-w-96 justify-end gap-8">
-        <li class="lg:block hidden">
-          <button id="whereWeAre">Donde estamos</button>
-        </li>
-        <li class="lg:block hidden">
-          <button id="weProducts">Productos</button>
-        </li>
+    <li class="w-full flex max-w-96 justify-end gap-8">
+      <div class="lg:block hidden">
+        <button id="whereWeAre">{t('header.whereWeAre.title')}</button>
       </div>
+      <div class="lg:block hidden">
+        <button id="weProducts">{t('header.products.title')}</button>
+      </div>
+    </li>
       <li>
         <a
           aria-label="Logo Interbras"
@@ -44,12 +52,12 @@ const { currentLocale } = Astro;
       </li>
       <div class="w-full flex max-w-96 justify-start gap-8">
         <li class="lg:block hidden">
-          <a href={getRelativeLocaleUrl(currentLocale || "/downloads")}>
-            <p>Descargas</p>
+          <a href={getRelativeLocaleUrl(currentLocale || "", "/downloads")}>
+            <p>{t('header.download')}</p>
           </a>
         </li>
         <li class="lg:block hidden">
-          <button id="whoWeAre">Quienes somos</button>
+          <button id="whoWeAre">{t('header.whoWeAre.title')}</button>
         </li>
       </div>
     </ul>
@@ -65,8 +73,8 @@ const { currentLocale } = Astro;
 
 </header>
 
-<script is:inline data-astro-rerun>
-  const init = () => {
+<script is:inline >
+  const initHeaderScript = () => {
     let selectedNavItem = null;
     const sectionNavItems = document.getElementById("section-nav-items");
     const whereWeAre = document.getElementById("whereWeAre");
@@ -120,7 +128,7 @@ const { currentLocale } = Astro;
       updateSelectedNavItem();
     });
   };
-  init();
+  initHeaderScript();
 </script>
 <style is:global>
 
