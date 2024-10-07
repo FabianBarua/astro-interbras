@@ -31,6 +31,214 @@ export interface Variant {
   photos: string[];
 }
 
+
+const hoverboards: Category = {
+  id: 'hoverboards',
+  name: 'hoverboards.name',
+  description: 'hoverboards.description',
+  shortDescription: 'hoverboards.shortDescription',
+  children: [
+    {
+      id: 'hoverboards1',
+      name: 'hoverboards.children.hoverboards1.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards1.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards1.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards1',
+          name: 'Hoverboard',
+          color: 'colors.black',
+          photos: [
+            '/product/hoverboards/hoverboards1-1.webp',
+            '/product/hoverboards/hoverboards1-2.webp',
+            '/product/hoverboards/hoverboards1-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards2',
+      name: 'hoverboards.children.hoverboards2.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards2.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards2.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards2',
+          name: 'Hoverboard',
+          color: 'colors.grafite',
+          photos: [
+            '/product/hoverboards/hoverboards2-1.webp',
+            '/product/hoverboards/hoverboards2-2.webp',
+            '/product/hoverboards/hoverboards2-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards3',
+      name: 'hoverboards.children.hoverboards3.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards3.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards3.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards3',
+          name: 'Hoverboard',
+          color: 'colors.blueFire',
+          photos: [
+            '/product/hoverboards/hoverboards3-1.webp',
+            '/product/hoverboards/hoverboards3-2.webp',
+            '/product/hoverboards/hoverboards3-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards4',
+      name: 'hoverboards.children.hoverboards4.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards4.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards4.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards4',
+          name: 'Hoverboard',
+          color: 'colors.redFire',
+          photos: [
+            '/product/hoverboards/hoverboards4-1.webp',
+            '/product/hoverboards/hoverboards4-2.webp',
+            '/product/hoverboards/hoverboards4-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards5',
+      name: 'hoverboards.children.hoverboards5.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards5.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards5.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards5',
+          name: 'Hoverboard',
+          color: 'colors.hiphop',
+          photos: [
+            '/product/hoverboards/hoverboards5-1.webp',
+            '/product/hoverboards/hoverboards5-2.webp',
+            '/product/hoverboards/hoverboards5-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards6',
+      name: 'hoverboards.children.hoverboards6.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards6.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards6.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards6',
+          name: 'Hoverboard',
+          color: 'colors.pinkCamouflage',
+          photos: [
+            '/product/hoverboards/hoverboards6-1.webp',
+            '/product/hoverboards/hoverboards6-2.webp',
+            '/product/hoverboards/hoverboards6-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards7',
+      name: 'hoverboards.children.hoverboards7.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards7.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards7.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards7',
+          name: 'Hoverboard',
+          color: 'colors.purple',
+          photos: [
+            '/product/hoverboards/hoverboards7-1.webp',
+            '/product/hoverboards/hoverboards7-2.webp',
+            '/product/hoverboards/hoverboards7-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards8',
+      name: 'hoverboards.children.hoverboards8.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards8.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards8.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards8',
+          name: 'Hoverboard',
+          color: 'colors.blueCamouflage',
+          photos: [
+            '/product/hoverboards/hoverboards8-1.webp',
+            '/product/hoverboards/hoverboards8-2.webp',
+            '/product/hoverboards/hoverboards8-3.webp'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hoverboards9',
+      name: 'hoverboards.children.hoverboards9.name',
+      popular: false,
+      info: {
+        review: 'hoverboards.children.hoverboards9.info.review',
+        included: null,
+        specs: 'hoverboards.children.hoverboards9.info.specs'
+      },
+      variants: [
+        {
+          id: 'hoverboards9',
+          name: 'Hoverboard',
+          color: 'colors.rosePink',
+          photos: [
+            '/product/hoverboards/hoverboards9-1.webp',
+            '/product/hoverboards/hoverboards9-2.webp',
+            '/product/hoverboards/hoverboards9-3.webp'
+          ]
+        }
+      ]
+    }
+  ]
+}
+
 const airfryer: Category = {
   id: "airfryer",
   name: "airfryer.name",
@@ -1152,6 +1360,7 @@ export const data: Root = {
     tvs,
     scooters,
     aires,
+    hoverboards,
     airfryer,
     mixteras,
     cocinas,

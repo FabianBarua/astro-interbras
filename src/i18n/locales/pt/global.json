@@ -1,10 +1,10 @@
 {
-  "header":{
+  "header": {
     "whereWeAre": {
       "title": "Onde estamos",
       "line1": "Nas melhores lojas",
       "line2": "do ",
-      "line3":"Paraguai! "
+      "line3": "Paraguai! "
     },
     "products": {
       "title": "Produtos",
@@ -13,53 +13,53 @@
     "download": "Downloads",
     "whoWeAre": {
       "title": "Quem somos",
-      "line1": "Somos uma empresa multinacional",
+      "line1": "Somos uma empresa internacional",
       "line2": "apaixonada por melhorar a vida no",
       "line3": "lar."
     }
-},
-  "home":{
-    "title":{
+  },
+  "home": {
+    "title": {
       "primary": "Sua marca",
       "secondary": "favorita"
     },
-    "airFryersSection":{
-      "text":"Nova tendência em cozinha saudável e rápida."
+    "airFryersSection": {
+      "text": "Nova tendência em cozinha saudável e rápida."
     },
     "animatedSection": {
-      "1":{
+      "1": {
         "id": "productSlide1",
         "name": "TVs",
         "description": "Inovação em telas de alta definição."
       },
-      "2":{
+      "2": {
         "id": "productSlide2",
         "name": "Ar condicionado",
         "description": "A nova geração em climatização."
       },
-      "3":{
+      "3": {
         "id": "productSlide3",
         "name": "Patinetes Eletricos",
         "description": "A nova forma de mobilidade urbana."
       }
     },
-    "MixSection":{
+    "MixSection": {
       "title": "Sanduicheira & Parrilla Grill",
       "description": "Sanduíches perfeitos, sem esforço."
     },
-    "CocinasSection":{
+    "CocinasSection": {
       "title": "Fogões Elétricos",
       "description": "Inovação compacta para sua cozinha na sua mesa."
     },
-    "HervidorasAndCafeterasSection":{
-      "1":{
+    "HervidorasAndCafeterasSection": {
+      "1": {
         "title": "Jarra Elétrica"
       },
-      "2":{
+      "2": {
         "title": "Cafeteiras"
       }
     },
-    "OtherProductsSection":{
+    "OtherProductsSection": {
       "1": "Ferros de passar",
       "2": "Liquidificadores",
       "3": "Beleza",
@@ -68,14 +68,14 @@
       "6": "Bebedouros"
     }
   },
-  "primaryButton":{ 
+  "primaryButton": {
     "text": "Abrir"
   },
   "moreProducts": "Mais produtos",
-  "footer":{
+  "footer": {
     "copy": "Copyright © 2024 Interbras. Todos os direitos reservados."
   },
-  "productPage":{
+  "productPage": {
     "review": "Descrição",
     "whatAreIncluded": "O que há na caixa?",
     "specs": "Especificações"
@@ -96,15 +96,15 @@
     "goBack": "Voltar",
     "home": "Ir para o início"
   },
-  "downloads":{
-    "download" : "Baixar",
+  "downloads": {
+    "download": "Baixar",
     "title": "Arquivos para\ndownload",
     "p1": "Bem-vindo à nossa seção de downloads.\nAqui você encontrará uma seleção de arquivos.",
     "callToAction": "Veja aplicativos",
     "close": "Fechar",
     "selectFile": "Selecione o arquivo",
-    "scroll" : "Baixar arquivos",
-    "files":{
+    "scroll": "Baixar arquivos",
+    "files": {
       "scooter105y85": {
         "1": "Arquivo .Apk",
         "2": "App para Iphone"

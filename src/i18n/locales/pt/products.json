@@ -16,11 +16,19 @@
     "white": "Branco",
     "inox": "Inox",
     "golden": "Dourado",
-    "blankAndWhite": "Branco - Preto",
-    "blackAndGray": "Preto - Cinza",
+    "blankAndWhite": "Branco e Preto",
+    "blackAndGray": "Preto e Cinza",
     "RedAndBlack": "Vermelho - Preto",
     "BlueAndWhite": "Branco - Azul",
-    "GrayAndBronze": "Cinza - Bronze"
+    "GrayAndBronze": "Cinza - Bronze",
+    "grafite": "Grafite",
+    "blueFire": "Azul Fogo",
+    "redFire": "Vermelho Fogo",
+    "hiphop": "Hip Hop",
+    "pinkCamouflage": "Rosa Camuflado",
+    "purple": "Roxo Galáxia",
+    "blueCamouflage": "Azul Camuflado",
+    "rosePink": "Rosa Pink"
   },
   "airfryer": {
     "id": "airfryer",
@@ -140,7 +148,7 @@
             "name": "ITP 12000IV - 1",
             "color": "Branco",
             "photos": [
-              "/productos/aires/general.webp"
+              "/product/aires/general.webp"
             ]
           }
         ]
@@ -160,7 +168,7 @@
             "name": "ITB 12000OF - 1",
             "color": "Branco",
             "photos": [
-              "/productos/aires/general.webp"
+              "/product/aires/general.webp"
             ]
           }
         ]
@@ -180,7 +188,7 @@
             "name": "ITP 12000OF - 1",
             "color": "Branco",
             "photos": [
-              "/productos/aires/general.webp"
+              "/product/aires/general.webp"
             ]
           }
         ]
@@ -200,7 +208,7 @@
             "name": "ITB 18000IV - 1",
             "color": "Branco",
             "photos": [
-              "/productos/aires/general.webp"
+              "/product/aires/general.webp"
             ]
           }
         ]
@@ -220,7 +228,7 @@
             "name": "ITB 24000IV Inverter (Paraguai 50Hz)",
             "color": "Branco",
             "photos": [
-              "/productos/aires/general.webp"
+              "/product/aires/general.webp"
             ]
           }
         ]
@@ -248,9 +256,9 @@
             "name": "IN3200TV - 1",
             "color": "Preto",
             "photos": [
-              "/productos/tvs/IN3200TV-1.webp",
-              "/productos/tvs/IN3200TV-2.webp",
-              "/productos/tvs/IN3200TV-3.webp"
+              "/product/tvs/IN3200TV-1.webp",
+              "/product/tvs/IN3200TV-2.webp",
+              "/product/tvs/IN3200TV-3.webp"
             ]
           }
         ]
@@ -270,10 +278,10 @@
             "name": "IN4300TV - 1",
             "color": "Preto",
             "photos": [
-              "/productos/tvs/IN4300TV-1.webp",
-              "/productos/tvs/IN4300TV-2.webp",
-              "/productos/tvs/IN4300TV-3.webp",
-              "/productos/tvs/IN4300TV-4.webp"
+              "/product/tvs/IN4300TV-1.webp",
+              "/product/tvs/IN4300TV-2.webp",
+              "/product/tvs/IN4300TV-3.webp",
+              "/product/tvs/IN4300TV-4.webp"
             ]
           }
         ]
@@ -293,10 +301,10 @@
             "name": "IN5000TV - 1",
             "color": "Preto",
             "photos": [
-              "/productos/tvs/IN5000TV-1.webp",
-              "/productos/tvs/IN5000TV-2.webp",
-              "/productos/tvs/IN5000TV-3.webp",
-              "/productos/tvs/IN5000TV-4.webp"
+              "/product/tvs/IN5000TV-1.webp",
+              "/product/tvs/IN5000TV-2.webp",
+              "/product/tvs/IN5000TV-3.webp",
+              "/product/tvs/IN5000TV-4.webp"
             ]
           }
         ]
@@ -316,10 +324,10 @@
             "name": "IN5500TV - 1",
             "color": "Preto",
             "photos": [
-              "/productos/tvs/IN5500TV-1.webp",
-              "/productos/tvs/IN5500TV-2.webp",
-              "/productos/tvs/IN5500TV-3.webp",
-              "/productos/tvs/IN5500TV-4.webp"
+              "/product/tvs/IN5500TV-1.webp",
+              "/product/tvs/IN5500TV-2.webp",
+              "/product/tvs/IN5500TV-3.webp",
+              "/product/tvs/IN5500TV-4.webp"
             ]
           }
         ]
@@ -339,10 +347,10 @@
             "name": "IN6500TV - 1",
             "color": "Preto",
             "photos": [
-              "/productos/tvs/IN6500TV-1.webp",
-              "/productos/tvs/IN6500TV-2.webp",
-              "/productos/tvs/IN6500TV-3.webp",
-              "/productos/tvs/IN6500TV-4.webp"
+              "/product/tvs/IN6500TV-1.webp",
+              "/product/tvs/IN6500TV-2.webp",
+              "/product/tvs/IN6500TV-3.webp",
+              "/product/tvs/IN6500TV-4.webp"
             ]
           }
         ]
@@ -362,10 +370,10 @@
             "name": "IN7500TV - 1",
             "color": "Preto",
             "photos": [
-              "/productos/tvs/IN7500TV-1.webp",
-              "/productos/tvs/IN7500TV-2.webp",
-              "/productos/tvs/IN7500TV-3.webp",
-              "/productos/tvs/IN7500TV-4.webp"
+              "/product/tvs/IN7500TV-1.webp",
+              "/product/tvs/IN7500TV-2.webp",
+              "/product/tvs/IN7500TV-3.webp",
+              "/product/tvs/IN7500TV-4.webp"
             ]
           }
         ]
@@ -385,10 +393,10 @@
             "name": "IN8500TV - 1",
             "color": "Preto",
             "photos": [
-              "/productos/tvs/IN8500TV-1.webp",
-              "/productos/tvs/IN8500TV-2.webp",
-              "/productos/tvs/IN8500TV-3.webp",
-              "/productos/tvs/IN8500TV-4.webp"
+              "/product/tvs/IN8500TV-1.webp",
+              "/product/tvs/IN8500TV-2.webp",
+              "/product/tvs/IN8500TV-3.webp",
+              "/product/tvs/IN8500TV-4.webp"
             ]
           }
         ]
@@ -473,7 +481,7 @@
             "name": "C10",
             "color": "colors.white",
             "photos": [
-              "/productos/cocinas/C10-1.webp"
+              "/product/cocinas/C10-1.webp"
             ]
           }
         ]
@@ -494,7 +502,7 @@
             "name": "C20",
             "color": "colors.black",
             "photos": [
-              "/productos/cocinas/C20-1.webp"
+              "/product/cocinas/C20-1.webp"
             ]
           }
         ]
@@ -515,7 +523,7 @@
             "name": "C30",
             "color": "colors.black",
             "photos": [
-              "/productos/cocinas/C30-1.webp"
+              "/product/cocinas/C30-1.webp"
             ]
           }
         ]
@@ -543,7 +551,7 @@
             "name": "T10",
             "color": "Inox",
             "photos": [
-              "/productos/hervidoras/T10-1.webp"
+              "/product/hervidoras/T10-1.webp"
             ]
           }
         ]
@@ -563,7 +571,7 @@
             "name": "T20",
             "color": "colors.white",
             "photos": [
-              "/productos/hervidoras/T20-1.webp"
+              "/product/hervidoras/T20-1.webp"
             ]
           }
         ]
@@ -583,7 +591,7 @@
             "name": "T30",
             "color": "colors.black",
             "photos": [
-              "/productos/hervidoras/T30-1.webp"
+              "/product/hervidoras/T30-1.webp"
             ]
           }
         ]
@@ -601,9 +609,9 @@
         "name": "Cafeteira E10",
         "popular": false,
         "info": {
-          "review": "A cafeteira E10 da Interbras é a escolha perfeita para os amantes de café que buscam versatilidade e qualidade em cada xícara. \nCom capacidade para utilizar tanto cápsulas quanto café moído, esta cafeteira se adapta às suas preferências e permite desfrutar de uma ampla variedade de bebidas.",
+          "review": "A cafeteira E10 da Interbras é a escolha perfeita para os amantes de café que buscam versatilidade e qualidade em cada xícara.",
           "included": null,
-          "specs": "Café em cápsulas\nCafé em pó\nPotência: 1500W\nTanque de água: 1.24 litros\nSeleção de tamanho da xícara: 80 ml a 420 ml\nSistema de aquecimento instantâneo\nDesligamento automático em 2 minutos\nIndicador de limpeza\nAcessórios removíveis\nPrograma de limpeza automatizado\nProteção contra superaquecimento"
+          "specs": "Café em pó\nPotência: 1500W\nTanque de água: 1.24 litros\nSeleção de tamanho da xícara: 80 ml a 420 ml\nSistema de aquecimento instantâneo\nDesligamento automático em 2 minutos\nIndicador de limpeza\nAcessórios removíveis\nPrograma de limpeza automatizado\nProteção contra superaquecimento"
         },
         "variants": [
           {
@@ -611,7 +619,7 @@
             "name": "E10",
             "color": "Inox",
             "photos": [
-              "/productos/cafeteras/E10-1.webp"
+              "/product/cafeteras/E10-1.webp"
             ]
           }
         ]
@@ -639,7 +647,7 @@
             "name": "F10",
             "color": "Vermelho - preto",
             "photos": [
-              "/productos/planchas/F10-1.webp"
+              "/product/planchas/F10-1.webp"
             ]
           }
         ]
@@ -659,7 +667,7 @@
             "name": "F20",
             "color": "Vermelho - preto",
             "photos": [
-              "/productos/planchas/F20-1.webp"
+              "/product/planchas/F20-1.webp"
             ]
           }
         ]
@@ -679,7 +687,7 @@
             "name": "F30",
             "color": "Azul - branco",
             "photos": [
-              "/productos/planchas/F30-1.webp"
+              "/product/planchas/F30-1.webp"
             ]
           }
         ]
@@ -699,7 +707,7 @@
             "name": "F40",
             "color": "Cinza - Bronze",
             "photos": [
-              "/productos/planchas/F40-1.webp"
+              "/product/planchas/F40-1.webp"
             ]
           }
         ]
@@ -719,7 +727,7 @@
             "name": "F50",
             "color": "preto",
             "photos": [
-              "/productos/planchas/F50-1.webp"
+              "/product/planchas/F50-1.webp"
             ]
           }
         ]
@@ -747,7 +755,7 @@
             "name": "L10",
             "color": "branco",
             "photos": [
-              "/productos/licuadoras/L10-1.webp"
+              "/product/licuadoras/L10-1.webp"
             ]
           }
         ]
@@ -767,9 +775,9 @@
             "name": "L20",
             "color": "branco",
             "photos": [
-              "/productos/licuadoras/L20-1.webp",
-              "/productos/licuadoras/L20-2.webp",
-              "/productos/licuadoras/L20-3.webp"
+              "/product/licuadoras/L20-1.webp",
+              "/product/licuadoras/L20-2.webp",
+              "/product/licuadoras/L20-3.webp"
             ]
           }
         ]
@@ -789,7 +797,7 @@
             "name": "L30",
             "color": "branco",
             "photos": [
-              "/productos/licuadoras/L30-1.webp"
+              "/product/licuadoras/L30-1.webp"
             ]
           }
         ]
@@ -809,9 +817,9 @@
             "name": "L40",
             "color": "branco",
             "photos": [
-              "/productos/licuadoras/L40-1.webp",
-              "/productos/licuadoras/L40-2.webp",
-              "/productos/licuadoras/L40-3.webp"
+              "/product/licuadoras/L40-1.webp",
+              "/product/licuadoras/L40-2.webp",
+              "/product/licuadoras/L40-3.webp"
             ]
           }
         ]
@@ -839,7 +847,7 @@
             "name": "603D",
             "color": "Preto",
             "photos": [
-              "/productos/beauty/603D-1.webp"
+              "/product/beauty/603D-1.webp"
             ]
           }
         ]
@@ -859,7 +867,7 @@
             "name": "HB40",
             "color": "Preto",
             "photos": [
-              "/productos/beauty/HB40-1.webp"
+              "/product/beauty/HB40-1.webp"
             ]
           }
         ]
@@ -879,7 +887,7 @@
             "name": "HD008",
             "color": "Preto",
             "photos": [
-              "/productos/beauty/HD008-1.webp"
+              "/product/beauty/HD008-1.webp"
             ]
           }
         ]
@@ -899,7 +907,7 @@
             "name": "RFCD865",
             "color": "Dourado",
             "photos": [
-              "/productos/beauty/RFCD865-1.webp"
+              "/product/beauty/RFCD865-1.webp"
             ]
           }
         ]
@@ -927,7 +935,7 @@
             "name": "B10",
             "color": "Preto e Branco",
             "photos": [
-              "/productos/batidoras/B10-1.webp"
+              "/product/batidoras/B10-1.webp"
             ]
           }
         ]
@@ -947,7 +955,7 @@
             "name": "B20",
             "color": "Preto e Cinza",
             "photos": [
-              "/productos/batidoras/B20-1.webp"
+              "/product/batidoras/B20-1.webp"
             ]
           }
         ]
@@ -967,7 +975,7 @@
             "name": "B30",
             "color": "Preto",
             "photos": [
-              "/productos/batidoras/B30-1.webp"
+              "/product/batidoras/B30-1.webp"
             ]
           }
         ]
@@ -995,7 +1003,7 @@
             "name": "A10",
             "color": "Inox",
             "photos": [
-              "/productos/arroceras/A10-1.webp"
+              "/product/arroceras/A10-1.webp"
             ]
           }
         ]
@@ -1015,7 +1023,7 @@
             "name": "P10",
             "color": "Inox",
             "photos": [
-              "/productos/arroceras/P10-1.webp"
+              "/product/arroceras/P10-1.webp"
             ]
           }
         ]
@@ -1043,11 +1051,183 @@
             "name": "W10",
             "color": "Branco",
             "photos": [
-              "/productos/bebederos/W10-1.webp"
+              "/product/bebederos/W10-1.webp"
             ]
           }
         ]
       }
     }
+  },
+
+  "hoverboards": {
+    "id": "hoverboards",
+    "name": "Hoverboards",
+    "description": "Ideal para se mover com estilo e diversão.",
+    "shortDescription": "Estilo e diversão",
+    "children": {
+      "hoverboards1": {
+        "id": "hoverboards1",
+        "name": "Hoverboard Preto",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards1",
+            "name": "hoverboards1",
+            "color": "colors.black",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards2": {
+        "id": "hoverboards2",
+        "name": "Hoverboard Grafite",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards2",
+            "name": "hoverboards2",
+            "color": "colors.grafite",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards3": {
+        "id": "hoverboards3",
+        "name": "Hoverboard Azul Fogo",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards3",
+            "name": "hoverboards3",
+            "color": "colors.blueFire",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards4": {
+        "id": "hoverboards4",
+        "name": "Hoverboard Vermelho Fogo",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards4",
+            "name": "hoverboards4",
+            "color": "colors.redFire",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards5": {
+        "id": "hoverboards5",
+        "name": "Hoverboard Hip Hop",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards5",
+            "name": "hoverboards5",
+            "color": "colors.hiphop",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards6": {
+        "id": "hoverboards6",
+        "name": "Hoverboard Camuflagem Rosa",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards6",
+            "name": "hoverboards6",
+            "color": "colors.pinkCamouflage",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards7": {
+        "id": "hoverboards7",
+        "name": "Hoverboard Roxo Galáxia",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards7",
+            "name": "hoverboards7",
+            "color": "colors.purple",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards8": {
+        "id": "hoverboards8",
+        "name": "Hoverboard Camuflagem Azul",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards8",
+            "name": "hoverboards8",
+            "color": "colors.blueCamouflage",
+            "photos": []
+          }
+        ]
+      },
+      "hoverboards9": {
+        "id": "hoverboards9",
+        "name": "Hoverboard Rosa Pink",
+        "popular": false,
+        "info": {
+          "review": "Combina estilo e funcionalidade, com um design robusto e leve que garante uma experiência de condução suave e segura. Sua tecnologia de autoequilíbrio facilita o controle, enquanto as luzes integradas adicionam um toque moderno e atraente.",
+          "included": null,
+          "specs": "Pneus: rodas de fibra de carbono.\nMaterial: estrutura de placas de alumínio.\nPlaca-mãe: controle dual inteligente autoequilibrado.\nCapacidade da bateria: bateria de 36V 2,4AH.\nAutonomia: 8-10 km.\nCapacidade de carga: 20-120 kg.\nVersão de Bluetooth: música Bluetooth 4Ω.\nLuzes: luzes de flash galopante.\nTamanho do produto: 612121 cm.\nTamanho do pacote: 6422,522,5 cm.\nPeso: 7 kg.\nTamanho da roda: 6,5 polegadas."
+        },
+        "variants": [
+          {
+            "id": "hoverboards9",
+            "name": "hoverboards9",
+            "color": "colors.rosePink",
+            "photos": []
+          }
+        ]
+      }
+    }
   }
+
 }
