@@ -6,16 +6,26 @@ import MixSection from "../MixSection.astro";
 import CocinasSection from "../CocinasSection.astro";
 import HervidorasAndCafeterasSection from "../HervidorasAndCafeterasSection.astro";
 import OtherProductsSection from "../OtherProductsSection.astro";
+import { AnimatedSection } from "../react/AnimatedSection";
+
+const { currentLocale } = Astro;
 
 // const url
 const currentPath = Astro.url;
 ---
 
-<div class=" sm:h-[450px] h-auto my-12 flex justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8 ">
+<div class=" sm:h-[450px] h-auto my-12 sm:my-24 flex justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8  ">
   <ProductsAnimated2 client:only="react" currentUrl={currentPath} />
 </div>
 
-<main class="sm:w-[80%] w-[90%] flex flex-col gap-6 mx-auto">
+<main class="sm:w-[80%] w-[90%] flex flex-col gap-6 mx-auto ">
+
+  <div class=" h-[25rem] md:h-[600px] ">
+    <AnimatedSection
+      client:only="react"
+      lang={currentLocale || "es"}
+    />
+  </div>
 
   <div class=" h-[25rem] md:h-[30rem] ">
     <AirFryerSection />

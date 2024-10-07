@@ -148,7 +148,7 @@
             "name": "ITP 12000IV - 1",
             "color": "Branco",
             "photos": [
-              "/product/aires/general.webp"
+              "/productos/aires/general.webp"
             ]
           }
         ]
@@ -168,7 +168,7 @@
             "name": "ITB 12000OF - 1",
             "color": "Branco",
             "photos": [
-              "/product/aires/general.webp"
+              "/productos/aires/general.webp"
             ]
           }
         ]
@@ -188,7 +188,7 @@
             "name": "ITP 12000OF - 1",
             "color": "Branco",
             "photos": [
-              "/product/aires/general.webp"
+              "/productos/aires/general.webp"
             ]
           }
         ]
@@ -208,7 +208,7 @@
             "name": "ITB 18000IV - 1",
             "color": "Branco",
             "photos": [
-              "/product/aires/general.webp"
+              "/productos/aires/general.webp"
             ]
           }
         ]
@@ -228,7 +228,7 @@
             "name": "ITB 24000IV Inverter (Paraguai 50Hz)",
             "color": "Branco",
             "photos": [
-              "/product/aires/general.webp"
+              "/productos/aires/general.webp"
             ]
           }
         ]
@@ -256,9 +256,9 @@
             "name": "IN3200TV - 1",
             "color": "Preto",
             "photos": [
-              "/product/tvs/IN3200TV-1.webp",
-              "/product/tvs/IN3200TV-2.webp",
-              "/product/tvs/IN3200TV-3.webp"
+              "/productos/tvs/IN3200TV-1.webp",
+              "/productos/tvs/IN3200TV-2.webp",
+              "/productos/tvs/IN3200TV-3.webp"
             ]
           }
         ]
@@ -278,10 +278,10 @@
             "name": "IN4300TV - 1",
             "color": "Preto",
             "photos": [
-              "/product/tvs/IN4300TV-1.webp",
-              "/product/tvs/IN4300TV-2.webp",
-              "/product/tvs/IN4300TV-3.webp",
-              "/product/tvs/IN4300TV-4.webp"
+              "/productos/tvs/IN4300TV-1.webp",
+              "/productos/tvs/IN4300TV-2.webp",
+              "/productos/tvs/IN4300TV-3.webp",
+              "/productos/tvs/IN4300TV-4.webp"
             ]
           }
         ]
@@ -301,10 +301,10 @@
             "name": "IN5000TV - 1",
             "color": "Preto",
             "photos": [
-              "/product/tvs/IN5000TV-1.webp",
-              "/product/tvs/IN5000TV-2.webp",
-              "/product/tvs/IN5000TV-3.webp",
-              "/product/tvs/IN5000TV-4.webp"
+              "/productos/tvs/IN5000TV-1.webp",
+              "/productos/tvs/IN5000TV-2.webp",
+              "/productos/tvs/IN5000TV-3.webp",
+              "/productos/tvs/IN5000TV-4.webp"
             ]
           }
         ]
@@ -324,10 +324,10 @@
             "name": "IN5500TV - 1",
             "color": "Preto",
             "photos": [
-              "/product/tvs/IN5500TV-1.webp",
-              "/product/tvs/IN5500TV-2.webp",
-              "/product/tvs/IN5500TV-3.webp",
-              "/product/tvs/IN5500TV-4.webp"
+              "/productos/tvs/IN5500TV-1.webp",
+              "/productos/tvs/IN5500TV-2.webp",
+              "/productos/tvs/IN5500TV-3.webp",
+              "/productos/tvs/IN5500TV-4.webp"
             ]
           }
         ]
@@ -347,10 +347,10 @@
             "name": "IN6500TV - 1",
             "color": "Preto",
             "photos": [
-              "/product/tvs/IN6500TV-1.webp",
-              "/product/tvs/IN6500TV-2.webp",
-              "/product/tvs/IN6500TV-3.webp",
-              "/product/tvs/IN6500TV-4.webp"
+              "/productos/tvs/IN6500TV-1.webp",
+              "/productos/tvs/IN6500TV-2.webp",
+              "/productos/tvs/IN6500TV-3.webp",
+              "/productos/tvs/IN6500TV-4.webp"
             ]
           }
         ]
@@ -370,10 +370,10 @@
             "name": "IN7500TV - 1",
             "color": "Preto",
             "photos": [
-              "/product/tvs/IN7500TV-1.webp",
-              "/product/tvs/IN7500TV-2.webp",
-              "/product/tvs/IN7500TV-3.webp",
-              "/product/tvs/IN7500TV-4.webp"
+              "/productos/tvs/IN7500TV-1.webp",
+              "/productos/tvs/IN7500TV-2.webp",
+              "/productos/tvs/IN7500TV-3.webp",
+              "/productos/tvs/IN7500TV-4.webp"
             ]
           }
         ]
@@ -393,10 +393,10 @@
             "name": "IN8500TV - 1",
             "color": "Preto",
             "photos": [
-              "/product/tvs/IN8500TV-1.webp",
-              "/product/tvs/IN8500TV-2.webp",
-              "/product/tvs/IN8500TV-3.webp",
-              "/product/tvs/IN8500TV-4.webp"
+              "/productos/tvs/IN8500TV-1.webp",
+              "/productos/tvs/IN8500TV-2.webp",
+              "/productos/tvs/IN8500TV-3.webp",
+              "/productos/tvs/IN8500TV-4.webp"
             ]
           }
         ]
@@ -481,7 +481,7 @@
             "name": "C10",
             "color": "colors.white",
             "photos": [
-              "/product/cocinas/C10-1.webp"
+              "/productos/cocinas/C10-1.webp"
             ]
           }
         ]
@@ -502,7 +502,7 @@
             "name": "C20",
             "color": "colors.black",
             "photos": [
-              "/product/cocinas/C20-1.webp"
+              "/productos/cocinas/C20-1.webp"
             ]
           }
         ]
@@ -523,7 +523,7 @@
             "name": "C30",
             "color": "colors.black",
             "photos": [
-              "/product/cocinas/C30-1.webp"
+              "/productos/cocinas/C30-1.webp"
             ]
           }
         ]
@@ -551,7 +551,7 @@
             "name": "T10",
             "color": "Inox",
             "photos": [
-              "/product/hervidoras/T10-1.webp"
+              "/productos/hervidoras/T10-1.webp"
             ]
           }
         ]
@@ -571,7 +571,7 @@
             "name": "T20",
             "color": "colors.white",
             "photos": [
-              "/product/hervidoras/T20-1.webp"
+              "/productos/hervidoras/T20-1.webp"
             ]
           }
         ]
@@ -591,7 +591,7 @@
             "name": "T30",
             "color": "colors.black",
             "photos": [
-              "/product/hervidoras/T30-1.webp"
+              "/productos/hervidoras/T30-1.webp"
             ]
           }
         ]
@@ -619,7 +619,7 @@
             "name": "E10",
             "color": "Inox",
             "photos": [
-              "/product/cafeteras/E10-1.webp"
+              "/productos/cafeteras/E10-1.webp"
             ]
           }
         ]
@@ -647,7 +647,7 @@
             "name": "F10",
             "color": "Vermelho - preto",
             "photos": [
-              "/product/planchas/F10-1.webp"
+              "/productos/planchas/F10-1.webp"
             ]
           }
         ]
@@ -667,7 +667,7 @@
             "name": "F20",
             "color": "Vermelho - preto",
             "photos": [
-              "/product/planchas/F20-1.webp"
+              "/productos/planchas/F20-1.webp"
             ]
           }
         ]
@@ -687,7 +687,7 @@
             "name": "F30",
             "color": "Azul - branco",
             "photos": [
-              "/product/planchas/F30-1.webp"
+              "/productos/planchas/F30-1.webp"
             ]
           }
         ]
@@ -707,7 +707,7 @@
             "name": "F40",
             "color": "Cinza - Bronze",
             "photos": [
-              "/product/planchas/F40-1.webp"
+              "/productos/planchas/F40-1.webp"
             ]
           }
         ]
@@ -727,7 +727,7 @@
             "name": "F50",
             "color": "preto",
             "photos": [
-              "/product/planchas/F50-1.webp"
+              "/productos/planchas/F50-1.webp"
             ]
           }
         ]
@@ -755,7 +755,7 @@
             "name": "L10",
             "color": "branco",
             "photos": [
-              "/product/licuadoras/L10-1.webp"
+              "/productos/licuadoras/L10-1.webp"
             ]
           }
         ]
@@ -775,9 +775,9 @@
             "name": "L20",
             "color": "branco",
             "photos": [
-              "/product/licuadoras/L20-1.webp",
-              "/product/licuadoras/L20-2.webp",
-              "/product/licuadoras/L20-3.webp"
+              "/productos/licuadoras/L20-1.webp",
+              "/productos/licuadoras/L20-2.webp",
+              "/productos/licuadoras/L20-3.webp"
             ]
           }
         ]
@@ -797,7 +797,7 @@
             "name": "L30",
             "color": "branco",
             "photos": [
-              "/product/licuadoras/L30-1.webp"
+              "/productos/licuadoras/L30-1.webp"
             ]
           }
         ]
@@ -817,9 +817,9 @@
             "name": "L40",
             "color": "branco",
             "photos": [
-              "/product/licuadoras/L40-1.webp",
-              "/product/licuadoras/L40-2.webp",
-              "/product/licuadoras/L40-3.webp"
+              "/productos/licuadoras/L40-1.webp",
+              "/productos/licuadoras/L40-2.webp",
+              "/productos/licuadoras/L40-3.webp"
             ]
           }
         ]
@@ -847,7 +847,7 @@
             "name": "603D",
             "color": "Preto",
             "photos": [
-              "/product/beauty/603D-1.webp"
+              "/productos/beauty/603D-1.webp"
             ]
           }
         ]
@@ -867,7 +867,7 @@
             "name": "HB40",
             "color": "Preto",
             "photos": [
-              "/product/beauty/HB40-1.webp"
+              "/productos/beauty/HB40-1.webp"
             ]
           }
         ]
@@ -887,7 +887,7 @@
             "name": "HD008",
             "color": "Preto",
             "photos": [
-              "/product/beauty/HD008-1.webp"
+              "/productos/beauty/HD008-1.webp"
             ]
           }
         ]
@@ -907,7 +907,7 @@
             "name": "RFCD865",
             "color": "Dourado",
             "photos": [
-              "/product/beauty/RFCD865-1.webp"
+              "/productos/beauty/RFCD865-1.webp"
             ]
           }
         ]
@@ -935,7 +935,7 @@
             "name": "B10",
             "color": "Preto e Branco",
             "photos": [
-              "/product/batidoras/B10-1.webp"
+              "/productos/batidoras/B10-1.webp"
             ]
           }
         ]
@@ -955,7 +955,7 @@
             "name": "B20",
             "color": "Preto e Cinza",
             "photos": [
-              "/product/batidoras/B20-1.webp"
+              "/productos/batidoras/B20-1.webp"
             ]
           }
         ]
@@ -975,7 +975,7 @@
             "name": "B30",
             "color": "Preto",
             "photos": [
-              "/product/batidoras/B30-1.webp"
+              "/productos/batidoras/B30-1.webp"
             ]
           }
         ]
@@ -1003,7 +1003,7 @@
             "name": "A10",
             "color": "Inox",
             "photos": [
-              "/product/arroceras/A10-1.webp"
+              "/productos/arroceras/A10-1.webp"
             ]
           }
         ]
@@ -1023,7 +1023,7 @@
             "name": "P10",
             "color": "Inox",
             "photos": [
-              "/product/arroceras/P10-1.webp"
+              "/productos/arroceras/P10-1.webp"
             ]
           }
         ]
@@ -1051,7 +1051,7 @@
             "name": "W10",
             "color": "Branco",
             "photos": [
-              "/product/bebederos/W10-1.webp"
+              "/productos/bebederos/W10-1.webp"
             ]
           }
         ]

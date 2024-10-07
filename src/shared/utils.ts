@@ -53,9 +53,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.black',
           photos: [
-            '/product/hoverboards/hoverboards1-1.webp',
-            '/product/hoverboards/hoverboards1-2.webp',
-            '/product/hoverboards/hoverboards1-3.webp'
+            '/productos/hoverboards/hoverboards1-1.webp',
+            '/productos/hoverboards/hoverboards1-2.webp',
+            '/productos/hoverboards/hoverboards1-3.webp'
           ]
         }
       ]
@@ -75,9 +75,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.grafite',
           photos: [
-            '/product/hoverboards/hoverboards2-1.webp',
-            '/product/hoverboards/hoverboards2-2.webp',
-            '/product/hoverboards/hoverboards2-3.webp'
+            '/productos/hoverboards/hoverboards2-1.webp',
+            '/productos/hoverboards/hoverboards2-2.webp',
+            '/productos/hoverboards/hoverboards2-3.webp'
           ]
         }
       ]
@@ -97,9 +97,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.blueFire',
           photos: [
-            '/product/hoverboards/hoverboards3-1.webp',
-            '/product/hoverboards/hoverboards3-2.webp',
-            '/product/hoverboards/hoverboards3-3.webp'
+            '/productos/hoverboards/hoverboards3-1.webp',
+            '/productos/hoverboards/hoverboards3-2.webp',
+            '/productos/hoverboards/hoverboards3-3.webp'
           ]
         }
       ]
@@ -119,9 +119,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.redFire',
           photos: [
-            '/product/hoverboards/hoverboards4-1.webp',
-            '/product/hoverboards/hoverboards4-2.webp',
-            '/product/hoverboards/hoverboards4-3.webp'
+            '/productos/hoverboards/hoverboards4-1.webp',
+            '/productos/hoverboards/hoverboards4-2.webp',
+            '/productos/hoverboards/hoverboards4-3.webp'
           ]
         }
       ]
@@ -141,9 +141,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.hiphop',
           photos: [
-            '/product/hoverboards/hoverboards5-1.webp',
-            '/product/hoverboards/hoverboards5-2.webp',
-            '/product/hoverboards/hoverboards5-3.webp'
+            '/productos/hoverboards/hoverboards5-1.webp',
+            '/productos/hoverboards/hoverboards5-2.webp',
+            '/productos/hoverboards/hoverboards5-3.webp'
           ]
         }
       ]
@@ -163,9 +163,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.pinkCamouflage',
           photos: [
-            '/product/hoverboards/hoverboards6-1.webp',
-            '/product/hoverboards/hoverboards6-2.webp',
-            '/product/hoverboards/hoverboards6-3.webp'
+            '/productos/hoverboards/hoverboards6-1.webp',
+            '/productos/hoverboards/hoverboards6-2.webp',
+            '/productos/hoverboards/hoverboards6-3.webp'
           ]
         }
       ]
@@ -185,9 +185,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.purple',
           photos: [
-            '/product/hoverboards/hoverboards7-1.webp',
-            '/product/hoverboards/hoverboards7-2.webp',
-            '/product/hoverboards/hoverboards7-3.webp'
+            '/productos/hoverboards/hoverboards7-1.webp',
+            '/productos/hoverboards/hoverboards7-2.webp',
+            '/productos/hoverboards/hoverboards7-3.webp'
           ]
         }
       ]
@@ -207,9 +207,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.blueCamouflage',
           photos: [
-            '/product/hoverboards/hoverboards8-1.webp',
-            '/product/hoverboards/hoverboards8-2.webp',
-            '/product/hoverboards/hoverboards8-3.webp'
+            '/productos/hoverboards/hoverboards8-1.webp',
+            '/productos/hoverboards/hoverboards8-2.webp',
+            '/productos/hoverboards/hoverboards8-3.webp'
           ]
         }
       ]
@@ -229,9 +229,9 @@ const hoverboards: Category = {
           name: 'Hoverboard',
           color: 'colors.rosePink',
           photos: [
-            '/product/hoverboards/hoverboards9-1.webp',
-            '/product/hoverboards/hoverboards9-2.webp',
-            '/product/hoverboards/hoverboards9-3.webp'
+            '/productos/hoverboards/hoverboards9-1.webp',
+            '/productos/hoverboards/hoverboards9-2.webp',
+            '/productos/hoverboards/hoverboards9-3.webp'
           ]
         }
       ]
