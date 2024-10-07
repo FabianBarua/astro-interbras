@@ -6,6 +6,7 @@ import { getI18NProducts, getValueFromKey } from "@/i18n";
 
 const { currentLocale } = Astro;
 const i18n = getI18NProducts({ currentLocale });
+
 const categories = getCategories();
 
 export const getStaticPaths = () => {
@@ -21,8 +22,12 @@ export const getStaticPaths = () => {
 
 const { category } = Astro.params;
 const categorySelected = categories.find((c) => c.id === category);
+
 ---
 
-<Layout title={getValueFromKey(categorySelected?.name || "", i18n) + " - Interbras"}>
+<Layout 
+  title={getValueFromKey(categorySelected?.name || "", i18n) + " - Interbras"}
+  description={getValueFromKey(categorySelected?.description || "", i18n)}
+>
   <ProductPage category={category} />
 </Layout>

@@ -1,4 +1,12 @@
-{
+{ 
+  "home":{
+    "title": "Interbras",
+    "description" : "Descubre con Interbras una gran gama de productos para el hogar y la cocina. ¡Conoce nuestros productos y disfruta de la calidad que nos caracteriza!"
+  },
+  "downloadsPage": {
+    "title": "Descargas",
+    "description": "Descarga los archivos que necesitas para tu producto Interbras."
+  },
   "header": {
     "whereWeAre": {
       "title": "Donde estamos",

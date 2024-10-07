@@ -1,0 +1,57 @@
+---
+
+
+/** https://developers.google.com/search/docs/appearance/structured-data/organization */
+const organizationSchema = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"url": "https://interbrasoficial.com/",
+	"image": "https://interbrasoficial.com/og-image.webp",
+	"sameAs": [
+		"https://www.instagram.com/interbrasofc",
+	],
+	"logo": "https://interbrasoficial.com/og-image.webp",
+	"name": "Interbras",
+	"alternateName": "Interbras Oficial",
+	"description":"Descubre con Interbras una gran gama de productos para el hogar y la cocina. ¡Conoce nuestros productos y disfruta de la calidad que nos caracteriza!",
+}
+
+
+const FAQs = [
+	{
+		question: "¿Qué productos tenemos?",
+		answer: "En Interbras tenemos una gran variedad de productos para el hogar y la cocina. ¡Descúbrelos!",
+	},
+	{
+		question: "¿Cómo puedo hacer un pedido?",
+		answer: "Puedes encontrar nuestros productos en las mejores tiendas del Paraguay. ¡Visítanos!",
+	},
+	{
+		question: "¿Tienen descuentos para compras al por mayor?",
+		answer: "Sí, ofrecemos descuentos especiales para compras al por mayor. Contacta con nuestro equipo de ventas para más información.",
+	},
+	{
+		question: "¿Dónde puedo encontrar las instrucciones de los productos?",
+		answer: "Las instrucciones y manuales de uso están disponibles junto con cada producto.",
+	}
+];
+
+/** https://developers.google.com/search/docs/appearance/structured-data/faqpage */
+const FAQSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		FAQs.map(({ answer, question }) => ({
+			"@type": "Question",
+			"name": question,
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": answer,
+			},
+		})),
+	],
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(FAQSchema)} />
