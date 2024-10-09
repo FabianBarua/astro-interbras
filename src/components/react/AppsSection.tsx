@@ -88,7 +88,7 @@ interface DownloadModalCardProps {
     return (
       <div className=' w-full lg:h-20 rounded-xl flex flex-col lg:flex-row gap-2 bg-gray-100 border p-2 '>
         <div className=' flex '>
-          <img src={imageCard} className=' size-[48px] my-auto ml-2 rounded-xl border' alt='' />
+          <img loading="lazy"  src={imageCard} className=' size-[48px] my-auto ml-2 rounded-xl border' alt='' />
           <div className=' ml-3  my-auto'>
             <h2 className=' text-xl font-medium'>
               {name}

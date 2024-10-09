@@ -30,7 +30,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ child, active, change,
       }
       onClick={() => change(child)}
     >
-      <img
+      <img loading="lazy" 
         src={child.variants[0].photos[0]}
         className=' size-20 p-3 object-contain rounded-3xl ' alt=''
       />

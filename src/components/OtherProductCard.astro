@@ -34,7 +34,7 @@ variants={{
 transition={{ duration: 0.5, delay: delay !== undefined ? delay : 0.5 }}
 className=' w-full relative  h-full overflow-hidden rounded-[40px]'
 >
-<img src={image} alt={name} class=' h-full w-full object-cover' />
+<img loading="lazy"  src={image} alt={name} class=' h-full w-full object-cover' />
 
 <div class='text-center w-full flex flex-col  absolute bottom-5 lg:bottom-10  '>
   <h2 class=' text-white line-clamp-1 text-xl md:text-4xl  lg:mb-2 mb-1 font-semibold  leading-5'>

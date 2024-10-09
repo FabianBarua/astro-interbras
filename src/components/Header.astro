@@ -51,16 +51,16 @@ const t = (key: string) => {
           <Logo />
         </a>
       </li>
-      <div class="w-full flex max-w-96 justify-start gap-8">
-        <li class="lg:block hidden">
+      <li class="w-full flex max-w-96 justify-start gap-8">
+        <div class="lg:block hidden">
           <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}  href={getRelativeLocaleUrl(currentLocale || "", "/downloads")}>
             <p>{t('header.download')}</p>
           </a>
-        </li>
-        <li class="lg:block hidden">
+        </div>
+        <div class="lg:block hidden">
           <button id="whoWeAre">{t('header.whoWeAre.title')}</button>
-        </li>
-      </div>
+        </div>
+      </li>
     </ul>
   </nav>
   <div id="section-nav-items" class="transition-all h-0 duration-700">

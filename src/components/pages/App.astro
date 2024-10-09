@@ -14,40 +14,53 @@ const { currentLocale } = Astro;
 const currentPath = Astro.url;
 ---
 
-<div class=" sm:h-[450px] h-auto my-12 sm:my-24 flex justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8  ">
+<section class=" sm:h-[450px] h-auto my-12 sm:my-24 flex justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8  ">
   <ProductsAnimated2 client:only="react" currentUrl={currentPath} />
+</section>
+
+<div class=" h-[25rem] md:h-[600px] ">
+  <AnimatedSection
+    client:only="react"
+    lang={currentLocale || "es"}
+  />
+</div>
+<div class=" h-[25rem] md:h-[30rem] ">
+  <AirFryerSection />
 </div>
 
-<main class="sm:w-[80%] w-[90%] flex flex-col gap-6 mx-auto ">
 
-  <div class=" h-[25rem] md:h-[600px] ">
-    <AnimatedSection
-      client:only="react"
-      lang={currentLocale || "es"}
-    />
-  </div>
+<div class=" h-[25rem] md:h-[30rem] ">
+  <MixSection />
+</div>
 
-  <div class=" h-[25rem] md:h-[30rem] ">
-    <AirFryerSection />
-  </div>
+<div class=" lg:h-[30rem] ">
+  <CocinasSection />
+</div>
 
-  <div class=" h-[25rem] md:h-[30rem] ">
-    <MixSection />
-  </div>
+<div class=" lg:h-[30rem] sm:h-auto ">
+  <HervidorasAndCafeterasSection />
+</div>
 
-  <div class=" lg:h-[30rem] ">
-    <CocinasSection />
-  </div>
+<div class=" flex gap-4 flex-col ">
+  <OtherProductsSection />
+</div>
 
-  <div class=" lg:h-[30rem] sm:h-auto ">
-    <HervidorasAndCafeterasSection />
-  </div>
+<style>
 
-  <div class=" flex gap-4 flex-col ">
-    <OtherProductsSection />
-  </div>
 
-</main>
+  div{
+    width: 90%;
+    margin: 1.5rem auto 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    div{
+        width: 80%;
+    }
+}
+</style>
+
+
 
 <style is:global>
   /* Gaps personalizados para dispositivos móviles */

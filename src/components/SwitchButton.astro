@@ -28,7 +28,7 @@ const langSelected =
     data-lang={langSelected.id}
     class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
   >
-    <img src={langSelected.flag} alt={langSelected.alt} />
+    <img loading="lazy"  width="20px" height="20px" src={langSelected.flag} alt={langSelected.alt} />
     {langSelected.slug}
   </button>
 </div>
@@ -48,7 +48,7 @@ const langSelected =
             id={`select-${lang.id}`}
             class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
           >
-            <img src={lang.flag} alt={lang.alt} />
+            <img loading="lazy"  src={lang.flag} alt={lang.alt} />
             {lang.slug}
           </button>
         </div>

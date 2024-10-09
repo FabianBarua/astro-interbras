@@ -71,7 +71,7 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({ lang }) => {
                   ? 'bg-zinc-800 hover:bg-zinc-900 active:bg-zinc-950'
                   : 'bg-interbrasGreen-500 hover:bg-interbrasGreen-600 active:bg-interbrasGreen-700'}`}
               >
-                <img
+                <img loading="lazy" 
                   src={
                   product.icon
                 } alt=''

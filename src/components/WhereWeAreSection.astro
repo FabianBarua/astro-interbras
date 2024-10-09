@@ -11,7 +11,7 @@ const i18n = getI18NGlobal({ currentLocale });
   class="h-full w-full hidden justify-center lg:justify-between"
 >
   <div class="lg:flex hidden items-end h-full">
-    <img
+    <img loading="lazy" 
       src="/arrowDondeEstamos.svg"
       class="h-52 pointer-events-none"
       alt="Arrow"
@@ -24,11 +24,11 @@ const i18n = getI18NGlobal({ currentLocale });
       {i18n.header.whereWeAre.line1}
       <br />
       {i18n.header.whereWeAre.line2}
-      <strong>{i18n.header.whereWeAre.line3}</strong>! <img src='/paraguayFLAG.png' class=' -translate-y-1 w-auto h-8 inline' alt='Emoji' />
+      <strong>{i18n.header.whereWeAre.line3}</strong>! <img loading="lazy"  src='/paraguayFLAG.png' class=' -translate-y-1 w-auto h-8 inline' alt='Emoji' />
     </p>
   </div>
   <div class="lg:flex hidden relative items-end h-full">
-    <img
+    <img loading="lazy" 
       src="/edificiosDondeEstamos.svg"
       class="h-60 mr-6 pointer-events-none"
       alt="Arrow"

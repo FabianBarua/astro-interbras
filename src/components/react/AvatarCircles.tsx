@@ -19,7 +19,7 @@ export const AvatarCircles = ({
       <div
         className='flex size-12   bg-interbrasGreen-500 items-center justify-center rounded-full   text-center  p-3'
       >
-        <img
+        <img loading="lazy" 
           src={pricipalIcon}
         />
       </div>
@@ -31,7 +31,7 @@ export const AvatarCircles = ({
             key={index}
             className='flex size-7   items-center justify-center rounded-full border-2 border-black text-center '
           >
-            <img
+            <img loading="lazy" 
               key={index}
               className=' size-full rounded-full object-cover'
               src={url}

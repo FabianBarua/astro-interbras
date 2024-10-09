@@ -30,12 +30,13 @@ export const HomeProductCard = ({
           `}
         href={typeof urlWithLang === "string" ? urlWithLang : "/"}
       >
-        <img
+        <img 
           data-atropos-offset="-5"
           className=" "
           src={photo}
-          alt={typeof name === "string" ? name : ""}
-          loading="lazy"
+          alt={typeof name === "string" ? name : "Go to home"}
+          width='99.68px'
+          height='99.68px'
         />
       </a>
       {isMagic && (
