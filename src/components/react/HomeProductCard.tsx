@@ -3,24 +3,12 @@ import type { ProductItemHome } from "@/shared/types";
 import "atropos/css";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-export const HomeProductCard = ({
-  name,
-  photo,
-  isMagic,
-  url,
-  lang,
-}: ProductItemHome): JSX.Element => {
+const InnerCard = ({ name, photo, url, lang, isMagic }: ProductItemHome) => {
+
   const urlWithLang = getRelativeLocaleUrl(lang || "es", url || "/");
 
   return (
-    <Atropos
-      shadow={false}
-      className={`
-          ${isMagic ? " sm:mt-4  mt-0 " : " mt-0"}
-          cursor-pointer
-          
-          `}
-    >
+    <>
       <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
         onClick={() => {
           window.scrollTo(0, 0);
@@ -44,6 +32,53 @@ export const HomeProductCard = ({
           {name}
         </div>
       )}
+    </>
+  );
+
+}
+
+export const HomeProductCard = ({
+  name,
+  photo,
+  isMagic,
+  url,
+  lang,
+}: ProductItemHome): JSX.Element => {
+
+  return (
+    <>
+    
+    <div className=" hidden sm:block">
+    <Atropos
+      shadow={false}
+      className={`${isMagic ? " sm:mt-4  mt-0 " : " mt-0"} cursor-pointer  `}
+    >
+
+      <InnerCard
+        name={name}
+        photo={photo}
+        url={url}
+        lang={lang}
+        isMagic={isMagic}
+      />
+
     </Atropos>
+    </div>
+
+    <div
+      className=" sm:hidden block"
+    >
+        <InnerCard
+          name={name}
+          photo={photo}
+          url={url}
+          lang={lang}
+          isMagic={isMagic}
+        />
+    </div>
+
+
+    </>
+
   );
 };
