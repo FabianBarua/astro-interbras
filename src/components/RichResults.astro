@@ -40,17 +40,16 @@ const FAQs = [
 const FAQSchema = {
 	"@context": "https://schema.org",
 	"@type": "FAQPage",
-	"mainEntity": [
-		FAQs.map(({ answer, question }) => ({
-			"@type": "Question",
-			"name": question,
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": answer,
-			},
-		})),
-	],
+	"mainEntity": FAQs.map(({ answer, question }) => ({
+		"@type": "Question",
+		"name": question,
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": answer,
+		},
+	})),
 }
+
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

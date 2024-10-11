@@ -18,12 +18,14 @@ const currentPath = Astro.url;
   <ProductsAnimated2 client:only="react" currentUrl={currentPath} />
 </section>
 
-<div class=" h-[25rem] md:h-[600px] ">
+<div class=" md:h-auto  h-[23rem]  ">
   <AnimatedSection
     client:only="react"
     lang={currentLocale || "es"}
   />
 </div>
+
+
 <div class=" h-[25rem] md:h-[30rem] ">
   <AirFryerSection />
 </div>
