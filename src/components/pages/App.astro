@@ -10,12 +10,10 @@ import { AnimatedSection } from "../react/AnimatedSection";
 
 const { currentLocale } = Astro;
 
-// const url
-const currentPath = Astro.url;
 ---
 
 <section class=" sm:h-[450px] h-auto my-12 sm:my-24 flex justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8  ">
-  <ProductsAnimated2 client:only="react" currentUrl={currentPath} />
+  <ProductsAnimated2 client:only="react" lang={currentLocale || ""} />
 </section>
 
 <div class=" md:h-auto  h-[23rem]  ">

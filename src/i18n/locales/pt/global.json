@@ -27,10 +27,7 @@
     }
   },
   "home": {
-    "title": {
-      "primary": "Sua marca",
-      "secondary": "favorita"
-    },
+    "title": "Sua marca\nfavorita",
     "airFryersSection": {
       "text": "Nova tendência em cozinha saudável e rápida."
     },

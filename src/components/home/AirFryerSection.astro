@@ -1,0 +1,131 @@
+---
+import { cn } from "@/shared/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const { currentLocale } = Astro;
+
+const airFryers = [
+  {
+    title: "S10",
+    description: "Elegante y moderno",
+    image: "/newVersion/airfryer-1.png",
+    customClass: " top-0",
+    url: getRelativeLocaleUrl(currentLocale || "", "/")
+  },
+  {
+    title: "S20",
+    description: "Esencial en tu cocina",
+    image: "/newVersion/airfryer-2.png",
+    customClass: " top-0 text-right",
+    url: getRelativeLocaleUrl(currentLocale || "", "/")
+  },
+  {
+    title: "S30",
+    description: "Optimiza tu tiempo",
+    image: "/newVersion/airfryer-3.png",
+    customClass: " bottom-0",
+    url: getRelativeLocaleUrl(currentLocale || "", "/")
+  },
+  {
+    title: "S40",
+    description: "Doble función, doble sabor",
+    image: "/newVersion/airfryer-4.png",
+    customClass: " bottom-0  text-right",
+    url: getRelativeLocaleUrl(currentLocale || "", "/")
+  },
+];
+
+
+---
+
+<section class="relative mx-auto  flex  flex-col justify-center  w-[90%] lg:w-fit">
+
+  <div class=" flex sm:flex-row flex-col gap-3 bg-neutral-200 border px-5 py-8 rounded-3xl justify-between items-center">
+    <h2 class="text-4xl font-bold ml-4  ">
+      Air Fryers
+    </h2>
+  
+    <p class=" leading-5 text-center sm:text-right">
+      Los Air Fryers de Interbras son la mejor opción para tu cocina.
+      <br>
+      Conoce nuestra línea de productos y elige el que mejor se adapte a tus necesidades.
+    </p>
+  </div>
+
+
+  <!-- <a 
+    href="#"
+    class=" absolute hidden sm:flex top-5 right-5 text-white/80 hover:bg-black/30 transition-colors bg-black/20 size-10 justify-center items-center rounded-xl p-2 "
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a> -->
+
+  <ul class=" overflow-hidden w-fit flex gap-4 flex-wrap lg:flex-nowrap justify-center  mt-5 relative ">
+    {
+      airFryers.map((item) => (
+        <li class={
+          `
+          cursor-pointer rounded-[30px] bg-interbrasGreen-100 hover:scale-[1.015] transition-transform relative  overflow-hidden border-2 
+          
+          h-[300px] 
+          
+          flex-1  
+          
+          min-w-40 sm:min-w-16 
+          
+          max-w-full sm:max-w-52 xl:max-w-80
+          
+          `
+        }>
+
+          <a href={item.url} class="w-full  flex justify-center items-center rounded-t-[30px] h-full ">
+            <img
+              src={item.image}
+              alt="air fryer"
+              class="w-full h-full object-cover"
+              sizes="(max-width: 640px) 100vw, 640px"
+            />
+          </a>
+
+          <div
+            class={cn(
+              "p-6 absolute sm:top-0 sm:text-left sm:left-0  z-20 pointer-events-none",
+              item.customClass
+            )}
+          >
+            <div class=" relative  text-white w-full">
+              <div class=" w-full h-full bg-black absolute top-0 right-0 blur-2xl z-[-1] ">
+              </div>
+
+              <p class="text-base  leading-5 text-balance">
+                {item.description}
+              </p>
+              <h2 class="text-2xl font-bold text-balance">
+                {item.title}
+              </h2>
+
+            </div>
+          </div>
+
+          <a 
+            href={item.url}
+            class="absolute hidden sm:block bottom-4 right-4 rounded-full size-9 p-2 text-white/75 hover:text-white bg-[#00000057] hover:bg-[#0000009d] hover:scale-[1.15] transition-transform">
+            <svg id="fi_7472635" viewBox="0 0 48 48" class=" w-full h-full fill-current translate-x-[2px]" xmlns="http://www.w3.org/2000/svg"><path d="m39.87 24.09a3.6338 3.6338 0 0 1 -1.9 3.22l-24.51 13.61a3.6734 3.6734 0 0 1 -1.78.47 3.7181 3.7181 0 0 1 -1.87-.52 3.6516 3.6516 0 0 1 -1.81-3.17v-27.21a3.6788 3.6788 0 0 1 5.46-3.22l24.51 13.61a3.63 3.63 0 0 1 1.9 3.21z"></path></svg>
+          </a>
+        </li>
+      ))
+    }
+
+
+      <a
+      href="#"
+      class="sm:hidden size-32 rounded-full flex justify-center items-center max-[373px]:hidden bg-interbrasGreen-500 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+    >
+      <img src="/newVersion/airfryer-medalla.png" class="w-20" alt="air" />
+    </a>
+
+  </ul>
+
+
+
+</section>

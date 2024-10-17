@@ -3,7 +3,11 @@ import type { ProductItemHome } from "@/shared/types";
 import "atropos/css";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
-const InnerCard = ({ name, photo, url, lang, isMagic }: ProductItemHome) => {
+interface HomeProductCardProps extends ProductItemHome {
+  lang : string;
+}
+
+const InnerCard = ({ name, photo, url, lang, isMagic }: HomeProductCardProps) => {
 
   const urlWithLang = getRelativeLocaleUrl(lang || "es", url || "/");
 
@@ -37,13 +41,15 @@ const InnerCard = ({ name, photo, url, lang, isMagic }: ProductItemHome) => {
 
 }
 
+
+
 export const HomeProductCard = ({
   name,
   photo,
   isMagic,
   url,
   lang,
-}: ProductItemHome): JSX.Element => {
+}: HomeProductCardProps): JSX.Element => {
 
   return (
     <>
@@ -55,11 +61,12 @@ export const HomeProductCard = ({
     >
 
       <InnerCard
-        name={name}
-        photo={photo}
-        url={url}
-        lang={lang}
-        isMagic={isMagic}
+            name={name}
+            photo={photo}
+            url={url}
+            lang={lang}
+            isMagic={isMagic} 
+            bgColor={0}      
       />
 
     </Atropos>
@@ -73,8 +80,9 @@ export const HomeProductCard = ({
           photo={photo}
           url={url}
           lang={lang}
-          isMagic={isMagic}
-        />
+          isMagic={isMagic} 
+          bgColor={0}        
+          />
     </div>
 
 

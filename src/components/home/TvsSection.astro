@@ -1,0 +1,133 @@
+---
+import { getCategory } from "@/shared/utils";
+import Ripples from "../Ripples.astro";
+
+const tvs = getCategory({
+  id: "tvs",
+});
+
+import { getI18NGlobal, getI18NProducts, getValueFromKey } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18NProducts({ currentLocale });
+
+const t = (key: string) => {
+  return getValueFromKey(key, i18n);
+};
+
+---
+
+<div class=" relative  overflow-hidden  ">
+  
+  <div class=" w-[80%] h-80 from-neutral-300 to-transparent bg-gradient-to-b absolute top-10  left-1/2 -translate-x-1/2 rounded-[50px]" />
+
+
+  <div id="video" class="w-full origin-top relative mx-auto transition-all duration-150 ease-out z-10 ">
+  
+    <div class=" absolute  bottom-10 scale-[.4] sm:scale-75 left-10">
+        <Ripples 
+        numRipples={4}
+      />
+    </div>
+    
+    <div class=" absolute right-10 bottom-10 scale-[.4] sm:scale-75 ">
+      <Ripples 
+      numRipples={4}
+    />
+  </div>
+
+    <img
+      src="/newVersion/marcoTV.png"
+      class="w-full absolute top-0 "
+      alt="MARCO DE TV"
+    />
+
+    <video
+      loop
+      width="100%"
+      class="relative scale-[0.98]"
+      height="auto"
+      autoplay
+      muted
+      poster="/newVersion/poster.png"
+    >
+      <source src="/newVersion/TvsSection.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+ 
+
+  <div class=" w-full mt-20 relative">
+     <h3 class=" text-2xl h-12 flex justify-center items-center text-white text-center bg-interbrasGreen-500  font-medium relative z-10  w-min mx-auto text-nowrap pr-1 pl-4 rounded-xl ">
+        <span class="">
+          Interbras Tvs 
+        </span> <span class=" bg-white rounded-xl  ml-3 py-1 px-3  text-black "> Tamaños </span>
+     </h3>
+
+     <div class="  gap-2 flex mx-auto w-full max-w-3xl justify-center mt-4 flex-wrap">
+      {
+        tvs.children.map((item) => (
+          <a 
+            href="/productos/tvs"
+            class=" hover:bg-neutral-200 border-neutral-300 transition-colors  px-4  py-2 bg-neutral-300 rounded-lg text-nowrap border">
+            {t(item.name)}
+          </a>
+        ))
+       }
+     </div>
+     
+  </div>
+
+</div>
+
+
+
+
+<script>
+  const init = () => {
+    const video = document.getElementById("video");
+
+    if (!video) return;
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: Array.from(Array(101).keys(), (x) => x / 100),
+    };
+
+    const sm_size = 10
+    const md_size = 30
+    const lg_size = 50
+    const xl_size = 65
+
+    let size = window.innerWidth < 640 ? sm_size : window.innerWidth < 1024 ? md_size : window.innerWidth < 1280 ? lg_size : xl_size
+
+    window.addEventListener("resize", () => {
+      size = window.innerWidth < 640 ? sm_size : window.innerWidth < 1024 ? md_size : window.innerWidth < 1280 ? lg_size : xl_size
+    });
+
+    const adjustWidth = (entries: any[], observer: any) => {
+    entries.forEach((entry: { intersectionRatio: any; boundingClientRect: { top: number; }; }) => {
+
+        const visibleRatio = entry.intersectionRatio; 
+        const newWidth = 100 - (visibleRatio * size) 
+        console.log()
+        if (entry.boundingClientRect.top > 0) {
+            video.style.width = `${newWidth}%`; 
+        }else{
+            video.style.width = `${100-size}%`; 
+        }
+        
+
+        });
+    };
+
+    const observer = new IntersectionObserver(adjustWidth, options);
+    observer.observe(video);
+    
+  };
+
+  init();
+
+  document.addEventListener("astro:page-load", init);
+
+</script>

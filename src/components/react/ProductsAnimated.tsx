@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { HomeProductCard } from "@/components/react/HomeProductCard";
 import { getI18NGlobal, getValueFromKey } from "@/i18n";
-import { getLangFromUrl } from "@/i18n/utils";
 import type { ProductItemHome } from "@/shared/types";
 
 const Titulo = ({ lang }: { lang: string }) => {
@@ -35,8 +34,7 @@ const getDelay = (
   return (i - mitad) * 0.2 + (mitadRow === j ? 0 : mitadRow > j ? 0.1 : 0.2);
 };
 
-export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
-  const lang = getLangFromUrl(new URL(currentUrl));
+export const ProductsAnimated2 = ({ lang }: { lang: string }) => {
 
   const products: ProductItemHome[][] = [
     [
@@ -45,12 +43,14 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         url: "/productos/airfryer",
         photo: "/home/5.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "hervidoras",
         url: "/productos/hervidoras",
         photo: "/home/13.webp",
         isMagic: false,
+        bgColor: 0
       },
     ],
     [
@@ -59,18 +59,21 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         url: "/productos/airfryer",
         photo: "/home/6.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "airfryer",
         url: "/productos/airfryer",
         photo: "/home/3.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "arroceras",
         url: "/productos/arroceras",
         photo: "/home/11.webp",
         isMagic: false,
+        bgColor: 0
       },
     ],
     [
@@ -79,18 +82,21 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         url: "/productos/airfryer",
         photo: "/home/2.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "arroceras",
         url: "/productos/arroceras",
         photo: "/home/10.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "scooters",
         url: "/productos/scooters",
         photo: "/home/14.webp",
         isMagic: false,
+        bgColor: 0
       },
     ],
     [
@@ -99,18 +105,21 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         url: "/productos/aires",
         photo: "/home/15.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: <Titulo lang={lang} />,
         url: "/",
         photo: "/home/logo.webp",
         isMagic: true,
+        bgColor: 0
       },
       {
         name: "airfryer",
         url: "/productos/airfryer",
         photo: "/home/4.webp",
         isMagic: false,
+        bgColor: 0
       },
     ],
     [
@@ -119,18 +128,21 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         url: "/productos/licuadoras",
         photo: "/home/9.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "hervidoras",
         url: "/productos/hervidoras",
         photo: "/home/12.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "beauty",
         url: "/productos/beauty",
         photo: "/home/20.webp",
         isMagic: false,
+        bgColor: 0
       },
     ],
     [
@@ -139,18 +151,21 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         url: "/productos/beauty",
         photo: "/home/17.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "planchas",
         url: "/productos/planchas",
         photo: "/home/19.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "cocinas",
         url: "/productos/cocinas",
         photo: "/home/18.webp",
         isMagic: false,
+        bgColor: 0
       },
     ],
     [
@@ -159,12 +174,14 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         url: "/productos/licuadoras",
         photo: "/home/7.webp",
         isMagic: false,
+        bgColor: 0
       },
       {
         name: "airfryer",
         url: "/productos/tvs",
         photo: "/home/16.webp",
         isMagic: false,
+        bgColor: 0
       },
     ],
   ];
@@ -181,7 +198,6 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
   }
 
   return (
-
 
     <>
     {
@@ -224,6 +240,7 @@ export const ProductsAnimated2 = ({ currentUrl }: { currentUrl: URL }) => {
         ))
       }
     </>
+
 
   );
 };
