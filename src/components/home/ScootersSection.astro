@@ -1,13 +1,28 @@
 ---
-import ProductCard from "../ProductCard.astro";
+import { getI18NProducts, getValueFromKey } from "@/i18n";
+import { getCategory } from "@/shared/utils"
 
-interface Items {
-  title: string;
-  description: string;
-  image: string;
-  url: string;
-  customClass?: string;
-}
+
+const category = getCategory({
+  id: "scooters",
+});
+
+const { currentLocale } = Astro;
+
+const i18n = getI18NProducts({ currentLocale });
+
+const t = (key: string) => {
+  return getValueFromKey(key, i18n);
+};
+
+const scooters = category.children.map((child) => ({
+  title: t(child.name),
+  description: t(child.name),
+  image: child.variants[0].photos[0],
+  url: "/productos/scooters",
+}));
+
+
 ---
 
 <section
@@ -51,11 +66,15 @@ interface Items {
         </svg>
       </div>
     </a>
+
+    <p class="text-white">
+      Estas buscando la aplicacion? <a href="/downloads" class=" relative font-bold text-interbrasGreen-50 " >Descargala aquí <span class=" w-full z-[-1] absolute -bottom-[3px] left-0 h-1 bg-interbrasGreen-800 doublemask" /></a>
+    </p>
   </div>
 
   <img
     src="/newVersion/scooter.svg"
-    class="absolute opacity-[.08] top-14 left-10 scale-[1.45]"
+    class="absolute opacity-[.08] top-14 left-10 scale-[1.45] pointer-events-none"
     alt="icons scooter"
   />
 
@@ -132,7 +151,7 @@ interface Items {
   </div>
 </section>
 
-<script type="module">
+<script define:vars={{ scooters }} type="module">
   import PhotoSwipeLightbox from "https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js";
 
   const lightbox = new PhotoSwipeLightbox({
@@ -147,36 +166,7 @@ interface Items {
     if (scooterChangeInterval) clearInterval(scooterChangeInterval);
   });
 
-
-
   lightbox.init();
-
-  const scooters = [
-    {
-      title: "Scooter 8.5",
-      description: "Scooter 8.5",
-      image: "/productos/scooters/8.5-v1-1.webp",
-      url: "/productos/scooters",
-    },
-    {
-      title: "Scooter 10",
-      description: "Scooter 10",
-      image: "/productos/scooters/10.5pro-v1-1.webp",
-      url: "/productos/scooters",
-    },
-    {
-      title: "Scooter 10.5",
-      description: "Scooter 10.5",
-      image: "/productos/scooters/cross-v1-1.webp",
-      url: "/productos/scooters",
-    },
-    {
-      title: "Scooter 12",
-      description: "Scooter 12",
-      image: "/productos/scooters/crosspro-v1-1.webp",
-      url: "/productos/scooters",
-    },
-  ];
 
   let currentIndex = 0;
   let scooterChangeInterval;
