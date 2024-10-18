@@ -842,7 +842,7 @@ const cocinas: Category = {
     },
     {
       id: "C30",
-      name: "Cocina electrica C30",
+      name: "cocinas.children.C30.name",
       popular: false,
       info: {
         review: "cocinas.children.C30.info.review",

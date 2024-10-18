@@ -60,7 +60,7 @@ const t = (key: string) => {
      <h3 class=" text-2xl h-12 flex justify-center items-center text-white text-center bg-interbrasGreen-500  font-medium relative z-10  w-min mx-auto text-nowrap pr-1 pl-4 rounded-xl ">
         <span class="">
           Interbras Tvs 
-        </span> <span class=" bg-white rounded-xl  ml-3 py-1 px-3  text-black "> Tamaños </span>
+        </span> <span class=" bg-white rounded-xl  ml-3 py-1 px-3  text-neutral-800 "> Tamaños </span>
      </h3>
 
      <div class="  gap-2 flex mx-auto w-full max-w-3xl justify-center mt-4 flex-wrap">
@@ -110,7 +110,6 @@ const t = (key: string) => {
 
         const visibleRatio = entry.intersectionRatio; 
         const newWidth = 100 - (visibleRatio * size) 
-        console.log()
         if (entry.boundingClientRect.top > 0) {
             video.style.width = `${newWidth}%`; 
         }else{

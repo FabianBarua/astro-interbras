@@ -130,7 +130,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ category, lang }) => {
                 </span>
               ))}
             </h2>
-            <h3 className=' mt-4  text-lg font-medium text-black/3'>
+            <h3 className=' mt-4  text-lg font-medium text-neutral-800/3'>
               {t('whatDoYouWant')}
             </h3>
 

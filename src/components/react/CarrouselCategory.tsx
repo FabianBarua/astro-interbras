@@ -42,7 +42,7 @@ export const CarrouselCategory: React.FC<CarrouselCategoryProps> = ({lang}) => {
 
   return (
     <>
-      <h3 className=' text-center text-3xl mt-12 mb-8 text-black/80 font-light'>
+      <h3 className=' text-center text-3xl mt-12 mb-8 text-neutral-800/80 font-light'>
         {
           t('youMayAlsoBeInteresed')
         }

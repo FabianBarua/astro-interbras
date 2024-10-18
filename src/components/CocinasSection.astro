@@ -13,17 +13,8 @@ const t = (key: string) => {
 
 ---
 
-<motion.section
-initial='hidden'
-whileInView='visible'
-viewport={{ once: true }}
-variants={{
-  visible: { opacity: 1, y: 0 },
-  hidden: { opacity: 0, y: 40 }
-}}
-transition={{ duration: 0.5, delay: 0.5 }}
-className=' bg-interbrasGray relative rounded-[40px]  h-full flex flex-col lg:flex-row items-center p-10  gap-5'
-client:idle
+<section
+class=' bg-interbrasGreen-900 relative rounded-[40px]  h-full flex flex-col lg:flex-row items-center p-10  gap-5'
 >
 <img loading="lazy"  src='/home/cocinaSection/1.webp' alt='Cocinas interbras' class=' rounded-[40px] h-[15rem]  lg:h-full object-cover' />
 <div class='text-center text-white w-full flex flex-col gap-3  '>
@@ -37,4 +28,4 @@ client:idle
     <PrimaryButton to='/productos/cocinas' />
   </div>
 </div>
-</motion.section>
+</section>

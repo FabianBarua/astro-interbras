@@ -38,7 +38,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ child, active, change,
       <div className={
         `
         flex-1 ml-3 text-left my-auto
-        ${active ? 'text-white ' : 'text-black'}
+        ${active ? 'text-white ' : 'text-neutral-800'}
         `
       }
       >

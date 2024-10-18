@@ -26,7 +26,7 @@ const scooters = category.children.map((child) => ({
 ---
 
 <section
-  class="flex flex-col-reverse w-[90%] sm:w-[70%] lg:flex-row overflow-hidden justify-center p-10 gap-10 items-center lg:justify-between relative lg:p-20 bg-interbrasGreen-500  mx-auto rounded-[40px] lg:rounded-[70px]"
+  class="flex flex-col-reverse w-[90%] sm:w-[80%] lg:flex-row overflow-hidden justify-center p-10 gap-10 items-center lg:justify-between relative lg:p-20 bg-interbrasGreen-500  mx-auto rounded-[40px] lg:rounded-[70px]"
 >
   <div class="relative z-10 mt-auto flex gap-5 flex-col">
     <div
@@ -259,5 +259,21 @@ const scooters = category.children.map((child) => ({
 </style>
 
 <style>
-  @import url("https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css");
+
+@import url("https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css");
+
+  section{
+    opacity: 0;
+    animation: fadeIn 1s ease .4s forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 </style>

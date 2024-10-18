@@ -44,7 +44,7 @@ const DownloadCard: React.FC<DownloadCardProps> = (
           {
           models.map((model, index) => (
             <div key={index} className=''>
-              <p className=' leading-4 font-light text-black/70'>{model}</p>
+              <p className=' leading-4 font-light text-neutral-800/70'>{model}</p>
             </div>
           )
           )
@@ -96,7 +96,7 @@ interface DownloadModalCardProps {
             <div className=' flex gap-2'>
               {
               models.map((model, index) => (
-                <p key={index} className=' text-black/70 bg-black/10 px-2 rounded-lg'>
+                <p key={index} className=' text-neutral-800/70 bg-black/10 px-2 rounded-lg'>
                   {model}
                 </p>
               ))
@@ -107,7 +107,7 @@ interface DownloadModalCardProps {
         <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
           href={url}
           target='_blank'
-          className=' p-2 w-full lg:w-auto my-auto h-full justify-center items-center flex ml-auto transition-colors text-black/70 hover:text-black/90 bg-black/10 hover:bg-black/20 rounded-lg px-5 gap-2'
+          className=' p-2 w-full lg:w-auto my-auto h-full justify-center items-center flex ml-auto transition-colors text-neutral-800/70 hover:text-neutral-800/90 bg-black/10 hover:bg-black/20 rounded-lg px-5 gap-2'
           rel='noreferrer'
         >
           {t('downloads.download')}

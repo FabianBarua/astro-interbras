@@ -12,20 +12,25 @@ const t = (key: string) => {
 ---
 
 <section class='  h-full flex-col lg:flex-row flex  gap-6 '>
-    <motion.div
-      initial='hidden' client:idle
-      client:idle
-
-      whileInView='visible'
-      viewport={{ once: true }}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 40 }
-      }}
-      transition={{ duration: 0.5, delay: 0.5 }}
-      className=' w-full h-[20rem] lg:h-full relative bg-interbrasGray rounded-[40px] overflow-hidden'
+    <div
+      class=' w-full h-[20rem] lg:h-full relative bg-interbrasGreen-900 rounded-[40px] overflow-hidden'
     >
-      <img loading="lazy"  src='/home/KettleAndCafeterasSection/1.webp' class='  h-[115%] top-1/2 -translate-y-[55%] absolute right-0' alt='hervidoras interbras' />
+      <img loading="lazy"  src='/home/cocinaSection/1.webp' class=' leftmask h-[115%] top-1/2 -translate-y-[55%] absolute -right-16 object-cover' alt='hervidoras interbras' />
+      <div class=' absolute lg:bottom-10 lg:left-10 left-5 bottom-5'>
+        <h2 class='text-3xl md:text-4xl mb-3 font-bold text-white'>
+          {t('home.CocinasSection.title')}
+        </h2>
+        <PrimaryButton
+          class=' w-min'
+          to='/productos/cocinas'
+        />
+      </div>
+    </div>
+    
+    <div
+      class=' w-full h-[20rem] lg:h-full relative bg-interbrasGreen-900 rounded-[40px] overflow-hidden'
+    >
+      <img loading="lazy"  src='/home/KettleAndCafeterasSection/1.webp' class='  h-[115%] top-1/2 -translate-y-[55%] absolute right-0 object-cover' alt='hervidoras interbras' />
       <div class=' absolute lg:bottom-10 lg:left-10 left-5 bottom-5'>
         <h2 class='text-3xl md:text-4xl mb-3 font-bold text-white'>
           {t('home.HervidorasAndCafeterasSection.1.title')}
@@ -35,19 +40,12 @@ const t = (key: string) => {
           to='/productos/hervidoras'
         />
       </div>
-    </motion.div>
-    <motion.div
-      initial='hidden' client:idle
+    </div>
 
-      whileInView='visible'
-      viewport={{ once: true }}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 40 }
-      }}
-      transition={{ duration: 0.5, delay: 0.7 }}
-      className=' w-full h-[20rem] lg:h-full relative bg-interbrasGray rounded-[40px] overflow-hidden'
-    >        <img loading="lazy"  src='/home/KettleAndCafeterasSection/2.webp' class='  h-[110%] top-1/2 -translate-y-[52%] absolute left-0' alt='hervidoras interbras' />
+    <div
+      class=' w-full h-[20rem] lg:h-full relative bg-interbrasGreen-900 rounded-[40px] overflow-hidden'
+    >        
+    <img loading="lazy"  src='/home/KettleAndCafeterasSection/2.webp' class='  h-[110%] top-1/2 -translate-y-[52%] absolute left-0 object-cover' alt='hervidoras interbras' />
 
       <div class=' absolute lg:bottom-10 bottom-5 lg:right-10 right-5 '>
         <h2 class='text-3xl md:text-4xl  mb-3 font-bold text-white'>
@@ -58,5 +56,14 @@ const t = (key: string) => {
           to='/productos/cafeteras'
         />
       </div>
-    </motion.div>
+    </div>
   </section>
+
+  <style>
+
+  .leftmask {
+    -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  }
+
+  </style>
