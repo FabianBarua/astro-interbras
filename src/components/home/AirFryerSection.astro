@@ -16,7 +16,7 @@ const airFryers = [
     title: "S20",
     description: "Esencial en tu cocina",
     image: "/newVersion/airfryer-2.png",
-    customClass: " top-0 text-right",
+    customClass: " top-0 ",
     url: getRelativeLocaleUrl(currentLocale || "", "/")
   },
   {
@@ -30,7 +30,7 @@ const airFryers = [
     title: "S40",
     description: "Doble función, doble sabor",
     image: "/newVersion/airfryer-4.png",
-    customClass: " bottom-0  text-right",
+    customClass: " bottom-0 ",
     url: getRelativeLocaleUrl(currentLocale || "", "/")
   },
 ];
@@ -40,25 +40,18 @@ const airFryers = [
 
 <section class="relative mx-auto  flex  flex-col justify-center  w-[90%] lg:w-fit">
 
-  <div class=" flex sm:flex-row flex-col gap-3 bg-neutral-200 border px-5 py-8 rounded-3xl justify-between items-center">
-    <h2 class="text-4xl font-bold ml-4  ">
+  <div class=" flex sm:flex-row flex-col  w-full justify-between gap-2 sm:gap-4">
+    <h2 class="text-4xl text-center sm:text-left font-bold  bg-neutral-100 p-5 rounded-3xl ">
       Air Fryers
     </h2>
   
-    <p class=" leading-5 text-center sm:text-right">
+    <p class=" leading-5 text-center sm:text-right bg-neutral-100 p-5 rounded-3xl">
       Los Air Fryers de Interbras son la mejor opción para tu cocina.
       <br>
       Conoce nuestra línea de productos y elige el que mejor se adapte a tus necesidades.
     </p>
   </div>
 
-
-  <!-- <a 
-    href="#"
-    class=" absolute hidden sm:flex top-5 right-5 text-white/80 hover:bg-black/30 transition-colors bg-black/20 size-10 justify-center items-center rounded-xl p-2 "
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-  </a> -->
 
   <ul class=" overflow-hidden w-fit flex gap-4 flex-wrap lg:flex-nowrap justify-center  mt-5 relative ">
     {
@@ -67,13 +60,13 @@ const airFryers = [
           `
           cursor-pointer rounded-[30px] bg-interbrasGreen-100 hover:scale-[1.015] transition-transform relative  overflow-hidden border-2 
           
-          h-[300px] 
+          h-[200px] sm:h-[300px] 
           
           flex-1  
           
           min-w-40 sm:min-w-16 
           
-          max-w-full sm:max-w-52 xl:max-w-80
+          max-w-full sm:max-w-52 xl:max-w-80 
           
           `
         }>
@@ -89,7 +82,7 @@ const airFryers = [
 
           <div
             class={cn(
-              "p-6 absolute sm:top-0 sm:text-left sm:left-0  z-20 pointer-events-none",
+              "sm:p-6 p-4 absolute sm:top-0 sm:text-left sm:left-0  z-20 pointer-events-none",
               item.customClass
             )}
           >
@@ -97,7 +90,7 @@ const airFryers = [
               <div class=" w-full h-full bg-black absolute top-0 right-0 blur-2xl z-[-1] ">
               </div>
 
-              <p class="text-base  leading-5 text-balance">
+              <p class="sm:text-base text-xs leading-3 sm:leading-5 text-balance ">
                 {item.description}
               </p>
               <h2 class="text-2xl font-bold text-balance">
@@ -119,7 +112,7 @@ const airFryers = [
 
       <a
       href="#"
-      class="sm:hidden size-32 rounded-full flex justify-center items-center max-[373px]:hidden bg-interbrasGreen-500 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+      class="sm:hidden size-24 rounded-full flex justify-center items-center max-[373px]:hidden bg-interbrasGreen-500 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
     >
       <img src="/newVersion/airfryer-medalla.png" class="w-20" alt="air" />
     </a>
