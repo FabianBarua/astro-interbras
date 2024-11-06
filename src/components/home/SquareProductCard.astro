@@ -24,7 +24,7 @@ const {
   id="product-card"
   hreflang="es"
   class={`
-    ${isMagic ? "my-4 mx-4" : "mx-auto"}
+    ${isMagic ? "my-2 mx-2" : "mx-auto"}
 
     size-22 lg:size-28 xl:size-32 
     md:p-4 p-2 
@@ -35,18 +35,17 @@ const {
 
     border-2 
     border-transparent 
-    hover:border-interbrasGreen-500 
     
     transition-all rounded-3xl  
     
-    ${isMagic ? "scale-[1.1] hover:scale-[1.2]" : "hover:scale-[1.05]"}
+    ${isMagic ? "scale-[1.1] hover:scale-[1.102]" : "hover:scale-[1.02]"}
     `
     }
   href={href}
   style={`animation: fade-in 1s ease ${delay}s forwards ;`}
 >
   <img
-    class=""
+    class=" h-[99px] w-[99px] object-contain saturate-0 hover:saturate-150 "
     src={src}
     alt={alt}
     width="99.68px"

@@ -8,6 +8,7 @@ import SwitchButton from "@/components/SwitchButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { MobileNav } from "./react/MobileNav";
 import { getI18NGlobal, getValueFromKey } from "@/i18n";
+import { getUrls } from "@/shared/utils";
 
 const { currentLocale } = Astro;
 const i18n = getI18NGlobal({ currentLocale });
@@ -16,65 +17,73 @@ const t = (key: string) => {
   return getValueFromKey(key, i18n);
 };
 
----
+const urls = getUrls({currentLocale});
 
+---
 
 <header
   transition:persist="true"
   id="header-client"
-  class="fixed w-full shadow-xl z-[40] flex flex-col min-h-20 pt-5 transition-all backdrop-blur bg-interbrasGreen-500 text-white"
+  class="fixed w-full z-[40] flex flex-col py-4 transition-all backdrop-blur bg-[#08850ec4] text-white"
 >
-  <nav class="w-full flex relative">
-    <div class="absolute right-3 lg:right-8 top-1/2 -translate-y-1/2">
-      <div class="relative z-40">
-        <SwitchButton />
-      </div>
-    </div>
-    <ul
-      class="flex mx-auto justify-center text-nowrap items-center gap-14 w-full"
+  <div class="flex lg:justify-around justify-center  ">
+    <a
+      hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}
+      aria-label="Logo Interbras"
+      class="cursor-pointer"
+      href={getRelativeLocaleUrl(currentLocale || "es", "/")}
+      hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}
     >
-    <li class="w-full flex max-w-96 justify-end gap-8">
-      <div class="lg:block hidden">
-        <button id="whereWeAre">{t('header.whereWeAre.title')}</button>
-      </div>
-      <div class="lg:block hidden">
-        <button id="weProducts">{t('header.products.title')}</button>
-      </div>
-    </li>
-      <li>
-        <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"} 
-          aria-label="Logo Interbras"
-          class="cursor-pointer"
-          href={getRelativeLocaleUrl(currentLocale || "es", "/")}
-          hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}
-        >
-          <Logo />
-        </a>
-      </li>
-      <li class="w-full flex max-w-96 justify-start gap-8">
-        <div class="lg:block hidden">
-          <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}  href={getRelativeLocaleUrl(currentLocale || "", "/downloads")}>
-            <p>{t('header.download')}</p>
+      <Logo />
+    </a>
+
+    <nav class="w-min flex ">
+      <ul
+        class=" lg:flex fixed lg:relative right-4 lg:mx-auto justify-center text-nowrap items-center gap-14 lg:w-full"
+      >
+        <li class="lg:block hidden">
+          <button id="whereWeAre">{t("header.whereWeAre.title")}</button>
+        </li>
+        <li class="lg:block hidden">
+          <button id="weProducts">{t("header.products.title")}</button>
+        </li>
+
+        <li class="w-full flex max-w-96 justify-start gap-8">
+          <div class="lg:block hidden">
+            <button id="whoWeAre">{t("header.whoWeAre.title")}</button>
+          </div>
+        </li>
+
+        <li class="w-full flex max-w-96 justify-start gap-8">
+          <a
+            class="lg:block hidden"
+            hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}
+            href={getRelativeLocaleUrl(currentLocale || "", "/downloads")}
+          >
+            <p>{t("header.download")}</p>
           </a>
-        </div>
-        <div class="lg:block hidden">
-          <button id="whoWeAre">{t('header.whoWeAre.title')}</button>
-        </div>
-      </li>
-    </ul>
-  </nav>
+        </li>
+
+        <li class=" w-20 shrink-0">
+          <SwitchButton />
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
   <div id="section-nav-items" class="transition-all h-0 duration-700">
     <WhereWeAreSection />
     <WeProductsSection />
     <WhoWeAreSection />
   </div>
 
-  
-<MobileNav client:only="react" />
-
+  <MobileNav 
+  urls={urls}
+  client:only="react" />
 </header>
 
-<script is:inline >
+<script is:inline>
   const initHeaderScript = () => {
     let selectedNavItem = null;
     const sectionNavItems = document.getElementById("section-nav-items");
@@ -85,7 +94,7 @@ const t = (key: string) => {
     const weProducts = document.getElementById("weProducts");
     const updateSelectedNavItem = () => {
       const selectedNavItemHidden = document.querySelector(
-        "#section-nav-items > div:not(.hidden)",
+        "#section-nav-items > div:not(.hidden)"
       );
       if (selectedNavItemHidden) {
         selectedNavItemHidden.classList.add("hidden");
@@ -129,15 +138,16 @@ const t = (key: string) => {
       updateSelectedNavItem();
     });
   };
-  initHeaderScript();
+  
+  document.addEventListener("astro:page-load", initHeaderScript);
+
 </script>
 <style is:global>
-
   /* hidden for 1 seccond with displaynone and before flex */
 
   .hiddenTemp {
     display: flex;
-    animation: hiddenTempAnimation .4s forwards;
+    animation: hiddenTempAnimation 0.4s forwards;
   }
 
   @keyframes hiddenTempAnimation {
@@ -153,8 +163,6 @@ const t = (key: string) => {
       display: flex;
     }
   }
-
-
 
   .fadeIn {
     animation: fadeIn 0.5s ease-in-out;

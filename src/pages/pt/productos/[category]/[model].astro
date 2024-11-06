@@ -1,0 +1,50 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { convertToSlug, getCategories, getCategorySelected, getModelSelected } from "@/shared/utils";
+import { getI18NProducts, getValueFromKey } from "@/i18n";
+import ModelPage from "@/components/pages/ModelPage.astro";
+
+
+export const getStaticPaths = () => {
+  const lang = "pt"
+  const i18n = getI18NProducts({ currentLocale: lang });
+  const t = (key:string) => getValueFromKey(key, i18n );
+  
+  const params = getCategories().flatMap((category) => {
+
+    return category.children.map((model) => {
+      const categorySlug = convertToSlug(t(category.name));
+      const modelSlug = convertToSlug(t(model.name));
+      return {
+        params: {
+          category: categorySlug,
+          model: modelSlug,
+        },
+      };
+    });
+
+  });
+  
+  return params;
+};
+
+const { category, model } = Astro.params;
+const { currentLocale } = Astro;
+
+const categorySelected = getCategorySelected({category,currentLocale}) 
+const modelSelected =  categorySelected ? getModelSelected({
+  children: categorySelected.children,
+  model,
+  currentLocale,
+}) : null;
+
+const i18n = getI18NProducts({ currentLocale });
+const t = (key:string) => getValueFromKey(key, i18n );
+
+---
+<Layout
+  title={ t(modelSelected?.name || "") }
+  description={ t(modelSelected?.info.review || "") }
+  >
+  <ModelPage />
+</Layout>

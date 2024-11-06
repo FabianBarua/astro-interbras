@@ -5,6 +5,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { ViewTransitions } from "astro:transitions";
 import SEO from "@/components/SEO.astro"
 import "@/styles/global.css"
+import { getI18NGlobal, getValueFromKey } from "@/i18n";
 
 interface Props {
   title: string;
@@ -20,6 +21,11 @@ const {
 const urlbase = getRelativeLocaleUrl( currentLocale || "" , "/");
 
 const { title, description, canonical, image } = Astro.props
+
+const i18n_global = getI18NGlobal({ currentLocale });
+const t_global = (key: string) => {
+  return getValueFromKey(key, i18n_global);
+};
 
 ---
 
@@ -53,7 +59,9 @@ const { title, description, canonical, image } = Astro.props
 
     <footer class="w-[90%] sm:w-[80%] mx-auto py-10 flex justify-between flex-col-reverse items-center sm:flex-row gap-3">
 
-        <p class=" text-center text-balance sm:text-left ">Copyright © 2024 Interbras. Todos los derechos reservados.</p>
+        <p class=" text-center text-balance sm:text-left ">
+          {t_global("footer.copy")}
+        </p>
         <a hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"} aria-label="interbras"  href={urlbase} class=" text-interbrasGreen-500">
            <Logo />
         </a>
@@ -80,11 +88,12 @@ const { title, description, canonical, image } = Astro.props
 
   .background {
     position: fixed;
-    top: 0;
+    top: -7px;
     left: 0;
     bottom: 0;
     width:  100dvw;
     height: 100dvh;
+    view-transition-name: background;
   }
   
   .button {
@@ -273,6 +282,12 @@ const { title, description, canonical, image } = Astro.props
 
 .shadow-custom {
     box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.415);
+}
+
+
+::view-transition-group(background) {
+  animation-fill-mode: both;
+  z-index: 10;
 }
 
 </style>

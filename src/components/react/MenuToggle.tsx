@@ -36,7 +36,7 @@ export const MenuToggle = ({ toggle }: MenuToggleProps): JSX.Element => (
     }
 
     aria-label='Toggle Menu'
-    className='left-[20px] top-[20px] size-[40px] flex justify-center items-center rounded-full z-10   absolute hiddenTempAnimation  ' onClick={toggle}
+    className='left-[20px] top-[13px] size-[40px] flex justify-center items-center rounded-full z-10   absolute hiddenTempAnimation  ' onClick={toggle}
   >
     <svg className=' translate-y-[1px]' width='19' height='19' viewBox='0 0 23 23'>
       <Path d='M 2 2.5 L 20 2.5'/>

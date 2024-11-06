@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion";
 import { useRef, useEffect, type MutableRefObject } from "react";
 import { Navigation } from "./Navigation";
 import { MenuToggle } from "./MenuToggle";
+import type { Urls } from "@/shared/utils";
 
 const useDimensions = (ref: MutableRefObject<any>) => {
     const dimensions = useRef({ width: 0, height: 0 })
@@ -36,7 +37,11 @@ const sidebar = {
   }
   
 
-export const MobileNav = () => {
+export const MobileNav = ({
+  urls
+}: {
+  urls: Urls[]
+}) => {
 
       const [isOpen, toggleOpen] = useCycle(false, true)
       const containerRef = useRef(null)
@@ -62,6 +67,7 @@ export const MobileNav = () => {
       >
         <motion.div className='background bg-interbrasGreen-500 ' variants={sidebar} />
         <Navigation
+          urls={urls}
           isOpen={isOpen}
           toggleOpen={
             toggleOpen

@@ -1,11 +1,12 @@
 import { getI18NGlobal, getI18NProducts, getValueFromKey } from '@/i18n'
 import { getLangFromUrl } from '@/i18n/utils'
-import { getUrls } from '@/shared/utils'
+import { type Urls } from '@/shared/utils'
 import { motion } from 'framer-motion'
 import React from 'react'
 
 interface ProductosHeaderProps {
   clicked?: () => void
+  urls: Urls[]
 }
 
 interface LinkItemProps {
@@ -34,18 +35,13 @@ const LinkItem: React.FC<LinkItemProps> = ({ to, children, clicked, lang }) => {
 }
 
 export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
-  clicked
+  clicked,
+  urls
 }) => {
- const urls = getUrls()
 
     const lang = getLangFromUrl(
         new URL(window.location.href)
     )
-
-    const i18nProduct = getI18NProducts({
-        currentLocale: lang,
-    });
-
 
     const i18nGlobal = getI18NGlobal({
         currentLocale: lang,
@@ -54,11 +50,6 @@ export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
     const t = (key: string) => {
         return getValueFromKey(key, i18nGlobal);
     }
-
-    const t2 = (key: string) => {
-        return getValueFromKey(key, i18nProduct);
-    };
-        
 
   return (
     <motion.div
@@ -78,23 +69,34 @@ export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
                 urls.slice(0, 8).map(url => (
                   <LinkItem
                     lang={lang}
-                    clicked={clicked} to={url.url}
-                    key={'id-header-' + t2(url.name)}
+                    clicked={clicked} to={
+                      lang === 'es' ? url.url : '/pt' + url.url
+                    }
+                    key={'id-header-' + url.name}
                   >
-                    {t2(url.name)}
+                    {
+                      url.name
+                    }
                   </LinkItem>
                 ))
               }
             </div>
             <div className=' flex-col flex'>
-              {
-                urls.slice(8, urls.length).map(url => (
+            {
+                urls.slice(
+                  8, 
+                  urls.length
+                ).map(url => (
                   <LinkItem
                     lang={lang}
-                    clicked={clicked} to={url.url}
+                    clicked={clicked} to={
+                      lang === 'es' ? url.url : '/pt' + url.url
+                    }
                     key={'id-header-' + url.name}
                   >
-                    {t2(url.name)}
+                    {
+                      url.name
+                    }
                   </LinkItem>
                 ))
               }

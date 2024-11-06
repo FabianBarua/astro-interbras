@@ -1,12 +1,8 @@
 ---
-import { getCategory } from "@/shared/utils";
+import { getCategory, getProductUrl } from "@/shared/utils";
 import Ripples from "../Ripples.astro";
 
-const tvs = getCategory({
-  id: "tvs",
-});
-
-import { getI18NProducts, getValueFromKey } from "@/i18n";
+import { getI18NGlobal, getI18NProducts, getValueFromKey } from "@/i18n";
 const { currentLocale } = Astro;
 const i18n = getI18NProducts({ currentLocale });
 
@@ -14,30 +10,49 @@ const t = (key: string) => {
   return getValueFromKey(key, i18n);
 };
 
+const i18n_global = getI18NGlobal({ currentLocale });
+const t_global = (key: string) => {
+  return getValueFromKey(key, i18n_global);
+};
+
+
+const tvs = getCategory({
+  id: "tvs",
+});
+
+const urls = tvs.children.map((item) => {
+  return getProductUrl ({
+    category: tvs.name,
+    product: item.name,
+    currentLocale: currentLocale || 'es',
+  });
+});
+
+
+
 ---
 
-<div class=" relative  overflow-hidden  ">
-  
-  <div class=" w-[80%] h-80 from-neutral-300 to-transparent bg-gradient-to-b absolute top-10  left-1/2 -translate-x-1/2 rounded-[50px]" />
-
-
-  <div id="video" class=" w-[90%] sm:w-[40%] origin-top relative mx-auto transition-all duration-150 ease-out z-10 ">
-  
-    <div class=" absolute  bottom-10 scale-[.4] sm:scale-75 left-10">
-        <Ripples 
-        numRipples={4}
-      />
-    </div>
-    
-    <div class=" absolute right-10 bottom-10 scale-[.4] sm:scale-75 ">
-      <Ripples 
-      numRipples={4}
-    />
+<section class="relative mt-12 overflow-hidden">
+  <div
+    class="w-[80%] max-w-[1536px] lg:w-[80%] h-80 from-neutral-300 to-transparent bg-gradient-to-b absolute top-10 left-1/2 -translate-x-1/2 rounded-[50px]"
+  >
   </div>
+
+  <div
+    id="video"
+    class="w-[90%] sm:w-[60%] lg:w-[30%] max-w-[500px] origin-top relative mx-auto transition-all duration-150 ease-out z-10"
+  >
+    <div class="absolute bottom-10 scale-[.4] sm:scale-50 left-10">
+      <Ripples numRipples={4} />
+    </div>
+
+    <div class="absolute right-10 bottom-10 scale-[.4] sm:scale-50">
+      <Ripples numRipples={4} />
+    </div>
 
     <img
       src="/newVersion/marcoTV.png"
-      class="w-full absolute top-[-4px]  z-10 origin-top"
+      class="w-full absolute top-[-3px] z-10 origin-top"
       alt="MARCO DE TV"
     />
 
@@ -54,79 +69,47 @@ const t = (key: string) => {
       Tu navegador no soporta el video.
     </video>
   </div>
- 
 
-  <div class=" w-full mt-20 relative">
-     <h3 class=" text-2xl h-12 flex justify-center items-center text-white text-center bg-interbrasGreen-500  font-medium relative z-10  w-min mx-auto text-nowrap pr-1 pl-4 rounded-xl ">
-        <span class="">
-          Interbras Tvs 
-        </span> <span class=" bg-white rounded-xl  ml-3 py-1 px-3  text-neutral-800 "> Tamaños </span>
-     </h3>
+  <div class="w-full mt-20 relative">
+    <h3
+      class="text-2xl flex justify-center items-center text-white text-center py-1 bg-interbrasGreen-500 font-medium relative z-10 w-min mx-auto text-nowrap pr-1 pl-4 rounded-xl"
+    >
+      <span class=""> Interbras Tvs </span>
+      <span class="bg-white rounded-xl ml-3 px-3 text-neutral-800">
+        {
+          t_global('home.tvs.sizes')
+        }
+      </span>
+    </h3>
 
-     <div class="  gap-2 flex mx-auto w-full max-w-3xl justify-center mt-4 flex-wrap">
+    <div
+      class="gap-2 flex mx-auto w-full max-w-3xl justify-center mt-4 flex-wrap"
+    >
       {
         tvs.children.map((item) => (
-          <a 
-            href="/productos/tvs"
-            class=" hover:bg-neutral-200 border-neutral-300 transition-colors  px-4  py-2 bg-neutral-300 rounded-lg text-nowrap border">
+          <a
+            href={urls[tvs.children.indexOf(item)]}
+            class=" hover:bg-neutral-200 border-neutral-300 transition-colors  px-2  py-1 bg-neutral-300 rounded-lg text-nowrap border"
+          >
             {t(item.name)}
           </a>
         ))
-       }
-     </div>
-     
+      }
+    </div>
   </div>
+</section>
 
-</div>
+<style>
+  section {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 
 
-
-<!-- 
-<script>
-  const init = () => {
-    const video = document.getElementById("video");
-
-    if (!video) return;
-
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: Array.from(Array(101).keys(), (x) => x / 100),
-    };
-
-    const sm_size = 0
-    const md_size = 0
-    const lg_size = 0
-    const xl_size = 0
-
-    let size = window.innerWidth < 640 ? sm_size : window.innerWidth < 1024 ? md_size : window.innerWidth < 1280 ? lg_size : xl_size
-
-    window.addEventListener("resize", () => {
-      size = window.innerWidth < 640 ? sm_size : window.innerWidth < 1024 ? md_size : window.innerWidth < 1280 ? lg_size : xl_size
-    });
-
-    const adjustWidth = (entries: any[], observer: any) => {
-    entries.forEach((entry: { intersectionRatio: any; boundingClientRect: { top: number; }; }) => {
-
-        const visibleRatio = entry.intersectionRatio; 
-        const newWidth = 50 - (visibleRatio * size) 
-        if (entry.boundingClientRect.top > 0) {
-            video.style.width = `${newWidth}%`; 
-        }else{
-            video.style.width = `${100-size}%`; 
-        }
-        
-
-        });
-    };
-
-    const observer = new IntersectionObserver(adjustWidth, options);
-    observer.observe(video);
-    
-  };
-
-  init();
-
-  document.addEventListener("astro:page-load", init);
-
-</script> -->
+</style>

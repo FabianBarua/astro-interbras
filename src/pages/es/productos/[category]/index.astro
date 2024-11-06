@@ -1,0 +1,24 @@
+---
+
+import { getCategories, convertToSlug } from "@/shared/utils";
+import { getI18NProducts, getValueFromKey } from "@/i18n";
+import CategoryPage from "@/components/pages/CategoryPage.astro";
+
+export const getStaticPaths = () => {
+  const lang = "es"
+  const i18n = getI18NProducts({ currentLocale: lang });
+  const t = (key:string) => getValueFromKey(key, i18n );
+  
+  const params = getCategories().map((category) => {
+    return {
+      params: {
+        category: convertToSlug(t(category.name)),
+      },
+    };
+  });
+  return params;
+};
+
+---
+
+<CategoryPage />

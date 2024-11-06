@@ -1,38 +1,66 @@
 ---
+import { getI18NGlobal, getValueFromKey } from "@/i18n";
+import { getUrlCategoryById } from "@/shared/utils";
+
+const { currentLocale } = Astro;
+const i18n_global = getI18NGlobal({ currentLocale });
+const t_global = (key: string) => {
+  return getValueFromKey(key, i18n_global);
+};
 
 const items = [
     {
-        title : "Silencioso",
-        description : "Los mas silenciosos del mercado, no te enteraras que estan encendidos.",
+        title : "home.ac.benefit_silent.title",
+        description : "home.ac.benefit_silent.description",
         image : "/newVersion/aires-silencio.svg"
     },
     {
-        title : "Ahorro de energia",
-        description : "Economiza en tu factura de luz con nuestros equipos de aire acondicionado que cuentan con tecnologia inverter.",
+        title : "home.ac.benefit_energy_saving.title",
+        description : "home.ac.benefit_energy_saving.description",
         image : "/newVersion/aires-ahorro.svg"
     },
     {
-        title : "Aire mas limpio",
-        description : "Nuestros equipos de aire acondicionado cuentan con filtros de alta calidad que eliminan el 99.9% de las bacterias y virus del aire.",
+        title : "home.ac.benefit_clean_air.title",
+        description : "home.ac.benefit_clean_air.description",
         image : "/newVersion/aires-limpio.svg"
     }
 ]
 
+const urlAire = getUrlCategoryById({ id: "aires", currentLocale: currentLocale ? currentLocale : "" }) ||  "";
+
 ---
 
-<div class=" bg-interbrasGreen-100 w-full  pt-24 pb-8 flex flex-col lg:flex-row justify-center items-center gap-10 xl:gap-32 ">
+<section class=" bg-neutral-100 lg:mt-16 lg:rounded-t-[150px]  mx-auto max-w-[1536px]  py-12 lg:pt-32 w-full lg:w-[80%] lg:pb-8 flex flex-col lg:flex-row justify-center items-center gap-10 xl:gap-32  px-6 lg:px-0">
 
     <div class=" flex flex-col justify-center  mb-10 lg:mb-0">
-        <img src="/newVersion/aire.png" class=" xl:h-72 w-min h-52 drop-shadow-[0_10px_30px_rgba(0,_0,_0,_.3)]" alt="aire">
-        <a id="pin2" class=" hidden lg:block relative mx-auto bg-black px-3 py-1 rounded-xl text-white font-medium hover:bg-interbrasGreen-500 transition-all hover:-translate-y-2 hover:scale-110" href="/productos/aires">
-            Ver aires
+        <img src="/newVersion/aire.png" class=" xl:h-72 w-min h-52 drop-shadow-[0_10px_30px_rgba(0,_0,_0,_.3)]  object-contain" alt="aire">
+        <a id="pin2" class=" hidden lg:block relative mx-auto bg-black px-3 py-1 rounded-xl text-white font-medium hover:bg-interbrasGreen-500 transition-all hover:-translate-y-2 hover:scale-110" 
+        href={urlAire}>
+            {
+                t_global("home.ac.seeAc")
+            }
         </a>
     </div>
 
     <div class=" text-neutral-800 ">
        
         <h2 class="text-3xl text-center font-extrabold mb-5">
-            Porque un <span class=" relative text-interbrasGreen-500 ">AC <a href="/productos/aires" id="pin" class=" text-neutral-800 font-semibold absolute text-base leading-4 text-center left-1/2 -translate-x-1/2 -top-14 bg-interbrasGreen-300 px-4 py-2 rounded-xl origin-bottom animate-jumpinfinite2"> Aire Acondicionado</a></span> Interbras?
+            {
+                t_global("home.ac.why.first")
+            }
+            <span class=" relative text-interbrasGreen-500 ">
+                {
+                    t_global("home.ac.why.second")
+                }
+                <a href={urlAire} id="pin" class=" text-neutral-800 font-semibold absolute text-base leading-4 text-center left-1/2 -translate-x-1/2 -top-14 bg-interbrasGreen-300 px-4 py-2 rounded-xl origin-bottom animate-jumpinfinite2"> 
+                    {
+                        t_global("home.ac.title")
+                    }
+                </a>
+            </span> 
+            {
+                t_global("home.ac.why.third")
+            }
         </h2>
         
         {
@@ -43,10 +71,10 @@ const items = [
                     </div>
                     <div class=" max-w-[400px] mb-1">
                         <h4 class=" text-xl font-bold">
-                            {item.title}
+                            {t_global(item.title)}
                         </h4>
                         <p class=" leading-4 text-sm">
-                            {item.description}
+                            {t_global(item.description)}
                         </p>
                     </div>
                 </div>
@@ -54,14 +82,16 @@ const items = [
         }
         
         <div class=" mt-9">
-            <a id="pin2" class=" block w-[80%] lg:hidden relative mx-auto bg-black px-3 py-3 rounded-xl text-center text-white font-medium hover:bg-interbrasGreen-500 transition-all hover:-translate-y-2 hover:scale-105" href="/productos/aires">
-                Ver aires
+            <a id="pin2" class=" block w-[80%] lg:hidden relative mx-auto bg-black px-3 py-3 rounded-xl text-center text-white font-medium hover:bg-interbrasGreen-500 transition-all hover:-translate-y-2 hover:scale-105" href={urlAire}>
+                {
+                    t_global("home.ac.seeAc")
+                }
             </a>
         </div>
         
     </div>
 
-</div>
+</section>
 
 <style>
 

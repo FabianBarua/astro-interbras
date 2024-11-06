@@ -18,74 +18,37 @@ const langs = [
   },
 ];
 
-const langSelected =
-  langs.find((lang) => lang.id === currentLocale) || langs[0];
+const langSelected = langs.find((lang) => lang.id === currentLocale) || langs[0];
+
 ---
 
-<div class="">
-  <button
-    id="selected"
-    data-lang={langSelected.id}
-    class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
+<div class="relative w-full">
+  <input type="checkbox" id="lang-toggle" class="hidden peer" />
+  <label
+    for="lang-toggle"
+    class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2 cursor-pointer"
   >
-    <img loading="lazy"  width="20px" height="20px" src={langSelected.flag} alt={langSelected.alt} />
+    <img loading="lazy" width="20px" height="20px" src={langSelected.flag} alt={langSelected.alt} />
     {langSelected.slug}
-  </button>
-</div>
+  </label>
 
-<div
-  class="absolute gap-1 top-[120%] text-white hidden"
-  style="opacity: 1; will-change: auto; transform: none;"
-  id="submenu"
->
-  {
-    langs.map((lang) => {
-      if (lang.id === currentLocale) return;
+  <div
+    class="absolute gap-1 top-[120%] text-white hidden peer-checked:flex flex-col w-full"
+    style="opacity: 1; will-change: auto; transform: none;"
+  >
+    {langs.map((lang) => {
+      if (lang.id === currentLocale ) return null;
 
       return (
-        <div class="">
-          <button
-            id={`select-${lang.id}`}
-            class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
+          <a
+            data-astro-reload
+            href={`/${lang.id === "es" ? "" : lang.id}`}
+            class="text-white bg-interbrasGreen-900 w-full rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
           >
-            <img loading="lazy"  src={lang.flag} alt={lang.alt} />
+            <img loading="eager"  class=" pointer-events-none " src={lang.flag} alt={lang.alt} />
             {lang.slug}
-          </button>
-        </div>
+          </a>
       );
-    })
-  }
+    })}
+  </div>
 </div>
-
-<script>
-  const init = () => {
-    function getRoute(url: string) {
-      const route = new URL(url).pathname;
-      const segments = route
-        .split("/")
-        .filter((segment) => segment && !["es", "pt"].includes(segment));
-
-      const cleanedSegments = segments.filter((segment) => segment !== "");
-
-      return "/" + cleanedSegments.join("/");
-    }
-
-    const selected = document.getElementById("selected");
-    const submenu = document.getElementById("submenu");
-
-    if (!selected || !submenu) return;
-
-    selected.addEventListener("click", () => {
-      submenu.classList.toggle("hidden");
-    });
-
-    submenu.addEventListener("click", (e) => {
-      const lang = (e.target as HTMLElement)
-        .closest("button")
-        ?.id.split("-")[1];
-      window.location.href = `${lang === "es" ? "" : `/${lang}`}${getRoute(window.location.href)}`;
-    });
-  };
-
-  init();
-</script>

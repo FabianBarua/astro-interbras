@@ -1,113 +1,23 @@
 ---
-import { ProductsAnimated2 } from "@/components/react/ProductsAnimated";
-
-import AirFryerSection from "../AirFryerSection.astro";
-import MixSection from "../MixSection.astro";
-import CocinasSection from "../CocinasSection.astro";
-import HervidorasAndCafeterasSection from "../HervidorasAndCafeterasSection.astro";
-import OtherProductsSection from "../OtherProductsSection.astro";
-import { AnimatedSection } from "../react/AnimatedSection";
-
-const { currentLocale } = Astro;
+import AiresSection from "../home/AiresSection.astro";
+import ScootersSection from "../home/ScootersSection.astro";
+import TvsSection from "../home/TvsSection.astro";
+import SomeProducts from "../SomeProducts.astro";
+import Faq from "../home/Faq.astro";
+import ScrolledProducts from "../home/ScrolledProducts.astro";
+import ProductsCards from "../ProductsCards.astro";
 
 ---
+<ProductsCards /> 
 
-<section class=" sm:h-[450px] h-auto my-12 sm:my-24 flex justify-center px-5 sm:px-0  gap-3 md:gap-4 lg:gap-6 xl:gap-8  ">
-  <ProductsAnimated2 client:only="react" lang={currentLocale || ""} />
-</section>
+<TvsSection />
 
-<div class=" md:h-auto  h-[23rem]  ">
-  <AnimatedSection
-    client:only="react"
-    lang={currentLocale || "es"}
-  />
-</div>
+<ScootersSection />
 
+<AiresSection />
 
-<div class=" h-[25rem] md:h-[30rem] ">
-  <AirFryerSection />
-</div>
+<ScrolledProducts />
 
+<SomeProducts />
 
-<div class=" h-[25rem] md:h-[30rem] ">
-  <MixSection />
-</div>
-
-<div class=" lg:h-[30rem] ">
-  <CocinasSection />
-</div>
-
-<div class=" lg:h-[30rem] sm:h-auto ">
-  <HervidorasAndCafeterasSection />
-</div>
-
-<div class=" flex gap-4 flex-col ">
-  <OtherProductsSection />
-</div>
-
-<style>
-
-
-  div{
-    width: 90%;
-    margin: 1.5rem auto 0 auto;
-  }
-
-  @media (min-width: 640px) {
-    div{
-        width: 80%;
-    }
-}
-</style>
-
-
-
-<style is:global>
-  /* Gaps personalizados para dispositivos móviles */
-  .custom-gap-0 {
-    gap: 10px;
-  }
-  .custom-gap-1 {
-    gap: 10px;
-  }
-  .custom-gap-2 {
-    gap: 10px;
-  }
-  .custom-gap-3 {
-    gap: 20px;
-  }
-  .custom-gap-4 {
-    gap: 10px;
-  }
-  .custom-gap-5 {
-    gap: 10px;
-  }
-  .custom-gap-6 {
-    gap: 10px;
-  }
-
-  /* Media Query para pantallas pequeñas (sm) */
-  @media (min-width: 640px) {
-    .custom-gap-0 {
-      gap: 20px;
-    }
-    .custom-gap-1 {
-      gap: 20px;
-    }
-    .custom-gap-2 {
-      gap: 30px;
-    }
-    .custom-gap-3 {
-      gap: 20px;
-    }
-    .custom-gap-4 {
-      gap: 30px;
-    }
-    .custom-gap-5 {
-      gap: 20px;
-    }
-    .custom-gap-6 {
-      gap: 20px;
-    }
-  }
-</style>
+<Faq />

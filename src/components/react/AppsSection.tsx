@@ -1,6 +1,6 @@
 import { getI18NGlobal, getValueFromKey } from '@/i18n'
 import { ScooterAndroidUrl, ScooterIosUrl } from '@/shared/constants'
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger, useModal } from '@/components/react/AnimatedModal'
 import { AvatarCircles } from '@/components/react/AvatarCircles'
 import { MagicCard } from '@/components/react/MagicCard'

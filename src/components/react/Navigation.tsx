@@ -8,6 +8,7 @@ import { QuienesSomos } from '@/components/react/QuienesSomos'
 
 import { getI18NGlobal, getValueFromKey } from '@/i18n'
 import { getLangFromUrl } from '@/i18n/utils'
+import type { Urls } from '@/shared/utils'
 
 const variants = {
   open: {
@@ -21,6 +22,7 @@ const variants = {
 interface NavigationProps {
   isOpen: boolean
   toggleOpen: Cycle
+  urls: Urls[]
 }
 
 const variantsItems = {
@@ -40,7 +42,7 @@ const variantsItems = {
   }
 }
 
-export const Navigation: React.FC<NavigationProps> = ({ isOpen, toggleOpen }) => {
+export const Navigation: React.FC<NavigationProps> = ({ isOpen, toggleOpen, urls }) => {
   const [selected, setSelected] = React.useState<string | null>(itemIds[0].id)
 
   const lang = getLangFromUrl(
@@ -106,7 +108,10 @@ export const Navigation: React.FC<NavigationProps> = ({ isOpen, toggleOpen }) =>
                   >
 
                     {
-                      (i.Component != null) && <i.Component toggle={toggleOpen} />
+                      (i.Component != null) && 
+                      <i.Component toggle={toggleOpen}
+                        urls={urls}
+                       />
 }
 
                   </motion.div>
@@ -131,9 +136,10 @@ const itemIds = [
   {
     id: 'headerSectionMobile2',
     title: 'header.products.title',
-    Component: ({ toggle }: { toggle: Cycle }) => {
+    Component: ({ toggle, urls }: { toggle: Cycle, urls: Urls[] }) => {
       return (
         <ProductosHeader
+          urls={urls}
           clicked={
             () => {
               toggle()

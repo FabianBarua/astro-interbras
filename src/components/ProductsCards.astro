@@ -1,14 +1,12 @@
 ---
-import type { ProductItemHomeAstro } from "@/shared/types";
+import { getUrlCategoryById } from "@/shared/utils";
 import SquareProductCard from "./home/SquareProductCard.astro";
-
-// todo : colocar bien las url con los lenguajes y colocar productos variados
 
 const getDelay = (
   i: number,
   j: number,
   n: number,
-  productRowN: number,
+  productRowN: number
 ): number => {
   const mitad = Math.floor(n / 2) + 1;
   const mitadRow = Math.floor(productRowN / 2) + 1;
@@ -18,399 +16,343 @@ const getDelay = (
   return (i - mitad) * 0.2 + (mitadRow === j ? 0 : mitadRow > j ? 0.1 : 0.2);
 };
 
-const products: ProductItemHomeAstro[][] = [
+const { currentLocale } = Astro;
+const initialProducts = [
   [
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/5.webp',
+      name: "scooters",
+      url: "/productos/tvs",
+      photo: "/newVersion/hero/7.png",
       isMagic: false,
-      bgColor: 1
+      bgColor: 2,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "mixteras",
+      url: "/productos/mixteras",
+      photo: "/newVersion/hero/43.png",
       isMagic: false,
-      bgColor: 0
+      bgColor: 1,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "bebederos",
+      url: "/productos/beauty",
+      photo: "/newVersion/hero/28.png",
       isMagic: false,
-      bgColor: 2
-    }
+      bgColor: 1,
+    },
   ],
   [
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/5.webp',
+      name: "beauty",
+      url: "/productos/beauty",
+      photo: "/newVersion/hero/26.png",
       isMagic: false,
-      bgColor: 2
+      bgColor: 2,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "planchas",
+      url: "/productos/planchas",
+      photo: "/newVersion/hero/38.png",
       isMagic: false,
-      bgColor: 3
+      bgColor: 3,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "tvs",
+      url: "/productos/tvs",
+      photo: "/newVersion/hero/5.png",
       isMagic: false,
-      bgColor: 2
-    }
+      bgColor: 3,
+    },
   ],
   [
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/5.webp',
+      name: "arroceras",
+      url: "/productos/arroceras",
+      photo: "/newVersion/hero/21.png",
       isMagic: false,
-      bgColor: 2
+      bgColor: 2,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "scooters",
+      url: "/productos/scooters",
+      photo: "/newVersion/hero/10.png",
       isMagic: false,
-      bgColor: 2
+      bgColor: 0,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "hervidoras",
+      url: "/productos/hervidoras",
+      photo: "/newVersion/hero/34.png",
       isMagic: false,
-      bgColor: 0
-    }
+      bgColor: 0,
+    },
   ],
   [
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/5.webp',
+      name: "aires",
+      url: "/productos/scooters",
+      photo: "/newVersion/hero/11.png",
       isMagic: false,
-      bgColor: 0
+      bgColor: 0,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "arroceras",
+      url: "/productos/airfryer",
+      photo: "/newVersion/hero/20.png",
       isMagic: false,
-      bgColor: 0
+      bgColor: 1,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "hoverboards",
+      url: "/productos/hoverboards",
+      photo: "/newVersion/hero/15.png",
       isMagic: false,
-      bgColor: 1
-    }
+      bgColor: 1,
+    },
   ],
   [
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/5.webp',
+      name: "mixteras",
+      url: "/productos/mixteras",
+      photo: "/newVersion/hero/44.png",
       isMagic: false,
-      bgColor: 2
+      bgColor: 2,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "cocinas",
+      url: "/productos/cocinas",
+      photo: "/newVersion/hero/31.png",
       isMagic: false,
-      bgColor: 3
+      bgColor: 0,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/13.webp',
+      name: "licuadoras",
+      url: "/productos/planchas",
+      photo: "/newVersion/hero/39.png",
       isMagic: false,
-      bgColor: 1
-    }
+      bgColor: 1,
+    },
   ],
+  
   [
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/6.webp',
+      name: "hoverboards",
+      url: "/productos/aires",
+      photo: "/newVersion/hero/12.png",
       isMagic: false,
-      bgColor: 2
+      bgColor: 1,
     },
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/3.webp',
-      isMagic: false,
-      bgColor: 1
-    },
-    {
-      name: 'arroceras',
-      url: '/productos/arroceras',
-      photo: '/home/11.webp',
-      isMagic: false,
-      bgColor: 2
-    }
-  ],
-  [
-    {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/2.webp',
-      isMagic: false,
-      bgColor: 1
-    },
-    {
-      name: 'arroceras',
-      url: '/productos/arroceras',
-      photo: '/home/10.webp',
-      isMagic: false,
-      bgColor: 1
-    },
-    {
-      name: 'scooters',
-      url: '/productos/scooters',
-      photo: '/home/14.webp',
-      isMagic: false,
-      bgColor: 2
-    }
-  ],
-  [
-    {
-      name: 'hervidoras',
-      url: '/productos/aires',
-      photo: '/home/15.webp',
-      isMagic: false,
-      bgColor: 0
-    },
-    {
-      name: 'Tu marca\nfavorita',
-      url: '/',
-      photo: '/home/logo.webp',
+      name: "licuadoras",
+      url: "/productos/licuadoras",
+      photo: "/logo.svg",
       isMagic: true,
-      bgColor: 1
+      bgColor: 1,
     },
     {
-      name: 'airfryer',
-      url: '/productos/airfryer',
-      photo: '/home/4.webp',
+      name: "planchas",
+      url: "/productos/hervidoras",
+      photo: "/newVersion/hero/36.png",
       isMagic: false,
-      bgColor: 0
-    }
+      bgColor: 3,
+    },
   ],
   [
     {
-      name: 'licuadora',
-      url: '/productos/licuadoras',
-      photo: '/home/9.webp',
+      name: "scooters",
+      url: "/productos/scooters",
+      photo: "/newVersion/hero/8.png",
       isMagic: false,
-      bgColor: 3
+      bgColor: 2,
     },
     {
-      name: 'hervidoras',
-      url: '/productos/hervidoras',
-      photo: '/home/12.webp',
+      name: "batidoras",
+      url: "/productos/batidoras",
+      photo: "/newVersion/hero/24.png",
       isMagic: false,
-      bgColor: 2
+      bgColor: 0,
     },
     {
-      name: 'beauty',
-      url: '/productos/beauty',
-      photo: '/home/20.webp',
+      name: "cocinas",
+      url: "/productos/cafeteras",
+      photo: "/newVersion/hero/30.png",
       isMagic: false,
-      bgColor: 0
-    }
+      bgColor: 3,
+    },
   ],
   [
     {
-      name: 'beauty',
-      url: '/productos/beauty',
-      photo: '/home/17.webp',
+      name: "tvs",
+      url: "/productos/tvs",
+      photo: "/newVersion/hero/6.png",
       isMagic: false,
-      bgColor: 1
+      bgColor: 2,
     },
     {
-      name: 'planchas',
-      url: '/productos/planchas',
-      photo: '/home/19.webp',
+      name: "tvs",
+      url: "/productos/tvs",
+      photo: "/newVersion/hero/3.png",
       isMagic: false,
-      bgColor: 3
+      bgColor: 2,
     },
     {
-      name: 'cocinas',
-      url: '/productos/cocinas',
-      photo: '/home/18.webp',
+      name: "mixteras",
+      url: "/productos/mixteras",
+      photo: "/newVersion/hero/45.png",
       isMagic: false,
-      bgColor: 3
-    }
+      bgColor: 1,
+    },
   ],
   [
     {
-      name: 'licuadora',
-      url: '/productos/licuadoras',
-      photo: '/home/7.webp',
+      name: "hoverboards",
+      url: "/productos/hoverboards",
+      photo: "/newVersion/hero/14.png",
       isMagic: false,
-      bgColor: 0
+      bgColor: 3,
     },
     {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
+      name: "tvs",
+      url: "/productos/tvs",
+      photo: "/newVersion/hero/2.png",
       isMagic: false,
-      bgColor: 1
+      bgColor: 0,
     },
     {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
+      name: "tvs",
+      url: "/productos/tvs",
+      photo: "/newVersion/hero/1.png",
       isMagic: false,
-      bgColor: 2
-    }
+      bgColor: 1,
+    },
   ],
   [
     {
-      name: 'licuadora',
-      url: '/productos/licuadoras',
-      photo: '/home/7.webp',
+      name: "licuadoras",
+      url: "/productos/licuadoras",
+      photo: "/newVersion/hero/40.png",
       isMagic: false,
-      bgColor: 0
+      bgColor: 1,
     },
     {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
+      name: "beauty",
+      url: "/productos/batidoras",
+      photo: "/newVersion/hero/25.png",
       isMagic: false,
-      bgColor: 3
+      bgColor: 3,
     },
     {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
+      name: "airfryer",
+      url: "/productos/airfryer",
+      photo: "/newVersion/hero/18.png",
       isMagic: false,
-      bgColor: 3
-    }
+      bgColor: 2,
+    },
   ],
   [
     {
-      name: 'licuadora',
-      url: '/productos/licuadoras',
-      photo: '/home/7.webp',
+      name: "hoverboards",
+      url: "/productos/hoverboards",
+      photo: "/newVersion/hero/13.png",
       isMagic: false,
-      bgColor: 2
+      bgColor: 2,
     },
     {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
+      name: "scooters",
+      url: "/productos/scooters",
+      photo: "/newVersion/hero/9.png",
       isMagic: false,
-      bgColor: 3
+      bgColor: 0,
     },
     {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
+      name: "cafeteras",
+      url: "/productos/bebederos",
+      photo: "/newVersion/hero/29.png",
       isMagic: false,
-      bgColor: 1
-    }
+      bgColor: 3,
+    },
   ],
-  [
-    {
-      name: 'licuadora',
-      url: '/productos/licuadoras',
-      photo: '/home/7.webp',
-      isMagic: false,
-      bgColor: 1
-    },
-    {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
-      isMagic: false,
-      bgColor: 1
-    },
-    {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
-      isMagic: false,
-      bgColor: 1
-    }
-  ],
-  [
-    {
-      name: 'licuadora',
-      url: '/productos/licuadoras',
-      photo: '/home/7.webp',
-      isMagic: false,
-      bgColor: 1
-    },
-    {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
-      isMagic: false,
-      bgColor: 2
-    },
-    {
-      name: 'airfryer',
-      url: '/productos/tvs',
-      photo: '/home/16.webp',
-      isMagic: false,
-      bgColor: 1
-    }
-  ]
-]
-
-const allBgColors = [
-  "bg-interbrasGreen-700",
-  "bg-interbrasGreen-500",
-  "bg-interbrasGreen-500",
-  "bg-interbrasGreen-700",
 ];
 
+const productsFINAL = initialProducts.map((productColumn) => {
+  return productColumn.map((productRow) => {
+    return {
+      name: productRow.name,
+      url: getUrlCategoryById({
+        id: productRow.name,
+        currentLocale: currentLocale || "es",
+      }),
+      photo: productRow.photo,
+      isMagic: productRow.isMagic,
+      bgColor: productRow.bgColor,
+    };
+  });
+});
 
+const allBgColors = [
+  "bg-interbrasGreen-500",
+  "bg-interbrasGreen-500",
+  "bg-interbrasGreen-500",
+  "bg-interbrasGreen-500",
+];
 ---
 
-<div id="ProductColumns" class="flex gap-3 justify-center items-center  w-dvw overflow-y-visible overflow-x-clip h-min  mt-[4rem] ">
+<section class="flex w-dvw justify-center overflow-hidden">
+  <div
+    id="ProductColumns"
+    class="double-mask flex gap-3 justify-center items-center w-min overflow-y-visible h-min mt-[3rem]"
+  >
     {
-        products.map((productColumn, ColumnIndex) => (
-          <div 
-            id="ProductRows"
-            class=" flex flex-col gap-2 shrink-0 ">
-            {productColumn.map((productRow, RowIndex) => (
-              <SquareProductCard
-                href={productRow.url}
-                src={productRow.photo}
-                alt={productRow.name}
-                isMagic={productRow.isMagic}
-                delay = {
-                    getDelay(
-                      ColumnIndex + 1,
-                      RowIndex + 1,
-                      products.length,
-                      productColumn.length,
-                    )
-                }
-                bgColor = {
-                    allBgColors[productRow.bgColor]
-                }
-              >
-              </SquareProductCard>
-            ))}
-          </div>
-        ))
+      productsFINAL.map((productColumn, ColumnIndex) => (
+        <div
+          id="ProductRows"
+          class={`
+             flex flex-col gap-2 shrink-0  
+            
+            `}
+        >
+          {productColumn.map((productRow, RowIndex) => (
+            <SquareProductCard
+              href={productRow.url}
+              src={productRow.photo}
+              alt={productRow.name}
+              isMagic={productRow.isMagic}
+              delay={getDelay(
+                ColumnIndex + 1,
+                RowIndex + 1,
+                productsFINAL.length,
+                productColumn.length
+              )}
+              bgColor={allBgColors[productRow.bgColor]}
+            ></SquareProductCard>
+          ))}
+        </div>
+      ))
     }
-</div>
-
+  </div>
+</section>
 
 <style is:global>
+  .double-mask2 {
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    animation: fade-in 1s ease-in-out 0.5s forwards;
+  }
 
-  #product-card{
+  @media screen and (min-width: 2000px) {
+    .double-mask2 {
+      mask-image: linear-gradient(
+        to left,
+        transparent 0%,
+        black 20%,
+        black 80%,
+        transparent 100%
+      );
+    }
+  }
+
+  #product-card {
     opacity: 0;
   }
 
@@ -419,5 +361,4 @@ const allBgColors = [
       opacity: 1;
     }
   }
-
 </style>
