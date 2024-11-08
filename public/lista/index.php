@@ -1,6 +1,6 @@
 <?php
 // Nombre del archivo
-$filename = 'lista.txt';
+$filename = '../lista.txt';
 
 // Verificar si el archivo existe
 if (file_exists($filename)) {
