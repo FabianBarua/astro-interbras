@@ -207,59 +207,54 @@ const t = (key: string) =>
 </section>
 
 <script>
-  const intiModel = () => {
-    const containerShadowOnScroll = document.getElementById(
-      "containerShadowOnScroll"
-    );
-    const shadowTop = document.getElementById("shadowTop");
-    const shadowBottom = document.getElementById("shadowBottom");
+  document.addEventListener("astro:page-load", 
+    ()=>{
+      const containerShadowOnScroll = document.getElementById(
+          "containerShadowOnScroll"
+        );
+        const shadowTop = document.getElementById("shadowTop");
+        const shadowBottom = document.getElementById("shadowBottom");
 
-    if (!containerShadowOnScroll || !shadowTop || !shadowBottom) return;
+        if (!containerShadowOnScroll || !shadowTop || !shadowBottom) return;
 
-    containerShadowOnScroll.addEventListener("scroll", () => {
-      const { scrollTop, scrollHeight, clientHeight } = containerShadowOnScroll;
+        containerShadowOnScroll.addEventListener("scroll", () => {
+          const { scrollTop, scrollHeight, clientHeight } = containerShadowOnScroll;
 
-      if (scrollTop > 0) {
-        shadowTop.style.height = "50px";
-      } else {
-        shadowTop.style.height = "0px";
-      }
+          if (scrollTop > 0) {
+            shadowTop.style.height = "50px";
+          } else {
+            shadowTop.style.height = "0px";
+          }
 
-      if (scrollHeight - clientHeight - 10 <= scrollTop) {
-        shadowBottom.style.height = "0px";
-      } else {
-        shadowBottom.style.height = "50px";
-      }
+          if (scrollHeight - clientHeight - 10 <= scrollTop) {
+            shadowBottom.style.height = "0px";
+          } else {
+            shadowBottom.style.height = "50px";
+          }
+        });
+    }
 
-      console.log(scrollTop, scrollHeight, clientHeight);
-    });
-  };
-
-  document.addEventListener("astro:page-load", intiModel);
+  );
 </script>
 
-<script is:inline type="module">
-  import PhotoSwipeLightbox from "https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js";
+<script>
 
-  const initPhotos = () => {
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+
+  document.addEventListener("astro:page-load", ()=>{
     const lightbox = new PhotoSwipeLightbox({
       gallery: "#photos",
       children: "a",
-      pswpModule: () => import("https://unpkg.com/photoswipe"),
-    });
-
+      pswpModule: () => import('photoswipe')
+      });
     lightbox.init();
-  };
-
-  document.addEventListener("astro:page-load", initPhotos);
+  });
 </script>
 
-<style>
-  @import url("https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css");
-</style>
 
 <script is:inline>
-  const initPhoto = () => {
+  document.addEventListener("astro:page-load", ()=>{
     const principalPhoto = document.getElementById("princialPhoto");
     const photos = document.getElementById("photos");
 
@@ -274,7 +269,5 @@ const t = (key: string) =>
         }
       });
     }
-  };
-
-  document.addEventListener("astro:page-load", initPhoto);
+  });
 </script>
