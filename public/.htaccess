@@ -1,12 +1,4 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # Asegurar que index.html sea el archivo predeterminado en directorios
-  DirectoryIndex index.html
-</IfModule>
-
-# Evitar el caché de lista.txt
+# Prevent caching of lista.txt
 <Files "lista.txt">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
