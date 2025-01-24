@@ -14,6 +14,7 @@ export interface Category {
 
 export interface Children {
   id: string;
+  listId?: string[];
   name: string;
   popular: boolean;
   info: Info;
@@ -31,6 +32,7 @@ export interface Variant {
   name: string;
   color: string;
   photos: string[];
+  stockAvailable?: boolean | string[]
 }
 
 export const data: Root = {

@@ -8,6 +8,7 @@ export const hoverboards: Category = {
   children: [
     {
       id: "hoverboards1",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards1.name",
       popular: false,
       info: {
@@ -20,6 +21,7 @@ export const hoverboards: Category = {
           id: "hoverboards1",
           name: "Hoverboard",
           color: "colors.black",
+          stockAvailable: true,
           photos: [
             "/productos/hoverboards/hoverboards1-1.webp",
             "/productos/hoverboards/hoverboards1-2.webp",
@@ -30,6 +32,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards2",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards2.name",
       popular: false,
       info: {
@@ -42,6 +45,7 @@ export const hoverboards: Category = {
           id: "hoverboards2",
           name: "Hoverboard",
           color: "colors.grafite",
+          stockAvailable: true,
           photos: [
             "/productos/hoverboards/hoverboards2-1.webp",
             "/productos/hoverboards/hoverboards2-2.webp",
@@ -52,6 +56,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards3",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards3.name",
       popular: false,
       info: {
@@ -61,6 +66,7 @@ export const hoverboards: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "hoverboards3",
           name: "Hoverboard",
           color: "colors.blueFire",
@@ -74,6 +80,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards4",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards4.name",
       popular: false,
       info: {
@@ -83,6 +90,7 @@ export const hoverboards: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "hoverboards4",
           name: "Hoverboard",
           color: "colors.redFire",
@@ -96,6 +104,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards5",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards5.name",
       popular: false,
       info: {
@@ -105,6 +114,7 @@ export const hoverboards: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "hoverboards5",
           name: "Hoverboard",
           color: "colors.hiphop",
@@ -118,6 +128,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards6",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards6.name",
       popular: false,
       info: {
@@ -127,6 +138,7 @@ export const hoverboards: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "hoverboards6",
           name: "Hoverboard",
           color: "colors.pinkCamouflage",
@@ -140,6 +152,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards7",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards7.name",
       popular: false,
       info: {
@@ -149,6 +162,7 @@ export const hoverboards: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "hoverboards7",
           name: "Hoverboard",
           color: "colors.purple",
@@ -162,6 +176,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards8",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards8.name",
       popular: false,
       info: {
@@ -171,6 +186,7 @@ export const hoverboards: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "hoverboards8",
           name: "Hoverboard",
           color: "colors.blueCamouflage",
@@ -184,6 +200,7 @@ export const hoverboards: Category = {
     },
     {
       id: "hoverboards9",
+      listId: ["000017"],
       name: "hoverboards.children.hoverboards9.name",
       popular: false,
       info: {
@@ -193,6 +210,7 @@ export const hoverboards: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "hoverboards9",
           name: "Hoverboard",
           color: "colors.rosePink",
@@ -222,14 +240,17 @@ export const airfryer: Category = {
         included: null,
         specs: "airfryer.children.s10.info.specs",
       },
+      listId: ["000018", "000019"],
       variants: [
         {
+          stockAvailable: ["000018"],
           id: "s10-1",
           name: "Airfryer S10 - 1",
           color: "colors.black",
           photos: ["/productos/airfryer/s10-v1-1.webp"],
         },
         {
+          stockAvailable: ["000018", "000019"],
           id: "s10-2",
           name: "Airfryer S10 - 2",
           color: "colors.white",
@@ -240,6 +261,7 @@ export const airfryer: Category = {
     {
       id: "s20",
       name: "airfryer.children.s20.name",
+      listId: ["000020", "000021", "000022", "000023"],
       popular: false,
       info: {
         review: "airfryer.children.s20.info.review",
@@ -248,12 +270,14 @@ export const airfryer: Category = {
       },
       variants: [
         {
+          stockAvailable: ["000021",  "000023"],
           id: "s20-1",
           name: "Airfryer S20 - 1",
           color: "colors.black",
           photos: ["/productos/airfryer/s20-v1-1.webp"],
         },
         {
+          stockAvailable: ["000020",  "000022"],
           id: "s20-2",
           name: "Airfryer S20 - 2",
           color: "colors.white",
@@ -263,6 +287,7 @@ export const airfryer: Category = {
     },
     {
       id: "s30",
+      listId: ["000024", "000025"],
       name: "airfryer.children.s30.name",
       popular: false,
       info: {
@@ -273,6 +298,7 @@ export const airfryer: Category = {
       variants: [
         {
           id: "s30-1",
+          stockAvailable: true,
           name: "Airfryer S30 - 1",
           color: "colors.inox",
           photos: ["/productos/airfryer/s30-v1-1.webp"],
@@ -281,6 +307,7 @@ export const airfryer: Category = {
     },
     {
       id: "s40",
+      listId: ["000026", "000027"],
       name: "airfryer.children.s40.name",
       popular: false,
       info: {
@@ -290,6 +317,7 @@ export const airfryer: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "s40-1",
           name: "Airfryer S40 - 1",
           color: "colors.black",
@@ -326,6 +354,7 @@ export const scooters: Category = {
     },
     {
       id: "10.5pro",
+      listId: ["000014"],
       name: "scooters.children.10pro.name",
       popular: false,
       info: {
@@ -335,6 +364,7 @@ export const scooters: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "10.5pro-1",
           name: "Scooter 10.5 Pro - 1",
           color: "colors.black",
@@ -344,6 +374,7 @@ export const scooters: Category = {
     },
     {
       id: "cross",
+      listId: ["000015"],
       name: "scooters.children.cross.name",
       popular: false,
       info: {
@@ -353,6 +384,7 @@ export const scooters: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "cross-1",
           name: "Scooter Cross - 1",
           color: "colors.black",
@@ -389,6 +421,7 @@ export const aires: Category = {
   children: [
     {
       id: "itb-12000iv",
+      listId: ["000009"],
       name: "aires.children.1.name",
       popular: false,
       info: {
@@ -398,6 +431,7 @@ export const aires: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "itb-12000iv-1",
           name: "ITB 12000IV - 1",
           color: "colors.white",
@@ -407,6 +441,7 @@ export const aires: Category = {
     },
     {
       id: "itp-12000iv",
+      listId: ["000011"],
       name: "aires.children.2.name",
       popular: false,
       info: {
@@ -416,6 +451,7 @@ export const aires: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "itp-12000iv-1",
           name: "ITP 12000IV - 1",
           color: "colors.white",
@@ -443,6 +479,7 @@ export const aires: Category = {
     },
     {
       id: "itp-12000of",
+      listId: ["000010"],
       name: "aires.children.4.name",
       popular: false,
       info: {
@@ -452,6 +489,7 @@ export const aires: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "itp-12000iv-1",
           name: "ITP 12000OF - 1",
           color: "colors.white",
@@ -461,6 +499,7 @@ export const aires: Category = {
     },
     {
       id: "itb-18000iv",
+      listId: ["000012"],
       name: "aires.children.5.name",
       popular: false,
       info: {
@@ -470,6 +509,7 @@ export const aires: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "itb-18000iv-1",
           name: "ITP 12000OF - 1",
           color: "colors.white",
@@ -479,6 +519,7 @@ export const aires: Category = {
     },
     {
       id: "itb-24000iv",
+      listId: ["000013"],
       name: "aires.children.6.name",
       popular: false,
       info: {
@@ -488,6 +529,7 @@ export const aires: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "itb-24000iv-1",
           name: "ITB 24000IV - 1",
           color: "colors.white",
@@ -506,6 +548,7 @@ export const tvs: Category = {
   children: [
     {
       id: "IN3200TV",
+      listId: ["000001"],
       name: "tvs.children.1.name",
       popular: false,
       info: {
@@ -515,6 +558,7 @@ export const tvs: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "IN3200TV-1",
           name: "IN3200TV - 1",
           color: "colors.black",
@@ -528,6 +572,7 @@ export const tvs: Category = {
     },
     {
       id: "IN4300TV",
+      listId: ["000002"],
       name: "tvs.children.2.name",
       popular: false,
       info: {
@@ -537,6 +582,7 @@ export const tvs: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "IN4300TV-1",
           name: "IN4300TV - 1",
           color: "colors.black",
@@ -551,6 +597,7 @@ export const tvs: Category = {
     },
     {
       id: "IN5000TV",
+      listId: ["000003"],
       name: "tvs.children.3.name",
       popular: false,
       info: {
@@ -560,6 +607,7 @@ export const tvs: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "IN5000TV-1",
           name: "IN5000TV - 1",
           color: "colors.black",
@@ -574,6 +622,7 @@ export const tvs: Category = {
     },
     {
       id: "IN5500TV",
+      listId: ["000004"],
       name: "tvs.children.4.name",
       popular: false,
       info: {
@@ -583,6 +632,7 @@ export const tvs: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "IN5500TV-1",
           name: "IN5500TV - 1",
           color: "colors.black",
@@ -597,6 +647,7 @@ export const tvs: Category = {
     },
     {
       id: "IN6500TV",
+      listId: ["000005"],
       name: "tvs.children.5.name",
       popular: false,
       info: {
@@ -606,6 +657,7 @@ export const tvs: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "IN6500TV-1",
           name: "IN6500TV - 1",
           color: "colors.black",
@@ -620,6 +672,7 @@ export const tvs: Category = {
     },
     {
       id: "IN7500TV",
+      listId: ["000006"],
       name: "tvs.children.6.name",
       popular: false,
       info: {
@@ -629,6 +682,7 @@ export const tvs: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "IN7500TV-1",
           name: "IN7500TV - 1",
           color: "colors.black",
@@ -643,6 +697,7 @@ export const tvs: Category = {
     },
     {
       id: "IN8500TV",
+      listId: ["000007"],
       name: "tvs.children.7.name",
       popular: false,
       info: {
@@ -652,6 +707,7 @@ export const tvs: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "IN8500TV-1",
           name: "IN8500TV - 1",
           color: "colors.black",
@@ -675,6 +731,7 @@ export const mixteras: Category = {
   children: [
     {
       id: "G10",
+      listId : ["000069", "000070"],
       name: "mixteras.children.G10.name",
       popular: false,
       info: {
@@ -684,6 +741,7 @@ export const mixteras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "G10",
           name: "G10",
           color: "colors.black",
@@ -694,6 +752,7 @@ export const mixteras: Category = {
     {
       id: "G20",
       name: "mixteras.children.G20.name",
+      listId: ["000071", "000072"],
       popular: false,
       info: {
         review: "mixteras.children.G20.info.review",
@@ -702,6 +761,7 @@ export const mixteras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "G20",
           name: "G20",
           color: "colors.black",
@@ -710,6 +770,7 @@ export const mixteras: Category = {
       ],
     },
     {
+      listId: ["000073", "000074"],
       id: "G30",
       name: "mixteras.children.G30.name",
       popular: false,
@@ -720,6 +781,7 @@ export const mixteras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "G30",
           name: "G30",
           color: "colors.black",
@@ -729,6 +791,7 @@ export const mixteras: Category = {
     },
     {
       id: "G40",
+      listId: ["000075", "000076"],
       name: "mixteras.children.G40.name",
       popular: false,
       info: {
@@ -738,6 +801,7 @@ export const mixteras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "G40",
           name: "G40",
           color: "colors.black",
@@ -747,6 +811,7 @@ export const mixteras: Category = {
     },
     {
       id: "G50",
+      listId: ["000077", "000078"],
       name: "mixteras.children.G50.name",
       popular: false,
       info: {
@@ -756,6 +821,7 @@ export const mixteras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "G50",
           name: "G50",
           color: "colors.black",
@@ -774,6 +840,7 @@ export const cocinas: Category = {
   children: [
     {
       id: "C10",
+      listId: ["000034"],
       name: "cocinas.children.C10.name",
       popular: false,
       info: {
@@ -783,6 +850,7 @@ export const cocinas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "C10",
           name: "C10",
           color: "colors.white",
@@ -792,6 +860,7 @@ export const cocinas: Category = {
     },
     {
       id: "C20",
+      listId: ["000035"],
       name: "cocinas.children.C20.name",
       popular: false,
       info: {
@@ -801,6 +870,7 @@ export const cocinas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "C20",
           name: "C20",
           color: "colors.black",
@@ -819,6 +889,7 @@ export const cocinas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "C30",
           name: "C30",
           color: "colors.black",
@@ -837,6 +908,7 @@ export const hervidoras: Category = {
   children: [
     {
       id: "T10",
+      listId : ["000052", "000053"],
       name: "hervidoras.children.T10.name",
       popular: false,
       info: {
@@ -846,6 +918,7 @@ export const hervidoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "T10",
           name: "T10",
           color: "Inox",
@@ -855,6 +928,7 @@ export const hervidoras: Category = {
     },
     {
       id: "T20",
+      listId: ["000054", "000055"],
       name: "hervidoras.children.T20.name",
       popular: false,
       info: {
@@ -864,6 +938,7 @@ export const hervidoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "T20",
           name: "T20",
           color: "colors.white",
@@ -873,6 +948,7 @@ export const hervidoras: Category = {
     },
     {
       id: "T30",
+      listId: ["000056", "000057"],
       name: "hervidoras.children.T30.name",
       popular: false,
       info: {
@@ -882,6 +958,7 @@ export const hervidoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "T30",
           name: "T30",
           color: "colors.black",
@@ -900,6 +977,7 @@ export const cafeteras: Category = {
   children: [
     {
       id: "E10",
+      listId: ["000037", "000038"],
       name: "cafeteras.children.E10.name",
       popular: false,
       info: {
@@ -909,6 +987,7 @@ export const cafeteras: Category = {
       },
       variants: [
         {
+          stockAvailable: ["000037", "000038"],
           id: "E10",
           name: "E10",
           color: "colors.inox",
@@ -927,6 +1006,7 @@ export const planchas: Category = {
   children: [
     {
       id: "F10",
+      listId: ["000041"],
       name: "planchas.children.F10.name",
       popular: false,
       info: {
@@ -936,6 +1016,7 @@ export const planchas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "F10",
           name: "F10",
           color: "colors.RedAndBlack",
@@ -945,6 +1026,7 @@ export const planchas: Category = {
     },
     {
       id: "F20",
+      listId: ["000042"],
       name: "planchas.children.F20.name",
       popular: false,
       info: {
@@ -954,6 +1036,7 @@ export const planchas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "F20",
           name: "F20",
           color: "colors.RedAndBlack",
@@ -963,6 +1046,7 @@ export const planchas: Category = {
     },
     {
       id: "F30",
+      listId: ["000043", "000044"],
       name: "planchas.children.F30.name",
       popular: false,
       info: {
@@ -972,6 +1056,7 @@ export const planchas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "F30",
           name: "F30",
           color: "colors.BlueAndWhite",
@@ -981,6 +1066,7 @@ export const planchas: Category = {
     },
     {
       id: "F40",
+      listId: ["000045"],
       name: "planchas.children.F40.name",
       popular: false,
       info: {
@@ -990,6 +1076,7 @@ export const planchas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "F40",
           name: "F40",
           color: "colors.GrayAndBronze",
@@ -999,6 +1086,7 @@ export const planchas: Category = {
     },
     {
       id: "F50",
+      listId: ["000046", "000047"],
       name: "planchas.children.F50.name",
       popular: false,
       info: {
@@ -1008,6 +1096,7 @@ export const planchas: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "F50",
           name: "F50",
           color: "colors.black",
@@ -1026,6 +1115,7 @@ export const licuadoras: Category = {
   children: [
     {
       id: "L10",
+      listId: ["000058", "000059"],
       name: "licuadoras.children.L10.name",
       popular: false,
       info: {
@@ -1035,6 +1125,7 @@ export const licuadoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "L10",
           name: "L10",
           color: "colors.white",
@@ -1045,6 +1136,7 @@ export const licuadoras: Category = {
     {
       id: "L20",
       name: "licuadoras.children.L20.name",
+      listId: ["000060"],
       popular: false,
       info: {
         review: "licuadoras.children.L20.info.review",
@@ -1053,6 +1145,7 @@ export const licuadoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "L20",
           name: "L20",
           color: "colors.white",
@@ -1066,6 +1159,7 @@ export const licuadoras: Category = {
     },
     {
       id: "L30",
+      listId: ["000061", "000062"],
       name: "licuadoras.children.L30.name",
       popular: false,
       info: {
@@ -1075,6 +1169,7 @@ export const licuadoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "L30",
           name: "L30",
           color: "colors.black",
@@ -1084,6 +1179,7 @@ export const licuadoras: Category = {
     },
     {
       id: "L40",
+      listId: ["000063", "000064"],
       name: "licuadoras.children.L40.name",
       popular: false,
       info: {
@@ -1093,6 +1189,7 @@ export const licuadoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "L40",
           name: "L40",
           color: "colors.black",
@@ -1115,6 +1212,7 @@ export const beauty: Category = {
   children: [
     {
       id: "603D",
+      listId: ["000081"],
       name: "beauty.children.603D.name",
       popular: false,
       info: {
@@ -1124,6 +1222,7 @@ export const beauty: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "603D",
           name: "603D",
           color: "colors.black",
@@ -1133,6 +1232,7 @@ export const beauty: Category = {
     },
     {
       id: "HB40",
+      listId: ["000082"],
       name: "beauty.children.HB40.name",
       popular: false,
       info: {
@@ -1142,6 +1242,7 @@ export const beauty: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "HB40",
           name: "HB40",
           color: "colors.black",
@@ -1151,6 +1252,7 @@ export const beauty: Category = {
     },
     {
       id: "HD008",
+      listId: ["000079"],
       name: "beauty.children.HD008.name",
       popular: false,
       info: {
@@ -1160,6 +1262,7 @@ export const beauty: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "HD008",
           name: "HD008",
           color: "colors.black",
@@ -1169,6 +1272,7 @@ export const beauty: Category = {
     },
     {
       id: "RFCD865",
+      listId: ["000080"],
       name: "beauty.children.RFCD865.name",
       popular: false,
       info: {
@@ -1178,6 +1282,7 @@ export const beauty: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "RFCD865",
           name: "RFCD865",
           color: "colors.golden",
@@ -1196,6 +1301,7 @@ export const batidoras: Category = {
   children: [
     {
       id: "B10",
+      listId: ["000028" , "000029"],
       name: "batidoras.children.B10.name",
       popular: false,
       info: {
@@ -1205,6 +1311,7 @@ export const batidoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "B10",
           name: "B10",
           color: "colors.blankAndWhite",
@@ -1214,6 +1321,7 @@ export const batidoras: Category = {
     },
     {
       id: "B20",
+      listId: ["000030", "000031"],
       name: "batidoras.children.B20.name",
       popular: false,
       info: {
@@ -1223,6 +1331,7 @@ export const batidoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "B20",
           name: "B20",
           color: "colors.blackAndGray",
@@ -1232,6 +1341,7 @@ export const batidoras: Category = {
     },
     {
       id: "B30",
+      listId: ["000032", "000033"],
       name: "batidoras.children.B30.name",
       popular: false,
       info: {
@@ -1241,6 +1351,7 @@ export const batidoras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "B30",
           name: "B30",
           color: "colors.black",
@@ -1259,6 +1370,7 @@ export const arroceras: Category = {
   children: [
     {
       id: "A10",
+      listId: ["000067", "000068"],
       name: "arroceras.children.A10.name",
       popular: false,
       info: {
@@ -1268,6 +1380,7 @@ export const arroceras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "A10",
           name: "A10",
           color: "Inox",
@@ -1277,6 +1390,7 @@ export const arroceras: Category = {
     },
     {
       id: "P10",
+      listId: ["000065", "000066"],
       name: "arroceras.children.P10.name",
       popular: false,
       info: {
@@ -1286,6 +1400,7 @@ export const arroceras: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "P10",
           name: "P10",
           color: "colors.inox",
@@ -1304,6 +1419,7 @@ export const bebederos: Category = {
   children: [
     {
       id: "W10",
+      listId : ["000039", "000040"],
       name: "bebederos.children.W10.name",
       popular: false,
       info: {
@@ -1313,6 +1429,7 @@ export const bebederos: Category = {
       },
       variants: [
         {
+          stockAvailable: true,
           id: "W10",
           name: "W10",
           color: "colors.white",
