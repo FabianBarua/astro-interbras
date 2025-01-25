@@ -18,10 +18,10 @@ const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/valu
 
 let parsedLista: { code: string; name: string; price: string; }[] = []
 
+if (apiKey && spreadsheetId) {
 await fetch(url)
-.then(response => response.json())
-.then(data => {
-  
+  .then(response => response.json())
+  .then(data => {
   for (const row of data.values) {
     if (data.values.indexOf(row) === 0) continue
     parsedLista.push({
@@ -30,9 +30,10 @@ await fetch(url)
       "price": row[2],
     })
   }
-  
 })
-
+}
+console.log('Api Key: ' + apiKey?.slice(0, 4) || 'No apiKey')
+console.log('Spread Sheet Id: ' + spreadsheetId?.slice(0, 4) || 'No spreadsheetId')
 
 const withData = parsedLista.flatMap((item) => {
   // Encontramos todos los productos que tienen un 'child' con el listId correspondiente
