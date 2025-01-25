@@ -24,9 +24,9 @@ const urls = getUrls({currentLocale});
 <header
   transition:persist="true"
   id="header-client"
-  class="fixed w-full z-[40] flex flex-col py-4 transition-all backdrop-blur bg-[#08850ec4] text-white"
+  class="xl:fixed relative w-full z-[40] flex flex-col py-4 transition-all backdrop-blur bg-[#08850ec4] text-white"
 >
-  <div class="flex lg:justify-around justify-center  ">
+  <div class="flex xl:justify-around justify-center  ">
     <a
       hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}
       aria-label="Logo Interbras"
@@ -39,24 +39,24 @@ const urls = getUrls({currentLocale});
 
     <nav class="w-min flex ">
       <ul
-        class=" lg:flex fixed lg:relative right-4 lg:mx-auto justify-center text-nowrap items-center gap-14 lg:w-full"
+        class=" xl:flex fixed xl:relative right-4 xl:mx-auto justify-center text-nowrap items-center gap-14 xl:w-full"
       >
-        <li class="lg:block hidden">
+        <li class="xl:block hidden">
           <button id="whereWeAre">{t("header.whereWeAre.title")}</button>
         </li>
-        <li class="lg:block hidden">
+        <li class="xl:block hidden">
           <button id="weProducts">{t("header.products.title")}</button>
         </li>
 
         <li class="w-full flex max-w-96 justify-start gap-8">
-          <div class="lg:block hidden">
+          <div class="xl:block hidden">
             <button id="whoWeAre">{t("header.whoWeAre.title")}</button>
           </div>
         </li>
 
         <li class="w-full flex max-w-96 justify-start gap-8">
           <a
-            class="lg:block hidden"
+            class="xl:block hidden"
             hreflang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}
             href={getRelativeLocaleUrl(currentLocale || "", "/downloads")}
           >

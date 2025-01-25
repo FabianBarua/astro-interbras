@@ -136,7 +136,7 @@ export interface Variant {
 <div class=" flex">
   <InteractiveGridPattern client:only
         className={cn(
-          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] -mt-40",
         )}
         width={20}
         height={20}
@@ -173,7 +173,7 @@ export interface Variant {
   </div>
 </div>
 
-<div id="catalogScroll" class=" mx-auto overflow-auto w-screen ">
+<div id="catalogScroll" class=" mx-auto overflow-auto w-screen  h-0 xl:h-auto">
   <div id="catalog"  class=" flex flex-col gap-8 w-[1360px] mx-auto ">
 
     {Object.keys(groupedByCategory).map((category) => {

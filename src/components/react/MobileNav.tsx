@@ -63,7 +63,7 @@ export const MobileNav = ({
         animate={isOpen ? 'open' : 'closed'}
         custom={height}
         ref={containerRef}
-        className=' nav w-min lg:hidden '
+        className=' nav w-min xl:hidden '
       >
         <motion.div className='background bg-interbrasGreen-500 ' variants={sidebar} />
         <Navigation
