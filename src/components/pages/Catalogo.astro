@@ -18,6 +18,7 @@ const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/valu
 let parsedLista: { code: string; name: string; price: string; }[] = []
 
 if (apiKey && spreadsheetId) {
+  console.log('Fetching data...')
 await fetch(url)
   .then(response => response.json())
   .then(data => {
