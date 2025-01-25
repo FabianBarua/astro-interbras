@@ -21,7 +21,6 @@ export const hoverboards: Category = {
           id: "hoverboards1",
           name: "Hoverboard",
           color: "colors.black",
-          stockAvailable: true,
           photos: [
             "/productos/hoverboards/hoverboards1-1.webp",
             "/productos/hoverboards/hoverboards1-2.webp",
@@ -45,7 +44,6 @@ export const hoverboards: Category = {
           id: "hoverboards2",
           name: "Hoverboard",
           color: "colors.grafite",
-          stockAvailable: true,
           photos: [
             "/productos/hoverboards/hoverboards2-1.webp",
             "/productos/hoverboards/hoverboards2-2.webp",
@@ -66,7 +64,6 @@ export const hoverboards: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "hoverboards3",
           name: "Hoverboard",
           color: "colors.blueFire",
@@ -90,7 +87,6 @@ export const hoverboards: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "hoverboards4",
           name: "Hoverboard",
           color: "colors.redFire",
@@ -114,7 +110,6 @@ export const hoverboards: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "hoverboards5",
           name: "Hoverboard",
           color: "colors.hiphop",
@@ -138,7 +133,6 @@ export const hoverboards: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "hoverboards6",
           name: "Hoverboard",
           color: "colors.pinkCamouflage",
@@ -162,7 +156,6 @@ export const hoverboards: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "hoverboards7",
           name: "Hoverboard",
           color: "colors.purple",
@@ -186,7 +179,6 @@ export const hoverboards: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "hoverboards8",
           name: "Hoverboard",
           color: "colors.blueCamouflage",
@@ -210,7 +202,6 @@ export const hoverboards: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "hoverboards9",
           name: "Hoverboard",
           color: "colors.rosePink",
@@ -243,14 +234,12 @@ export const airfryer: Category = {
       listId: ["000018", "000019"],
       variants: [
         {
-          stockAvailable: ["000018"],
           id: "s10-1",
           name: "Airfryer S10 - 1",
           color: "colors.black",
           photos: ["/productos/airfryer/s10-v1-1.webp"],
         },
         {
-          stockAvailable: ["000018", "000019"],
           id: "s10-2",
           name: "Airfryer S10 - 2",
           color: "colors.white",
@@ -270,14 +259,12 @@ export const airfryer: Category = {
       },
       variants: [
         {
-          stockAvailable: ["000021",  "000023"],
           id: "s20-1",
           name: "Airfryer S20 - 1",
           color: "colors.black",
           photos: ["/productos/airfryer/s20-v1-1.webp"],
         },
         {
-          stockAvailable: ["000020",  "000022"],
           id: "s20-2",
           name: "Airfryer S20 - 2",
           color: "colors.white",
@@ -298,7 +285,6 @@ export const airfryer: Category = {
       variants: [
         {
           id: "s30-1",
-          stockAvailable: true,
           name: "Airfryer S30 - 1",
           color: "colors.inox",
           photos: ["/productos/airfryer/s30-v1-1.webp"],
@@ -317,7 +303,6 @@ export const airfryer: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "s40-1",
           name: "Airfryer S40 - 1",
           color: "colors.black",
@@ -364,7 +349,6 @@ export const scooters: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "10.5pro-1",
           name: "Scooter 10.5 Pro - 1",
           color: "colors.black",
@@ -384,7 +368,6 @@ export const scooters: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "cross-1",
           name: "Scooter Cross - 1",
           color: "colors.black",
@@ -431,7 +414,6 @@ export const aires: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "itb-12000iv-1",
           name: "ITB 12000IV - 1",
           color: "colors.white",
@@ -451,7 +433,6 @@ export const aires: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "itp-12000iv-1",
           name: "ITP 12000IV - 1",
           color: "colors.white",
@@ -489,7 +470,6 @@ export const aires: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "itp-12000iv-1",
           name: "ITP 12000OF - 1",
           color: "colors.white",
@@ -509,7 +489,6 @@ export const aires: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "itb-18000iv-1",
           name: "ITP 12000OF - 1",
           color: "colors.white",
@@ -529,7 +508,6 @@ export const aires: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "itb-24000iv-1",
           name: "ITB 24000IV - 1",
           color: "colors.white",
@@ -558,7 +536,6 @@ export const tvs: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "IN3200TV-1",
           name: "IN3200TV - 1",
           color: "colors.black",
@@ -582,7 +559,6 @@ export const tvs: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "IN4300TV-1",
           name: "IN4300TV - 1",
           color: "colors.black",
@@ -607,7 +583,6 @@ export const tvs: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "IN5000TV-1",
           name: "IN5000TV - 1",
           color: "colors.black",
@@ -632,7 +607,6 @@ export const tvs: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "IN5500TV-1",
           name: "IN5500TV - 1",
           color: "colors.black",
@@ -657,7 +631,6 @@ export const tvs: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "IN6500TV-1",
           name: "IN6500TV - 1",
           color: "colors.black",
@@ -682,7 +655,6 @@ export const tvs: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "IN7500TV-1",
           name: "IN7500TV - 1",
           color: "colors.black",
@@ -707,7 +679,6 @@ export const tvs: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "IN8500TV-1",
           name: "IN8500TV - 1",
           color: "colors.black",
@@ -741,7 +712,6 @@ export const mixteras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "G10",
           name: "G10",
           color: "colors.black",
@@ -761,7 +731,6 @@ export const mixteras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "G20",
           name: "G20",
           color: "colors.black",
@@ -781,7 +750,6 @@ export const mixteras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "G30",
           name: "G30",
           color: "colors.black",
@@ -801,7 +769,6 @@ export const mixteras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "G40",
           name: "G40",
           color: "colors.black",
@@ -821,7 +788,6 @@ export const mixteras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "G50",
           name: "G50",
           color: "colors.black",
@@ -850,7 +816,6 @@ export const cocinas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "C10",
           name: "C10",
           color: "colors.white",
@@ -870,7 +835,6 @@ export const cocinas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "C20",
           name: "C20",
           color: "colors.black",
@@ -889,7 +853,6 @@ export const cocinas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "C30",
           name: "C30",
           color: "colors.black",
@@ -918,7 +881,6 @@ export const hervidoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "T10",
           name: "T10",
           color: "Inox",
@@ -938,7 +900,6 @@ export const hervidoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "T20",
           name: "T20",
           color: "colors.white",
@@ -958,7 +919,6 @@ export const hervidoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "T30",
           name: "T30",
           color: "colors.black",
@@ -987,7 +947,6 @@ export const cafeteras: Category = {
       },
       variants: [
         {
-          stockAvailable: ["000037", "000038"],
           id: "E10",
           name: "E10",
           color: "colors.inox",
@@ -1016,7 +975,6 @@ export const planchas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "F10",
           name: "F10",
           color: "colors.RedAndBlack",
@@ -1036,7 +994,6 @@ export const planchas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "F20",
           name: "F20",
           color: "colors.RedAndBlack",
@@ -1056,7 +1013,6 @@ export const planchas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "F30",
           name: "F30",
           color: "colors.BlueAndWhite",
@@ -1076,7 +1032,6 @@ export const planchas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "F40",
           name: "F40",
           color: "colors.GrayAndBronze",
@@ -1096,7 +1051,6 @@ export const planchas: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "F50",
           name: "F50",
           color: "colors.black",
@@ -1125,7 +1079,6 @@ export const licuadoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "L10",
           name: "L10",
           color: "colors.white",
@@ -1145,7 +1098,6 @@ export const licuadoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "L20",
           name: "L20",
           color: "colors.white",
@@ -1169,7 +1121,6 @@ export const licuadoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "L30",
           name: "L30",
           color: "colors.black",
@@ -1189,7 +1140,6 @@ export const licuadoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "L40",
           name: "L40",
           color: "colors.black",
@@ -1222,7 +1172,6 @@ export const beauty: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "603D",
           name: "603D",
           color: "colors.black",
@@ -1242,7 +1191,6 @@ export const beauty: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "HB40",
           name: "HB40",
           color: "colors.black",
@@ -1262,7 +1210,6 @@ export const beauty: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "HD008",
           name: "HD008",
           color: "colors.black",
@@ -1282,7 +1229,6 @@ export const beauty: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "RFCD865",
           name: "RFCD865",
           color: "colors.golden",
@@ -1311,7 +1257,6 @@ export const batidoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "B10",
           name: "B10",
           color: "colors.blankAndWhite",
@@ -1331,7 +1276,6 @@ export const batidoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "B20",
           name: "B20",
           color: "colors.blackAndGray",
@@ -1351,7 +1295,6 @@ export const batidoras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "B30",
           name: "B30",
           color: "colors.black",
@@ -1380,7 +1323,6 @@ export const arroceras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "A10",
           name: "A10",
           color: "Inox",
@@ -1400,7 +1342,6 @@ export const arroceras: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "P10",
           name: "P10",
           color: "colors.inox",
@@ -1429,7 +1370,6 @@ export const bebederos: Category = {
       },
       variants: [
         {
-          stockAvailable: true,
           id: "W10",
           name: "W10",
           color: "colors.white",
