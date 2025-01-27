@@ -6,8 +6,6 @@ import { InteractiveGridPattern } from "../react/InteractiveGridPattern";
 const { currentLocale } = Astro;
 const i18n = getI18NProducts({ currentLocale });
 
-console.log()
-
 const t = (key: string) => getValueFromKey(key, i18n);
 
 const apiKey = import.meta.env.GOOGLE_SHEET_APIKEY
@@ -15,7 +13,7 @@ const spreadsheetId =  import.meta.env.GOOGLE_SHEET_ID
 
 const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/main?key=${apiKey}`;
 
-let parsedLista: { code: string; name: string; price: string; }[] = []
+let parsedLista: { code: string; name: string; price: string; show: boolean }[] = []
 
 if (apiKey && spreadsheetId) {
   console.log('Fetching data...')
@@ -28,113 +26,107 @@ await fetch(url)
       "code": row[0],
       "name": row[1],
       "price": row[2],
+      "show": row[3] === '1'
     })
   }
 })
 }
-console.log('Api Key: ' + apiKey?.slice(0, 4) || 'No apiKey')
-console.log('Spread Sheet Id: ' + spreadsheetId?.slice(0, 4) || 'No spreadsheetId')
 
-const withData = parsedLista.flatMap((item) => {
-  // Encontramos todos los productos que tienen un 'child' con el listId correspondiente
-  const relevantProducts = data.products
-    .filter((product) => 
-      product.children.some((child) => child.listId?.includes(item.code))
-    );
+const withData = parsedLista.map(({code, name, price, show}) => {
 
-  if (relevantProducts.length === 0) {
-    return [{ ...item, dataItem: null }] as any[];
-  }
+  const categorySelected = data.products.filter(
+    (category) => {
+      return category.children.find(
+        (child) => child.variants.find((variant) => variant.catalogId?.includes(code))
+      )
+    }
+  )[0];
+  
+  const category = t(categorySelected?.name || '');
+  const categoryDescription = t(categorySelected?.description || '');
+  const categoryShortDescription = t(categorySelected?.shortDescription || '');
 
-  return relevantProducts.flatMap((dataItem) => {
-    // Encontramos todos los children que coincidan con el listId
-    const relevantChildren = dataItem.children.filter((child) => child.listId?.includes(item.code));
-    
-    return relevantChildren.map((relevantChild) => ({
-      code: item.code,
-      name: item.name,
-      category: t(dataItem.name),
-      categoryDescription: t(dataItem.description),
-      categoryShortDescription: t(dataItem.shortDescription),
-      originalName: t(relevantChild.name),
-      price: item.price,
-      info: {
-        review: t(relevantChild.info.review),
-        included: relevantChild.info.included ? t(relevantChild.info.included) : null,
-        specs: t(relevantChild.info.specs),
-      },
-      variants: relevantChild.variants
-        .filter((variant) => {
-          if (!variant.stockAvailable) return false;
-          if (typeof variant.stockAvailable === "boolean") return variant.stockAvailable;
-          if (Array.isArray(variant.stockAvailable)) {
-            return variant.stockAvailable.some((itemCode) => itemCode === item.code);
-          }
-        })
-        .map((variantItem) => {
-          return {
-            ...variantItem,
-            color: t(variantItem.color),
-          };
-        }),
-    }));
-  });
+  const childSelected = categorySelected?.children.find(
+    (child) => child.variants.find((variant) => variant.catalogId?.includes(code))
+  );
+
+  const variantSelected = childSelected?.variants.find((variant) => variant.catalogId?.includes(code));
+
+  const originalName = t(childSelected?.name || '');
+  const review = t(childSelected?.info?.review || '');
+  const specs = t(childSelected?.info?.specs || '');
+  const included = t(childSelected?.info?.included || '');
+  
+  return {
+    code,
+    name,
+    price,
+    show,
+    category,
+    categoryDescription,
+    categoryShortDescription,
+    registered: childSelected?.id !== undefined,
+    originalName,
+    info : {
+      review,
+      included,
+      specs,
+    },
+    photo: variantSelected?.photos
+  };
+
 });
 
-const groupedByCategory: Root = withData.reduce(
-  (acc: { [key: string]: { categoryName: string; categoryDescription: string; categoryShortDescription: string; products: any[] }; }, item) => {
-    if (item.category) {
-      if (!acc[item.category]) {
-        acc[item.category] = {
-          categoryName: item.category,
-          categoryDescription: item.categoryDescription,
-          categoryShortDescription: item.categoryShortDescription,
-          products: [],
-        };
-      }
-      const { category, categoryDescription, categoryShortDescription, ...restItem } = item;
-      acc[item.category].products.push(restItem);
-    }
-    return acc;
-  },
-  {}
-);
+type WithData = {
+  code: string;
+  name: string;
+  price: string;
+  show: boolean;
+  category: any;
+  categoryDescription: any;
+  categoryShortDescription: any;
+  registered: boolean;
+  originalName: any;
+  info: {
+    review: any;
+    included: any;
+    specs: any;
+  };
+  photo: string[] | undefined;
+}[];
 
-export interface Root {
-  [key: string]: Category;
-}
-
-export interface Category {
+type AgrupadoPorCategoriaHijo = {
+  products: WithData;
   categoryName: string;
   categoryDescription: string;
   categoryShortDescription: string;
-  products: Product[];
+};
+
+type AgrupadoPorCategoria = {
+  [categoria: string]: AgrupadoPorCategoriaHijo
+};
+
+function group(withData: WithData): AgrupadoPorCategoria {
+  return withData.reduce((acumulador: AgrupadoPorCategoria, item) => {
+    const categoria = item.category || "Sin categoría";
+    if (!acumulador[categoria]) {
+      acumulador[categoria] = {
+        products: [],
+        categoryName: item.category || "Sin categoría",
+        categoryDescription: item.categoryDescription || "Sin descripción",
+        categoryShortDescription: item.categoryShortDescription || "Sin subtitulo",
+      };
+    }
+    acumulador[categoria].products.push(item);
+    return acumulador;
+  }, {});
 }
 
-export interface Product {
-  code: string;
-  name: string;
-  originalName: string;
-  price: number;
-  info: Info;
-  variants: Variant[];
-}
+const groupedByCategory = group(withData);
 
-export interface Info {
-  review: string;
-  included: any;
-  specs: string;
-}
-
-export interface Variant {
-  stockAvailable: boolean;
-  id: string;
-  name: string;
-  color: string;
-  photos: string[];
-}
 
 ---
+
 
 <div class=" flex">
   <InteractiveGridPattern client:only
@@ -179,7 +171,7 @@ export interface Variant {
 <div id="catalogScroll" class=" mx-auto overflow-auto w-screen  h-0 xl:h-auto">
   <div id="catalog"  class=" flex flex-col gap-8 w-[1360px] mx-auto ">
 
-    {Object.keys(groupedByCategory).map((category) => {
+     {Object.keys(groupedByCategory).map((category) => {
       const { categoryName, products, categoryDescription } = groupedByCategory[category];
       return (
         <section id="catalogSection" class=" flex bg-interbrasGreen-500 text-white rounded-[50px] ">
@@ -190,13 +182,18 @@ export interface Variant {
               {products[0].info.review}
             </h3>
 
-            <div class=" w-full relative mt-10 bg-interbrasGreen-600 rounded-xl  py-10">
-              <img class=" max-w-72 w-full rounded-3xl object-contain relative mx-auto z-10" src={products[0].variants[0]?.photos[0]} alt="" />
+            {
+              products[0].registered && (
+              <div class=" w-full relative mt-10 bg-interbrasGreen-600 rounded-xl  py-10">
+              <img class=" max-w-72 w-full rounded-3xl object-contain relative mx-auto z-10" src={products[0].photo?.[0]} alt="" />
               <div class=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2  size-56 rounded-full  bg-interbrasGreen-300 "></div>
               <h3 class=" max-w-44 text-center mx-auto font-bold text-xl mt-3">
                 {products[0].originalName}
               </h3>
             </div>
+              )
+            }
+
           </div>
           <ul class={
               `
@@ -206,18 +203,28 @@ export interface Variant {
               `
           }>
             {products.map((product) => {
+
+              if (!product.show) return null;
+
               return (
                 <li class={`bg-[#f2f2f293] p-5 relative min-h-72 h-min rounded-3xl`}>
                   <div class="flex gap-4">
-                    <img class="w-52 h-44  rounded-3xl rounded-tl-[50px] p-2 object-contain mx-auto" src={product.variants[0]?.photos[0]} alt="" />
-                    <div class="flex-1">
-                      <h3 class="text-2xl font-bold">Características</h3>
-                      <ul>
-                        {product.info.specs.split("\n").slice(0, 7).map((spec) => {
-                          return <li class="text-sm">{spec}</li>;
-                        })}
-                      </ul>
-                    </div>
+                    {
+                      product.registered && (
+                        <>
+                          <img class="w-52 h-44  rounded-3xl rounded-tl-[50px] p-2 object-contain mx-auto" src={product.photo?.[0] || ''} alt="" />
+                          <div class="flex-1">
+                            <h3 class="text-2xl font-bold">Características</h3>
+                            <ul>
+                              {product.info.specs?.split("\n").slice(0, 7).map((spec: unknown) => {
+                                return <li class="text-sm">{spec}</li>;
+                              })}
+                            </ul>
+                          </div>
+                        </>
+                      )
+                    }
+
                   </div>
   
                   <div class="flex  mt-4 px-2 gap-3">
@@ -266,6 +273,7 @@ export interface Variant {
         </section>
       );
     })}
+    
   </div>
 </div>
 
