@@ -1,0 +1,92 @@
+---
+import { db } from "@root/db/config";
+import {
+  Category,
+  Product,
+  Variant,
+  Volt,
+  Color,
+  Photo,
+} from "@root/db/schema";
+
+import { getI18NProducts, getI18NGlobal, getValueFromKey } from "@/i18n";
+import { eq } from "drizzle-orm";
+const { currentLocale } = Astro;
+const i18n_Products = getI18NProducts({ currentLocale });
+const i18n_Global = getI18NGlobal({ currentLocale });
+
+const t_Products = (key: string) => getValueFromKey(key, i18n_Products);
+const t_Global = (key: string) => getValueFromKey(key, i18n_Global);
+
+const products = await db
+  .select()
+  .from(Variant)
+  .fullJoin(Product, eq(Variant.product_id, Product.id))
+  .fullJoin(Category, eq(Product.category_id, Category.id))
+  .fullJoin(Color, eq(Variant.color_id, Color.id))
+  .fullJoin(Volt, eq(Variant.volt_id, Volt.id))
+  .fullJoin(Photo, eq(Variant.id, Photo.variant_id));
+
+const productsReducedByVariantId = products.reduce(
+  (acc, product) => {
+    const variantId = product.variant?.id;
+    if (variantId) {
+      const existingProduct = acc.find((p) => p.variant?.id === variantId);
+      if (existingProduct) {
+        existingProduct.Photo.push(product.photo);
+      } else {
+        acc.push({
+          ...product,
+          Photo: [product.photo], // Foto como un array
+        });
+      }
+    }
+    return acc;
+  },
+  [] as Array<
+    Omit<(typeof products)[0], "photo"> & {
+      Photo: (typeof products)[0]["photo"][];
+    }
+  >
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="min-h-screen w-full bg-gray-950 text-white">
+    <div class="container mx-auto p-4">
+      {
+        productsReducedByVariantId.map((product) => (
+          <div class="flex flex-col bg-gray-800 p-2 rounded-lg mb-4 shadow-md">
+            <div class="flex flex-row gap-4">
+              <div class="flex flex-col space-y-1">
+                <div class="text-lg font-semibold">{product.product?.name}</div>
+                <div class="text-xs text-gray-400">
+                  {product.variant?.catalog_id}
+                </div>
+                <div class="text-sm text-gray-300">
+                  {product.category?.name}
+                </div>
+                <div class="text-sm text-gray-300">{product.volt?.name}</div>
+              </div>
+              <div class="flex flex-row space-y-2">
+                {product.Photo.map((photo) => (
+                  <img
+                    src={photo?.url}
+                    alt={product.product?.name}
+                    class="w-32 h-32 object-cover rounded-md shadow-sm"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </body>
+</html>
