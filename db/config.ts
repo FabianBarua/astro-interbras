@@ -1,6 +1,4 @@
 import { drizzle } from 'drizzle-orm/libsql';
-import { config } from 'dotenv';
-config();
 
 const isDev = () => {
   return import.meta.env.DEV
@@ -8,8 +6,8 @@ const isDev = () => {
 
 const db_prod = ()=>
   drizzle({ connection: {
-    url: process.env.DATABASE_URL || 'cuculele', 
-    authToken: process.env.DATABASE_AUTH_TOKEN 
+    url: import.meta.env.DATABASE_URL, 
+    authToken: import.meta.env.DATABASE_AUTH_TOKEN 
   }});
 
 
