@@ -1,12 +1,30 @@
 import portugueseGlobal from "@/i18n/locales/pt/global.json";
 import spanishGlobal from "@/i18n/locales/es/global.json";
+
 import spanishProducts from "@/i18n/locales/es/products.json";
 import portugueseProducts from "@/i18n/locales/pt/products.json";
+
+import spanishCatalog from "@/i18n/locales/es/catalog.json";
+import portugueseCatalog from "@/i18n/locales/pt/catalog.json";
+
 
 const LANG = {
   PORTUGUESE: "pt",
   SPANISH: "es",
 };
+
+export const getI18NCatalog = ({
+  currentLocale = "es",
+}: {
+  currentLocale: string | undefined;
+}) => {
+  if (currentLocale === LANG.PORTUGUESE)
+    return { ...spanishCatalog, ...portugueseCatalog };
+  if (currentLocale === LANG.SPANISH)
+    return { ...portugueseCatalog, ...spanishCatalog };
+  return spanishCatalog;
+}
+
 
 export const getI18NGlobal = ({
   currentLocale = "es",

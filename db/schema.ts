@@ -32,13 +32,18 @@ export const Variant = sqliteTable("variant", {
   product_id: text().references(() => Product.id, {onDelete: 'cascade', onUpdate:'cascade'}),
   color_id: int().references(() => Color.id, {onDelete: 'set null', onUpdate:'cascade'}),
   volt_id: int().references(() => Volt.id , {onDelete: 'set null', onUpdate:'cascade'}),
-  catalog_id: int(),
-  price: real(),
-  status_id : int().references(() => Status.id, {onDelete: 'set null', onUpdate:'cascade'})
+  catalog_id: int().references(() => Catalog.id, {onDelete: 'set null', onUpdate:'cascade'}).unique(),
 });
 
+export const Catalog = sqliteTable("catalog", {
+  id: int().primaryKey(),
+  name: text(),
+  price: real(),
+  status_id : int().references(() => Status.id, {onDelete: 'set null', onUpdate:'cascade'})
+} );
+
 export const Status = sqliteTable("status", {
-  id: int().primaryKey({ autoIncrement: true }),
+  id: int().primaryKey({ autoIncrement: true}),
   name: text(),
 })
 

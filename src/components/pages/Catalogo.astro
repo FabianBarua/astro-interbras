@@ -1,132 +1,133 @@
 ---
-import { getI18NProducts, getValueFromKey } from "@/i18n";
+import {
+  getI18NGlobal,
+  getI18NProducts,
+  getValueFromKey,
+  getI18NCatalog,
+} from "@/i18n";
 import { cn, data } from "@/shared/utils";
 import { InteractiveGridPattern } from "../react/InteractiveGridPattern";
+import { db } from "@root/db/config";
+import {
+  Catalog,
+  Variant,
+  Product,
+  Volt,
+  Color,
+  Category,
+  Photo,
+} from "@root/db/schema";
+import { eq, min } from "drizzle-orm";
 
 const { currentLocale } = Astro;
 const i18n = getI18NProducts({ currentLocale });
+const i18n_catalog = getI18NCatalog({ currentLocale });
 
 const t = (key: string) => getValueFromKey(key, i18n);
+const t_catalog = (key: string) => getValueFromKey(key, i18n_catalog);
 
-const apiKey = import.meta.env.GOOGLE_SHEET_APIKEY;
-const spreadsheetId = import.meta.env.GOOGLE_SHEET_ID;
-
-const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/main?key=${apiKey}`;
-
-let parsedLista: {
-  code: string;
-  name: string;
-  price: string;
-  show: boolean;
-}[] = [];
-
-if (apiKey && spreadsheetId) {
-  console.log("Fetching data...");
-  await fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      for (const row of data.values) {
-        if (data.values.indexOf(row) === 0) continue;
-        parsedLista.push({
-          code: row[0],
-          name: row[1],
-          price: row[2],
-          show: row[3] === "1",
-        });
-      }
-    });
-}
-
-const withData = parsedLista.map(({ code, name, price, show }) => {
-  const categorySelected = data.products.filter((category) => {
-    return category.children.find((child) =>
-      child.variants.find((variant) => variant.catalogId?.includes(code))
-    );
-  })[0];
-
-  const category = t(categorySelected?.name || "");
-  const categoryDescription = t(categorySelected?.description || "");
-  const categoryShortDescription = t(categorySelected?.shortDescription || "");
-
-  const childSelected = categorySelected?.children.find((child) =>
-    child.variants.find((variant) => variant.catalogId?.includes(code))
+const catalog = await db
+  .select()
+  .from(Catalog)
+  .fullJoin(Variant, eq(Variant.catalog_id, Catalog.id))
+  .fullJoin(Product, eq(Product.id, Variant.product_id))
+  .fullJoin(Volt, eq(Volt.id, Variant.volt_id))
+  .fullJoin(Color, eq(Color.id, Variant.color_id))
+  .fullJoin(Category, eq(Category.id, Product.category_id))
+  .fullJoin(Photo, eq(Photo.variant_id, Variant.id))
+  .where(
+    eq(
+      Photo.order,
+      db
+        .select({ order: min(Photo.order) })
+        .from(Photo)
+        .where(eq(Photo.variant_id, Variant.id))
+    )
   );
 
-  const variantSelected = childSelected?.variants.find((variant) =>
-    variant.catalogId?.includes(code)
-  );
+const groupedByCategory: {
+  [key: string]: {
+    products: {
+      code: string;
+      name: string;
+      productCode: string | null;
+      price: string;
+      show: boolean;
+      volt: string | null;
+      registered: boolean;
+      originalName: string;
+      info: { review: string; included: string | null; specs: string };
+      photo: string | undefined;
+    }[];
+    categoryName: string;
+    categoryDescription: string;
+    categoryShortDescription: string;
+  };
+} = {};
 
-  const originalName = t(childSelected?.name || "");
-  const review = t(childSelected?.info?.review || "");
-  const specs = t(childSelected?.info?.specs || "");
-  const included = t(childSelected?.info?.included || "");
+catalog.forEach((item) => {
+  const CategoryName = item?.category?.name
+    ? t(item.category.name)
+    : t_catalog("noCategory");
 
-  return {
+  const CategoryDescription = item?.category?.description
+    ? t(item.category.description)
+    : t_catalog("noDescription");
+
+  const CategoryShortDescription = item?.category?.shortDescription
+    ? t(item.category.shortDescription)
+    : t_catalog("noShortDescription");
+
+  const code = item?.catalog?.id || t_catalog("noCode");
+
+  const name = item?.catalog?.name || t_catalog("noName");
+  const price = item?.catalog?.price || t_catalog("noPrice");
+  const show = item?.catalog?.status_id === 1 || false;
+  const registered = item?.product?.id ? true : false;
+  const originalName = item?.product?.name
+    ? t(item?.product?.name)
+    : t_catalog("noName");
+
+  const review = item?.product?.review
+    ? t(item.product.review)
+    : t_catalog("noReview");
+
+  const included = item?.product?.included ? t(item.product.included) : null;
+
+  const specs = item?.product?.specs
+    ? t(item.product.specs)
+    : t_catalog("noSpecs");
+
+  const photo = item?.photo?.url || "test";
+
+  const product = {
     code,
+    productCode: item?.product?.id || null,
     name,
     price,
     show,
-    category,
-    categoryDescription,
-    categoryShortDescription,
-    registered: childSelected?.id !== undefined,
+    registered,
     originalName,
+    volt: item?.volt?.name || null,
     info: {
       review,
       included,
       specs,
     },
-    photo: variantSelected?.photos,
+    photo,
   };
+
+  if (!groupedByCategory[CategoryName]) {
+    groupedByCategory[CategoryName] = {
+      products: [product],
+      categoryName: CategoryName,
+      categoryDescription: CategoryDescription,
+      categoryShortDescription: CategoryShortDescription,
+    };
+  } else {
+    groupedByCategory[CategoryName].products.push(product);
+  }
 });
-
-type WithData = {
-  code: string;
-  name: string;
-  price: string;
-  show: boolean;
-  category: any;
-  categoryDescription: any;
-  categoryShortDescription: any;
-  registered: boolean;
-  originalName: any;
-  info: {
-    review: any;
-    included: any;
-    specs: any;
-  };
-  photo: string[] | undefined;
-}[];
-
-type AgrupadoPorCategoriaHijo = {
-  products: WithData;
-  categoryName: string;
-  categoryDescription: string;
-  categoryShortDescription: string;
-};
-
-type AgrupadoPorCategoria = {
-  [categoria: string]: AgrupadoPorCategoriaHijo;
-};
-
-function group(withData: WithData): AgrupadoPorCategoria {
-  return withData.reduce((acumulador: AgrupadoPorCategoria, item) => {
-    const categoria = item.category || "Sin categoría";
-    if (!acumulador[categoria]) {
-      acumulador[categoria] = {
-        products: [],
-        categoryName: item.category || "Sin categoría",
-        categoryDescription: item.categoryDescription || "Sin descripción",
-        categoryShortDescription:
-          item.categoryShortDescription || "Sin subtitulo",
-      };
-    }
-    acumulador[categoria].products.push(item);
-    return acumulador;
-  }, {});
-}
-
-const groupedByCategory = group(withData);
 ---
 
 <div class="flex">
@@ -153,10 +154,12 @@ const groupedByCategory = group(withData);
     class="flex justify-center items-center flex-col h-[500px] my-9 gap-5 pointer-events-none relative z-20 mx-auto"
   >
     <div class="flex flex-col items-center gap-4 mx-auto">
-      <h1 class="text-5xl font-bold text-center">Catalogo de Productos</h1>
+      <h1 class="text-5xl font-bold text-center">
+        {t_catalog("title")}
+      </h1>
 
       <h2 class="text-xl text-center">
-        Encuentra los mejores productos para tu hogar
+        {t_catalog("subtitle")}
       </h2>
     </div>
 
@@ -164,7 +167,8 @@ const groupedByCategory = group(withData);
       class="bg-interbrasGreen-500 hover:bg-interbrasGreen-600 text-white px-5 py-2 rounded-xl text-xl flex gap-3 pointer-events-auto"
       id="downloadCatalog"
     >
-      Descargar catalogo
+      {t_catalog("download")}
+
       <svg
         class="w-auto h-6 my-auto fill-white"
         clip-rule="evenodd"
@@ -217,7 +221,7 @@ const groupedByCategory = group(withData);
                 <div class=" w-full relative mt-10 bg-interbrasGreen-600 rounded-xl  py-10">
                   <img
                     class=" max-w-72 w-full rounded-3xl object-contain relative mx-auto z-10"
-                    src={products[0].photo?.[0]}
+                    src={products[0].photo || ""}
                     alt=""
                   />
                   <div class=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2  size-56 rounded-full  bg-interbrasGreen-300 " />
@@ -234,73 +238,72 @@ const groupedByCategory = group(withData);
               
               `}
             >
-              {products.map((product) => {
-                if (!product.show) return null;
+              {products
+                .sort((a, b) =>
+                  (a.productCode || "").localeCompare(b.productCode || "")
+                )
+                .map((product) => {
+                  if (!product.show) return null;
 
-                return (
-                  <li
-                    class={`bg-[#f2f2f293] p-5 relative min-h-72 h-min rounded-3xl`}
-                  >
-                    <div class="flex gap-4">
-                      {product.registered && (
-                        <>
-                          <img
-                            class="w-52 h-44  rounded-3xl rounded-tl-[50px] p-2 object-contain mx-auto"
-                            src={product.photo?.[0] || ""}
-                            alt=""
-                          />
-                          <div class="flex-1">
-                            <h3 class="text-2xl font-bold">Características</h3>
-                            <ul>
-                              {product.info.specs
-                                ?.split("\n")
-                                .slice(0, 7)
-                                .map((spec: unknown) => {
-                                  return <li class="text-sm">{spec}</li>;
-                                })}
-                            </ul>
-                          </div>
-                        </>
-                      )}
-                    </div>
-
-                    <div class="flex  mt-4 px-2 gap-3">
-                      <div>
-                        <h3 class="text-2xl font-bold bg-interbrasGreen-500 text-white px-3 py-1 rounded-tr-xl rounded-bl-xl h-min text-nowrap">
-                          U$ {product.price}
-                        </h3>
-                        {/br|py|paraguai|paraguay|brasil|brazil/i.test(
-                          product.name
-                        ) && (
-                          <div class="bg-interbrasGreen-100  text-interbrasGreen-500 py-[2px] rounded-tr-xl rounded-bl-xl text-2xl flex-1 w-full text-center mt-1 font-bold">
-                            <p>
-                              {/br|brasil|brazil/i.test(product.name)
-                                ? "127V"
-                                : /py|paraguay|paraguai/i.test(product.name)
-                                  ? "220V"
-                                  : ""}
-                            </p>
-                          </div>
+                  return (
+                    <li
+                      class={`bg-[#f2f2f293] p-5 relative min-h-72 h-min rounded-3xl`}
+                    >
+                      <div class="flex gap-4">
+                        {product.registered && (
+                          <>
+                            <img
+                              class="w-52 h-44  rounded-3xl rounded-tl-[50px] p-2 object-contain mx-auto"
+                              src={product.photo || ""}
+                              alt=""
+                            />
+                            <div class="flex-1">
+                              <h3 class="text-2xl font-bold">
+                                {t_catalog("specs")}
+                              </h3>
+                              <ul>
+                                {product.info.specs
+                                  ?.split("\n")
+                                  .slice(0, 7)
+                                  .map((spec: unknown) => {
+                                    return <li class="text-sm">{spec}</li>;
+                                  })}
+                              </ul>
+                            </div>
+                          </>
                         )}
                       </div>
 
-                      <div class=" border-l border-2 border-black/5" />
+                      <div class="flex  mt-4 px-2 gap-3">
+                        <div>
+                          <h3 class="text-2xl font-bold bg-interbrasGreen-500 text-white px-3 py-1 rounded-tr-xl rounded-bl-xl h-min text-nowrap">
+                            U$ {product.price}
+                          </h3>
 
-                      <div class=" flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold line-clamp-2">
-                          {product.name}
-                        </h3>
-                        {product.info.included && (
-                          <h4 class=" leading-5">
-                            <strong>Incluye:</strong>
-                            {product.info.included}
-                          </h4>
-                        )}
+                          {product.volt && (
+                            <div class="bg-interbrasGreen-100  text-interbrasGreen-500 py-[2px] rounded-tr-xl rounded-bl-xl text-2xl flex-1 w-full text-center mt-1 font-bold">
+                              <p>{product.volt}</p>
+                            </div>
+                          )}
+                        </div>
+
+                        <div class=" border-l border-2 border-black/5" />
+
+                        <div class=" flex flex-col justify-center">
+                          <h3 class="text-2xl font-bold line-clamp-2">
+                            {product.name}
+                          </h3>
+                          {product.info.included && (
+                            <h4 class=" leading-5">
+                              <strong>{t_catalog("included")}:</strong>
+                              {product.info.included}
+                            </h4>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                );
-              })}
+                    </li>
+                  );
+                })}
             </ul>
           </section>
         );

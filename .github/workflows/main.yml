@@ -29,8 +29,8 @@ jobs:
       - name: Build project
         run: pnpm run build
         env:
-          GOOGLE_SHEET_APIKEY: ${{ secrets.GOOGLE_SHEET_APIKEY }}
-          GOOGLE_SHEET_ID : ${{ secrets.GOOGLE_SHEET_ID }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_AUTH_TOKEN : ${{ secrets.DATABASE_AUTH_TOKEN }}
 
       - name: 📂 Upload dist folder
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
