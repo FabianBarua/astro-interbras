@@ -14,6 +14,7 @@ import {
 } from "@root/db/schema";
 import { eq, min } from "drizzle-orm";
 import { CatalogoSection } from "../react/catalogo/CatalogoSection";
+import { HeroProvider } from "../react/catalogo/Provider";
 
 const { currentLocale } = Astro;
 const i18n = getI18NProducts({ currentLocale });
@@ -49,6 +50,7 @@ export interface grouped {
       productCode: string | null;
       price: string;
       show: boolean;
+      productPerBox: number;
       volt: string | null;
       registered: boolean;
       originalName: string;
@@ -104,6 +106,7 @@ catalog.forEach((item) => {
     name,
     price,
     show,
+    productPerBox: item.catalog?.productPerBox || 1,
     registered,
     originalName,
     volt: item?.volt?.name || null,
@@ -193,11 +196,13 @@ catalog.forEach((item) => {
   </div>
 </div>
 
-<CatalogoSection
-  client:only
-  groupedByCategory={groupedByCategory}
-  currentLocale={currentLocale || "es"}
-/>
+<HeroProvider client:only>
+  <CatalogoSection
+    client:only
+    groupedByCategory={groupedByCategory}
+    currentLocale={currentLocale || "es"}
+  />
+</HeroProvider>
 
 <div
   id="loader"

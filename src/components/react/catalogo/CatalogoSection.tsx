@@ -1,6 +1,9 @@
 import type { grouped } from "@/components/pages/Catalogo.astro";
 import { getI18NCatalog, getValueFromKey } from "@/i18n";
+import { Button } from "@heroui/react";
 import { useState } from "react";
+import { Filters } from "./Filters";
+import { motion } from "framer-motion";
 
 export const CatalogoSection = (
     {
@@ -20,18 +23,29 @@ export const CatalogoSection = (
     return (
         <>
 
+            <div className=" px-4">
+                <Filters
+                    groupedByCategory={groupedByCategory}
+                    selectedProducts={selectedProducts}
+                    setSelectedProducts={setSelectedProducts}
+                />
+            </div>
 
 
-            <div id="catalogScroll" className="mx-auto overflow-auto w-screen h-0 xl:h-auto fade">
+            <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+
+                id="catalogScroll" className="mx-auto overflow-auto w-screen h-0 xl:h-auto ">
                 <div id="catalog" className="flex flex-col gap-8 w-[1360px] mx-auto">
                     {
-                        Object.keys(selectedProducts).map((category) => {
+                        Object.keys(selectedProducts).map((category, i) => {
                             const { categoryName, products, categoryDescription } =
                                 selectedProducts[category];
                             return (
                                 <section
                                     id="catalogSection"
-                                    key={categoryName}
+                                    key={categoryName + `-${i}`}
                                     className=" flex bg-interbrasGreen-500 text-white rounded-[50px] "
                                 >
                                     <div className="mx-8 my-16 flex flex-col">
@@ -44,13 +58,12 @@ export const CatalogoSection = (
                                         </h3>
 
                                         {products[0].registered && (
-                                            <div className=" w-full relative mt-10 bg-interbrasGreen-600 rounded-xl  py-10">
+                                            <div className=" w-full mt-10 bg-interbrasGreen-600 rounded-xl  py-10">
                                                 <img
-                                                    className=" max-w-72 w-full rounded-3xl object-contain relative mx-auto z-10"
+                                                    className=" max-w-72 w-full rounded-3xl object-contain  mx-auto z-10"
                                                     src={products[0].photo || ""}
                                                     alt=""
                                                 />
-                                                <div className=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2  size-56 rounded-full  bg-interbrasGreen-300 " />
                                                 <h3 className=" max-w-44 text-center mx-auto font-bold text-xl mt-3">
                                                     {products[0].originalName}
                                                 </h3>
@@ -73,7 +86,7 @@ export const CatalogoSection = (
 
                                                 return (
                                                     <li
-                                                        key={product.productCode}
+                                                        key={product.productCode + '-' + product.code}
                                                         className={`bg-[#f2f2f293] p-5 relative min-h-72 h-min rounded-3xl`}
                                                     >
                                                         <div className="flex gap-4">
@@ -92,8 +105,9 @@ export const CatalogoSection = (
                                                                             {product.info.specs
                                                                                 ?.split("\n")
                                                                                 .slice(0, 7)
-                                                                                .map((spec: string) => {
-                                                                                    return <li className="text-sm">{spec}</li>;
+                                                                                .map((spec: string, i: number) => {
+                                                                                    return <li className="text-sm" key={i}
+                                                                                    >{spec}</li>;
                                                                                 })}
                                                                         </ul>
                                                                     </div>
@@ -120,10 +134,17 @@ export const CatalogoSection = (
                                                                 <h3 className="text-2xl  font-medium line-clamp-3 leading-6">
                                                                     {product.originalName}
                                                                 </h3>
-                                                                <ul className=" flex mt-2">
-                                                                    <span className=" px-2 bg-interbrasGreen-100 rounded-lg text-interbrasGreen-600">
+                                                                <ul className=" flex mt-2 gap-1 font-light">
+                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300">
                                                                         SKU {product.code}
                                                                     </span>
+
+                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300">
+                                                                        {
+                                                                            product.productPerBox
+                                                                        } {t_catalog("perBox")}
+                                                                    </span>
+
                                                                 </ul>
 
                                                                 {product.info.included && (
@@ -143,7 +164,7 @@ export const CatalogoSection = (
                         })
                     }
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }
