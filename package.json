@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" ",
-    "push" : "drizzle-kit push --config=./drizzle-dev.config.ts && drizzle-kit push --config=./drizzle-prod.config.ts",
+    "push": "drizzle-kit push --config=./drizzle-dev.config.ts && drizzle-kit push --config=./drizzle-prod.config.ts",
     "push:dev": "drizzle-kit push --config=./drizzle-dev.config.ts",
     "push:prod": "drizzle-kit push --config=./drizzle-prod.config.ts"
   },
@@ -40,6 +40,7 @@
   "devDependencies": {
     "drizzle-kit": "^0.30.3",
     "prettier-plugin-astro": "^0.14.1",
-    "tsx": "^4.19.2"
+    "tsx": "^4.19.2",
+    "vite": "^6.0.11"
   }
 }

@@ -1,3 +1,4 @@
+import { loadEnv } from "vite";
 import { db } from "./config";
 import { Catalog, Category, Color, Photo, Product, Status, Variant, Volt } from "./schema";
 
@@ -18,9 +19,11 @@ const ALL_PHOTOS = [{"id":1,"variant_id":1,"url":"/productos/tvs/IN3200TV-1.webp
 
 const ALL_VOLTAJES = [{"id":1,"name":"120V"},{"id":2,"name":"220V"},{"id":3,"name":"Bivolt"},{"id":4,"name":null}];
 
+const { NODE_ENV } = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), "");
+
 const init = async () => {
 
-  if (import.meta.env.PROD) return;
+  if (NODE_ENV !== 'development' ) return;
 
   [Color,Volt,Photo,Status,Catalog,Variant,Product,Category].forEach(async (model) => {
     await db.delete(model).all()
@@ -36,7 +39,7 @@ const init = async () => {
   const variants = await db.insert(Variant).values(ALL_VARIANTS);
   const photos = await db.insert(Photo).values(ALL_PHOTOS);
 
-  return { categories, volts, colors, products, variants, photos, status };
+  return { categories, volts, colors, products, variants, photos, status, catalog };
 }
 
 export function seedDatabase() {

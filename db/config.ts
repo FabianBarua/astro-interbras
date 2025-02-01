@@ -1,13 +1,16 @@
 import { drizzle } from 'drizzle-orm/libsql';
+import { loadEnv } from "vite";
+
+const { NODE_ENV, DATABASE_URL, DATABASE_AUTH_TOKEN } = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), "");
 
 const isDev = () => {
-  return import.meta.env.DEV
+  return NODE_ENV === 'development';
 }
 
 const db_prod = ()=>
   drizzle({ connection: {
-    url: import.meta.env.DATABASE_URL, 
-    authToken: import.meta.env.DATABASE_AUTH_TOKEN 
+    url: DATABASE_URL, 
+    authToken: DATABASE_AUTH_TOKEN 
   }});
 
 
