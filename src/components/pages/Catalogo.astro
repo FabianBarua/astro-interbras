@@ -1,10 +1,5 @@
 ---
-import {
-  getI18NGlobal,
-  getI18NProducts,
-  getValueFromKey,
-  getI18NCatalog,
-} from "@/i18n";
+import { getI18NProducts, getValueFromKey, getI18NCatalog } from "@/i18n";
 import { cn, data } from "@/shared/utils";
 import { InteractiveGridPattern } from "../react/InteractiveGridPattern";
 import { db } from "@root/db/config";
@@ -18,6 +13,7 @@ import {
   Photo,
 } from "@root/db/schema";
 import { eq, min } from "drizzle-orm";
+import { CatalogoSection } from "../react/catalogo/CatalogoSection";
 
 const { currentLocale } = Astro;
 const i18n = getI18NProducts({ currentLocale });
@@ -45,7 +41,7 @@ const catalog = await db
     )
   );
 
-const groupedByCategory: {
+export interface grouped {
   [key: string]: {
     products: {
       code: string;
@@ -63,7 +59,9 @@ const groupedByCategory: {
     categoryDescription: string;
     categoryShortDescription: string;
   };
-} = {};
+}
+
+const groupedByCategory: grouped = {};
 
 catalog.forEach((item) => {
   const CategoryName = item?.category?.name
@@ -144,10 +142,9 @@ catalog.forEach((item) => {
 
   <div class="flex-1 justify-center items-end pr-20 flex-col hidden lg:flex">
     <img
-      id="fade"
       src="/1.png"
       alt="recopilacion de productos"
-      class="h-[500px] object-contain -rotate-12 scale-90"
+      class="h-[500px] object-contain -rotate-12 scale-90 fade"
     />
   </div>
   <div
@@ -189,128 +186,18 @@ catalog.forEach((item) => {
 
   <div class="flex-1 justify-center items-start pr-20 flex-col hidden lg:flex">
     <img
-      id="fade"
       src="/2.png"
       alt="recopilacion de productos"
-      class="h-[500px] object-contain rotate-12 scale-90"
+      class="h-[500px] object-contain rotate-12 scale-90 fade"
     />
   </div>
 </div>
 
-<div id="catalogScroll" class="mx-auto overflow-auto w-screen h-0 xl:h-auto">
-  <div id="catalog" class="flex flex-col gap-8 w-[1360px] mx-auto">
-    {
-      Object.keys(groupedByCategory).map((category) => {
-        const { categoryName, products, categoryDescription } =
-          groupedByCategory[category];
-        return (
-          <section
-            id="catalogSection"
-            class=" flex bg-interbrasGreen-500 text-white rounded-[50px] "
-          >
-            <div class="mx-8 my-16 flex flex-col">
-              <h2 class="text-4xl font-bold">{categoryName}</h2>
-              <h2 class="text-xl mt-2 max-w-80 leading-6">
-                {categoryDescription}
-              </h2>
-              <h3 class="text-base max-w-80 mt-3 leading-5 text-white/70">
-                {products[0].info.review}
-              </h3>
-
-              {products[0].registered && (
-                <div class=" w-full relative mt-10 bg-interbrasGreen-600 rounded-xl  py-10">
-                  <img
-                    class=" max-w-72 w-full rounded-3xl object-contain relative mx-auto z-10"
-                    src={products[0].photo || ""}
-                    alt=""
-                  />
-                  <div class=" absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2  size-56 rounded-full  bg-interbrasGreen-300 " />
-                  <h3 class=" max-w-44 text-center mx-auto font-bold text-xl mt-3">
-                    {products[0].originalName}
-                  </h3>
-                </div>
-              )}
-            </div>
-            <ul
-              class={`
-              flex-1 bg-white text-black m-4 rounded-t-[50px] rounded-b-3xl grid grid-cols-2 p-3 gap-2  
-              [&>*:nth-child(1)]:rounded-tl-[50px] [&>*:nth-child(2)]:rounded-tr-[50px]
-              
-              `}
-            >
-              {products
-                .sort((a, b) =>
-                  (a.productCode || "").localeCompare(b.productCode || "")
-                )
-                .map((product) => {
-                  if (!product.show) return null;
-
-                  return (
-                    <li
-                      class={`bg-[#f2f2f293] p-5 relative min-h-72 h-min rounded-3xl`}
-                    >
-                      <div class="flex gap-4">
-                        {product.registered && (
-                          <>
-                            <img
-                              class="w-52 h-44  rounded-3xl rounded-tl-[50px] p-2 object-contain mx-auto"
-                              src={product.photo || ""}
-                              alt=""
-                            />
-                            <div class="flex-1">
-                              <h3 class="text-2xl font-bold">
-                                {t_catalog("specs")}
-                              </h3>
-                              <ul>
-                                {product.info.specs
-                                  ?.split("\n")
-                                  .slice(0, 7)
-                                  .map((spec: unknown) => {
-                                    return <li class="text-sm">{spec}</li>;
-                                  })}
-                              </ul>
-                            </div>
-                          </>
-                        )}
-                      </div>
-
-                      <div class="flex  mt-4 px-2 gap-3">
-                        <div>
-                          <h3 class="text-2xl font-bold bg-interbrasGreen-500 text-white px-3 py-1 rounded-tr-xl rounded-bl-xl h-min text-nowrap">
-                            U$ {product.price}
-                          </h3>
-
-                          {product.volt && (
-                            <div class="bg-interbrasGreen-100  text-interbrasGreen-500 py-[2px] rounded-tr-xl rounded-bl-xl text-2xl flex-1 w-full text-center mt-1 font-bold">
-                              <p>{product.volt}</p>
-                            </div>
-                          )}
-                        </div>
-
-                        <div class=" border-l border-2 border-black/5" />
-
-                        <div class=" flex flex-col justify-center">
-                          <h3 class="text-2xl font-bold line-clamp-2">
-                            {product.name}
-                          </h3>
-                          {product.info.included && (
-                            <h4 class=" leading-5">
-                              <strong>{t_catalog("included")}:</strong>
-                              {product.info.included}
-                            </h4>
-                          )}
-                        </div>
-                      </div>
-                    </li>
-                  );
-                })}
-            </ul>
-          </section>
-        );
-      })
-    }
-  </div>
-</div>
+<CatalogoSection
+  client:only
+  groupedByCategory={groupedByCategory}
+  currentLocale={currentLocale || "es"}
+/>
 
 <div
   id="loader"
@@ -403,8 +290,8 @@ catalog.forEach((item) => {
   }
 </script>
 
-<style>
-  #fade {
+<style is:global>
+  .fade {
     opacity: 0;
     animation: fadeIn 1s forwards;
   }

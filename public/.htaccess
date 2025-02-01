@@ -7,6 +7,17 @@ DirectoryIndex index.html
   Header set Expires "0"
 </Files>
 
+# Evitar caché de /catalogo, /es/catalogo, /pt/catalogo
+<IfModule mod_headers.c>
+    <FilesMatch "^(/catalogo|/es/catalogo|/pt/catalogo)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+</IfModule>
+
+ErrorDocument 404 /404.html
+
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php82” package as the default “PHP” programming language.
 <IfModule mime_module>

@@ -1,0 +1,10 @@
+---
+import { db } from "@root/db/config";
+import { Catalog } from "@root/db/schema";
+
+const catalog = await db.select().from(Catalog);
+---
+
+<pre>
+    {JSON.stringify(catalog, null, 2)}
+</pre>

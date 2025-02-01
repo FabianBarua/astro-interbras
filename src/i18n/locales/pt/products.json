@@ -215,7 +215,7 @@
       },
       "6": {
         "id": "itb-24000iv",
-        "name": "ITB 24000IV Inverter (Paraguai 50Hz)",
+        "name": "ITB 24000IV Inverter (Brasil 50Hz)",
         "popular": false,
         "info": {
           "review": "Descrição: O ITB 24000IV é um ar condicionado potente com 24000 BTU, projetado para manter grandes espaços frescos e confortáveis. \nA tecnologia Inverter ajusta o uso de energia para maior eficiência e economia.",
@@ -225,7 +225,7 @@
         "variants": [
           {
             "id": "itb-24000iv-1",
-            "name": "ITB 24000IV Inverter (Paraguai 50Hz)",
+            "name": "ITB 24000IV Inverter (Brasil 50Hz)",
             "color": "Branco",
             "photos": [
               "/productos/aires/general.webp"
