@@ -115,7 +115,7 @@ export const CatalogoSection = (
                                                         </div>
 
                                                         <div className="flex  mt-4 px-2 gap-3">
-                                                            <div>
+                                                            <div className=" justify-center flex flex-col items-center ">
                                                                 <h3 className="text-xl bg-interbrasGreen-500 text-white px-3 py-1 rounded-tr-xl rounded-bl-xl h-min text-nowrap">
                                                                     USD {product.price}
                                                                 </h3>
