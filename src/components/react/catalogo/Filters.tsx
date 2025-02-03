@@ -90,7 +90,7 @@ export const Filters = (
 
         const searchFiltered = Object.keys(selectedByCategory).reduce((acc: grouped, category) => {
             const products = selectedByCategory[category].products.filter((product) => {
-                return product.name.toLowerCase().includes(search?.toLowerCase()) && product.show
+                return product.originalName.toLowerCase().includes(search?.toLowerCase()) && product.show
             });
             if (products.length > 0) {
                 acc[category] = {
