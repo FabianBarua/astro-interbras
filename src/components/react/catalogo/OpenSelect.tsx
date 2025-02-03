@@ -1,4 +1,4 @@
-import { Alert, Button, Listbox, ListboxItem } from "@heroui/react"
+import { Button, Listbox, ListboxItem } from "@heroui/react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react";
 
@@ -59,18 +59,29 @@ export const OpenSelect =
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 10 }}
                                     id={`selectCategory`} className="  w-full max-w-56 border-small px-1 py-2 z-40 rounded-small border-default-200 dark:border-default-100 absolute top-full mt-2  bg-background">
+                                    {/* @ts-ignore */}
                                     <Listbox
+                                        disallowEmptySelection
                                         aria-label="Multiple selection example"
                                         selectedKeys={selectedKeys}
                                         selectionMode="multiple"
                                         variant="flat"
-                                        onSelectionChange={(keys) => setSelectedKeys(new Set(keys as unknown as string[]))}
+                                        onSelectionChange={(keys: any) => setSelectedKeys(new Set(keys))}
                                     >
-                                        {options.map((category) => (
-                                            <ListboxItem key={category.key} value={category.key}>
-                                                {category.label}
-                                            </ListboxItem>
-                                        ))}
+                                        <>
+                                            {
+                                                options.map((
+                                                    category: { key: string, label: string }
+                                                ) => (
+                                                    <ListboxItem
+                                                        aria-label={category.label}
+                                                        key={category.key}
+                                                        value={category.key}>
+                                                        {category.label}
+                                                    </ListboxItem>
+                                                ))
+                                            }
+                                        </>
                                     </Listbox>
                                 </motion.div>
                             )

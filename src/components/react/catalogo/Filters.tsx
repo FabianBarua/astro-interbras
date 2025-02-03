@@ -1,8 +1,6 @@
 import type { grouped } from "@/components/pages/Catalogo.astro";
-import { Alert, Button, Card, cn, Input, Select, SelectItem, Switch } from "@heroui/react";
-import { Listbox, ListboxItem } from "@heroui/react";
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { Card, Input } from "@heroui/react";
+import React, { useEffect } from "react";
 import { OpenSelect } from "./OpenSelect";
 import { useDebouncedCallback } from 'use-debounce';
 
@@ -30,7 +28,6 @@ const all_voltages = (grouped: grouped) => {
 export const Filters = (
     {
         groupedByCategory,
-        selectedProducts,
         setSelectedProducts,
     }: {
         groupedByCategory: grouped;
@@ -121,7 +118,7 @@ export const Filters = (
                         placeholder="Nombre del producto"
                         type="text"
                         className=" w-full flex-shrink"
-                        onChange={(e) =>
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                             debounced(e.target.value)
                         }
                         classNames={

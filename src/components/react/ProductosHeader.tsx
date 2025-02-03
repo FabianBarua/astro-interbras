@@ -1,4 +1,4 @@
-import { getI18NGlobal, getI18NProducts, getValueFromKey } from '@/i18n'
+import { getI18NGlobal, getValueFromKey } from '@/i18n'
 import { getLangFromUrl } from '@/i18n/utils'
 import { type Urls } from '@/shared/utils'
 import { motion } from 'framer-motion'
@@ -18,7 +18,7 @@ interface LinkItemProps {
 
 const LinkItem: React.FC<LinkItemProps> = ({ to, children, clicked, lang }) => {
   return (
-    <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"} 
+    <a hrefLang={lang === "pt" ? "pt-BR" : lang || "es"}
       className=' opacity-55 hover:opacity-100 transition-colors'
       href={to}
       onClick={
@@ -39,17 +39,17 @@ export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
   urls
 }) => {
 
-    const lang = getLangFromUrl(
-        new URL(window.location.href)
-    )
+  const lang = getLangFromUrl(
+    new URL(window.location.href)
+  )
 
-    const i18nGlobal = getI18NGlobal({
-        currentLocale: lang,
-    })
+  const i18nGlobal = getI18NGlobal({
+    currentLocale: lang,
+  })
 
-    const t = (key: string) => {
-        return getValueFromKey(key, i18nGlobal);
-    }
+  const t = (key: string) => {
+    return getValueFromKey(key, i18nGlobal);
+  }
 
   return (
     <motion.div
@@ -58,7 +58,7 @@ export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
       className=' h-full w-full flex justify-center'
     >
       <div className=' mt-5 lg:mt-auto mx-3  lg:mx-0 text-white flex lg:my-auto  gap-6 landscape:flex-row flex-col items-center '>
-        <img loading="lazy"  src='/productosHeader.webp' className='  h-64 ' alt='Arrow' />
+        <img loading="lazy" src='/productosHeader.webp' className='  h-64 ' alt='Arrow' />
         <div className=' flex flex-col items-left justify-center'>
           <h3 className='text-lg  font-bold'>
             {t('header.products.text')}
@@ -82,9 +82,9 @@ export const ProductosHeader: React.FC<ProductosHeaderProps> = ({
               }
             </div>
             <div className=' flex-col flex'>
-            {
+              {
                 urls.slice(
-                  8, 
+                  8,
                   urls.length
                 ).map(url => (
                   <LinkItem

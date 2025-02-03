@@ -1,6 +1,6 @@
 ---
 import { getI18NProducts, getValueFromKey, getI18NCatalog } from "@/i18n";
-import { cn, data } from "@/shared/utils";
+import { cn } from "@/shared/utils";
 import { InteractiveGridPattern } from "../react/InteractiveGridPattern";
 import { db } from "@root/db/config";
 import {
@@ -230,12 +230,13 @@ catalog.forEach((item) => {
 ></script>
 
 <script
+  is:inline
   src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
   integrity="sha512-z8IYLHO8bTgFqj+yrPyIJnzBDf7DDhWwiEsk4sY+Oe6J2M+WQequeGS7qioI5vT6rXgVRb4K1UVQC5ER7MKzKQ=="
   crossorigin="anonymous"
   referrerpolicy="no-referrer"></script>
 
-<script type="text/javascript">
+<script is:inline>
   document
     .getElementById("downloadCatalog")
     .addEventListener("click", convertir);

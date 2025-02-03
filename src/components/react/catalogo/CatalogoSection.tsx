@@ -1,6 +1,5 @@
 import type { grouped } from "@/components/pages/Catalogo.astro";
 import { getI18NCatalog, getValueFromKey } from "@/i18n";
-import { Button } from "@heroui/react";
 import { useState } from "react";
 import { Filters } from "./Filters";
 import { motion } from "framer-motion";
