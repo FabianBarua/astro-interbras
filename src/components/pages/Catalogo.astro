@@ -12,7 +12,7 @@ import {
   Category,
   Photo,
 } from "@root/db/schema";
-import { eq, min } from "drizzle-orm";
+import { and, eq, min } from "drizzle-orm";
 import { CatalogoSection } from "../react/catalogo/CatalogoSection";
 import { HeroProvider } from "../react/catalogo/Provider";
 
@@ -33,14 +33,18 @@ const catalog = await db
   .fullJoin(Category, eq(Category.id, Product.category_id))
   .fullJoin(Photo, eq(Photo.variant_id, Variant.id))
   .where(
-    eq(
-      Photo.order,
-      db
-        .select({ order: min(Photo.order) })
-        .from(Photo)
-        .where(eq(Photo.variant_id, Variant.id))
+    and(
+      eq(
+        Photo.order,
+        db
+          .select({ order: min(Photo.order) })
+          .from(Photo)
+          .where(eq(Photo.variant_id, Variant.id))
+      )
     )
   );
+
+console.log(catalog);
 
 export interface grouped {
   [key: string]: {

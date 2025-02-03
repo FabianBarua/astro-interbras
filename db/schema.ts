@@ -41,6 +41,7 @@ export const Catalog = sqliteTable("catalog", {
   price: real(),
   status_id : int().references(() => Status.id, {onDelete: 'set null', onUpdate:'cascade'}),
   productPerBox: int(),
+  show: int({mode: 'boolean'}).default(true).notNull(),
 } );
 
 export const Status = sqliteTable("status", {
