@@ -133,7 +133,7 @@ export const Filters = (
                 </div>
 
 
-                <div className=" flex gap-2 w-full items-center justify-end">
+                <div className=" flex gap-2 w-full items-center justify-center lg:justify-end">
                     <OpenSelect
                         title="Categorías"
                         options={categories(groupedByCategory)}

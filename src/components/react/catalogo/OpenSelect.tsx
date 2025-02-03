@@ -40,7 +40,7 @@ export const OpenSelect =
         return (
             <>
 
-                <div className="flex flex-col gap-2 relative max-w-52 z-40  flex-shrink w-full">
+                <div className="flex flex-col gap-2 relative lg:max-w-52 z-40  flex-shrink w-full">
                     <div className=" flex flex-col justify-center items-center gap-2">
                         <Button
                             variant="bordered"
