@@ -30,9 +30,9 @@ export const Volt = sqliteTable("volt", {
 export const Variant = sqliteTable("variant", {
   id: int().primaryKey({ autoIncrement: true }).notNull(),
   product_id: text().references(() => Product.id, {onDelete: 'cascade', onUpdate:'cascade'}).notNull(),
-  color_id: int().references(() => Color.id, {onDelete: 'set null', onUpdate:'cascade'}).notNull(),
-  volt_id: int().references(() => Volt.id , {onDelete: 'set null', onUpdate:'cascade'}).notNull(),
-  catalog_id: int().references(() => Catalog.id, {onDelete: 'set null', onUpdate:'cascade'}).unique().notNull(),
+  color_id: int().references(() => Color.id, {onDelete: 'set null', onUpdate:'cascade'}),
+  volt_id: int().references(() => Volt.id , {onDelete: 'set null', onUpdate:'cascade'}),
+  catalog_id: int().references(() => Catalog.id, {onDelete: 'set null', onUpdate:'cascade'}),
 });
 
 export const Catalog = sqliteTable("catalog", {
