@@ -1,10 +1,10 @@
 import { type Cycle, motion } from 'framer-motion'
-import { MenuItem } from '@/components/react/MenuItem'
+import { MenuItem } from '@/components/react/header/MenuItem'
 import React from 'react'
 
-import { WhereWeAre } from '@/components/react/WhereWeAre'
-import { ProductosHeader } from '@/components/react/ProductosHeader'
-import { QuienesSomos } from '@/components/react/QuienesSomos'
+import { WhereWeAre } from '@/components/react/header/WhereWeAre'
+import { ProductosHeader } from '@/components/react/header/ProductosHeader'
+import { QuienesSomos } from '@/components/react/header/QuienesSomos'
 
 import { getI18NGlobal, getValueFromKey } from '@/i18n'
 import { getLangFromUrl } from '@/i18n/utils'
@@ -63,10 +63,10 @@ export const Navigation: React.FC<NavigationProps> = ({ isOpen, toggleOpen, urls
     <>
       <motion.div
         style={
-        {
-          pointerEvents: isOpen ? 'all' : 'none'
+          {
+            pointerEvents: isOpen ? 'all' : 'none'
+          }
         }
-      }
         className=' hiddenTemp absolute top-16 left-4 w-[calc(100dvw-2rem)]  flex flex-col items-center justify-center h-auto ' variants={variants}
       >
         <ul className=' flex gap-3 text-xl w-80 h-min flex-wrap items-center justify-center'>
@@ -108,11 +108,11 @@ export const Navigation: React.FC<NavigationProps> = ({ isOpen, toggleOpen, urls
                   >
 
                     {
-                      (i.Component != null) && 
+                      (i.Component != null) &&
                       <i.Component toggle={toggleOpen}
                         urls={urls}
-                       />
-}
+                      />
+                    }
 
                   </motion.div>
                 )
