@@ -1,10 +1,9 @@
 ---
-import { db } from "@root/db/config";
-import { Catalog } from "@root/db/schema";
+import { getProducts } from "@/shared/newUtils";
 
-const catalog = await db.select().from(Catalog);
+const products = await getProducts();
 ---
 
 <pre>
-    {JSON.stringify(catalog, null, 2)}
+    {JSON.stringify(products, null, 2)}
 </pre>
