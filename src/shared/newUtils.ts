@@ -2,12 +2,6 @@ import { db } from "@root/db/config";
 import { Category, Color, Photo, Product, Variant, Volt } from "@root/db/schema";
 import { and, eq, inArray } from "drizzle-orm";
 
-
-type getProductsProps = Partial<{
-    id? : string | string[],
-    category_id? : string | string[]
-}>;
-
 export type Volt = {
     id: number
     name: string
@@ -24,7 +18,12 @@ export type Photo = {
     order: number
 }
 
-const getProducts = async (settings: getProductsProps = {}) => {
+type getProductsProps = Partial<{
+    id? : string | string[],
+    category_id? : string | string[]
+}>;
+
+export const getProducts = async (settings: getProductsProps = {}) => {
     
     const filters = [];
     
@@ -135,4 +134,107 @@ const getProducts = async (settings: getProductsProps = {}) => {
     return finalProducts
 };
 
-export { getProducts }
+type getCategoriesProps = Partial<{
+    id? : string | string[],
+    name? : string | string[]
+}>
+
+export const getCategories = async (settings: getCategoriesProps = {}) => {
+    const filters = [];
+    
+    if (settings.id) {
+        Array.isArray(settings.id) 
+            ? filters.push(inArray(Category.id, settings.id)) 
+            : filters.push(eq(Category.id, settings.id));
+    }
+
+    if (settings.name) {
+        Array.isArray(settings.name) 
+            ? filters.push(inArray(Category.name, settings.name)) 
+            : filters.push(eq(Category.name, settings.name));
+    }
+
+    const categories = await db.select().from(Category).where(and(...filters))
+
+    return categories
+}
+
+
+// ------------------ UTILS ------------------
+import { getI18NProducts, getValueFromKey } from "@/i18n";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const t_products = ({key, currentLocale}: {key: string, currentLocale: string | undefined}) => {
+
+    const i18n = getI18NProducts({ currentLocale });
+    const t = (key: string) => getValueFromKey(key, i18n);
+    return t(key)
+
+}
+
+export function convertToSlug(text: string) {
+    return text
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "");
+  }
+
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]): string {
+    return twMerge(clsx(inputs));
+}
+
+export type Url = {
+    id: string
+    name: string
+    url: string
+}
+
+type getUrlsProps = {
+    table: 'products' | 'categories'
+    category_id?: string | string[]
+    currentLocale: string | undefined
+}
+
+export const getUrls = async ({
+    currentLocale = 'es',
+    table,
+    category_id
+}: getUrlsProps 
+) : Promise<Url[]> => {
+
+    if (table === 'products') {
+        const products = await getProducts({category_id})
+        return products.map(
+            product => ({
+                id: product.id,
+                name: t_products({key: product.name, currentLocale}),
+                url: getRelativeLocaleUrl(
+                    currentLocale,
+                    `/productos/${convertToSlug(t_products({key: product.category.name, currentLocale}))}/${convertToSlug(t_products({key: product.name, currentLocale}))}`,
+                )
+            })
+        )
+    }
+
+    if (table === 'categories') {
+        const categories = await getCategories({id: category_id})
+        return categories.map(
+            category => ({
+                id: category.id,
+                name: t_products({key: category.name, currentLocale}),
+                url: getRelativeLocaleUrl(
+                    currentLocale,
+                    `/productos/${convertToSlug(t_products({key: category.name, currentLocale}))}`,
+                )
+            })
+        )
+    }
+
+    return []
+};

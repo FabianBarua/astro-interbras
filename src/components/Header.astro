@@ -6,9 +6,10 @@ import WeProductsSection from "@/components/WeProductsSection.astro";
 import WhoWeAreSection from "@/components/WhoWeAreSection.astro";
 import SwitchButton from "@/components/SwitchButton.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
+
 import { MobileNav } from "./react/header/MobileNav";
 import { getI18NGlobal, getValueFromKey } from "@/i18n";
-import { getUrls } from "@/shared/utils";
+import { getUrls } from "@/shared/newUtils";
 
 const { currentLocale } = Astro;
 const i18n = getI18NGlobal({ currentLocale });
@@ -17,7 +18,10 @@ const t = (key: string) => {
   return getValueFromKey(key, i18n);
 };
 
-const urls = getUrls({ currentLocale });
+const urls = await getUrls({
+  currentLocale,
+  table: "categories",
+});
 ---
 
 <header

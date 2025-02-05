@@ -1,12 +1,12 @@
 import { getI18NGlobal, getValueFromKey } from '@/i18n'
 import { getLangFromUrl } from '@/i18n/utils'
-import { type Urls } from '@/shared/utils'
+import type { Url } from '@/shared/newUtils'
 import { motion } from 'framer-motion'
 import React from 'react'
 
 interface ProductosHeaderProps {
   clicked?: () => void
-  urls: Urls[]
+  urls: Url[]
 }
 
 interface LinkItemProps {

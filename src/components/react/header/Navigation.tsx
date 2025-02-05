@@ -8,7 +8,8 @@ import { QuienesSomos } from '@/components/react/header/QuienesSomos'
 
 import { getI18NGlobal, getValueFromKey } from '@/i18n'
 import { getLangFromUrl } from '@/i18n/utils'
-import type { Urls } from '@/shared/utils'
+
+import type { Url } from '@/shared/newUtils'
 
 const variants = {
   open: {
@@ -22,7 +23,7 @@ const variants = {
 interface NavigationProps {
   isOpen: boolean
   toggleOpen: Cycle
-  urls: Urls[]
+  urls: Url[]
 }
 
 const variantsItems = {
@@ -57,10 +58,9 @@ export const Navigation: React.FC<NavigationProps> = ({ isOpen, toggleOpen, urls
     return getValueFromKey(key, i18n);
   };
 
-
-
   return (
     <>
+
       <motion.div
         style={
           {
@@ -136,7 +136,7 @@ const itemIds = [
   {
     id: 'headerSectionMobile2',
     title: 'header.products.title',
-    Component: ({ toggle, urls }: { toggle: Cycle, urls: Urls[] }) => {
+    Component: ({ toggle, urls }: { toggle: Cycle, urls: Url[] }) => {
       return (
         <ProductosHeader
           urls={urls}

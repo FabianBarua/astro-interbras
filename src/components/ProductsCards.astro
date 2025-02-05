@@ -1,5 +1,5 @@
 ---
-import { getUrlCategoryById } from "@/shared/utils";
+// import { getUrlCategoryById } from "@/shared/utils";
 import SquareProductCard from "./home/SquareProductCard.astro";
 
 const getDelay = (
@@ -133,7 +133,7 @@ const initialProducts = [
       bgColor: 1,
     },
   ],
-  
+
   [
     {
       name: "aires",
@@ -324,7 +324,7 @@ const allBgColors = [
                 productColumn.length
               )}
               bgColor={allBgColors[productRow.bgColor]}
-            ></SquareProductCard>
+            />
           ))}
         </div>
       ))

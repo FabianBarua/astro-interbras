@@ -18,8 +18,8 @@ const langs = [
   },
 ];
 
-const langSelected = langs.find((lang) => lang.id === currentLocale) || langs[0];
-
+const langSelected =
+  langs.find((lang) => lang.id === currentLocale) || langs[0];
 ---
 
 <div class="relative w-full">
@@ -28,7 +28,13 @@ const langSelected = langs.find((lang) => lang.id === currentLocale) || langs[0]
     for="lang-toggle"
     class="text-white bg-interbrasGreen-900 rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2 cursor-pointer"
   >
-    <img loading="lazy" width="20px" height="20px" src={langSelected.flag} alt={langSelected.alt} />
+    <img
+      loading="lazy"
+      width="20px"
+      height="20px"
+      src={langSelected.flag}
+      alt={langSelected.alt}
+    />
     {langSelected.slug}
   </label>
 
@@ -36,19 +42,26 @@ const langSelected = langs.find((lang) => lang.id === currentLocale) || langs[0]
     class="absolute gap-1 top-[120%] text-white hidden peer-checked:flex flex-col w-full"
     style="opacity: 1; will-change: auto; transform: none;"
   >
-    {langs.map((lang) => {
-      if (lang.id === currentLocale ) return null;
+    {
+      langs.map((lang) => {
+        if (lang.id === currentLocale) return null;
 
-      return (
+        return (
           <a
             data-astro-reload
             href={`/${lang.id === "es" ? "" : lang.id}`}
             class="text-white bg-interbrasGreen-900 w-full rounded-lg hover:bg-interbrasGreen-900/80 transition-colors px-2 py-1 flex justify-center items-center gap-2"
           >
-            <img loading="eager"  class=" pointer-events-none " src={lang.flag} alt={lang.alt} />
+            <img
+              loading="eager"
+              class=" pointer-events-none "
+              src={lang.flag}
+              alt={lang.alt}
+            />
             {lang.slug}
           </a>
-      );
-    })}
+        );
+      })
+    }
   </div>
 </div>
