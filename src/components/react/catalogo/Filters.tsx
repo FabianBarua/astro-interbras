@@ -47,7 +47,6 @@ export const Filters = (
     const debounced = useDebouncedCallback(
         // function
         (value: string) => {
-            console.log('debounced', value);
             setSearch(value);
         },
         // delay in ms
@@ -83,7 +82,6 @@ export const Filters = (
 
 
         if (!search) {
-            console.log('selectedByCategory', selectedByCategory);
             setSelectedProducts(selectedByCategory);
             return;
         }

@@ -44,8 +44,6 @@ const catalog = await db
     )
   );
 
-console.log(catalog);
-
 export interface grouped {
   [key: string]: {
     products: {
@@ -102,7 +100,7 @@ catalog.forEach((item) => {
     ? t(item.product.specs)
     : t_catalog("noSpecs");
 
-  const photo = item?.photo?.url || "test";
+  const photo = item?.photo?.url || "noPhoto";
 
   const product = {
     code,
