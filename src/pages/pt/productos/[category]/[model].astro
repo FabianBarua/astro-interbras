@@ -26,8 +26,6 @@ const i18n = getI18NProducts({ currentLocale });
 const t = (key: string) => getValueFromKey(key, i18n);
 const categories = await getCategories();
 const categorySelected = categories.find((cat) => {
-  console.log(`db: ${category} === ${convertToSlug(t(cat.name))}`);
-
   return convertToSlug(t(cat.name)) === category;
 });
 const products = await getProducts({
