@@ -8,7 +8,7 @@ import {
   useTransform,
   useVelocity,
 } from "framer-motion";
-import { cn } from "@/shared/utils";
+import { cn } from "@/shared/tailwind";
 
 interface VelocityScrollProps {
   text: string;

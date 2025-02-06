@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { cn } from '@/shared/utils'
+import { cn } from '@/shared/tailwind'
 
 export interface MagicCardProps {
   children: React.ReactNode
@@ -12,7 +12,7 @@ export interface MagicCardProps {
   gradientOpacity?: number
 }
 
-export function MagicCard ({
+export function MagicCard({
   children,
   className = '',
   gradientSize = 200,

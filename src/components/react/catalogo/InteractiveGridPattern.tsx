@@ -1,4 +1,5 @@
-import { cn } from "@/shared/utils";
+import { cn } from "@/shared/tailwind";
+
 import React, { useState } from "react";
 
 /**

@@ -1,35 +1,20 @@
 ---
-import { getCategory, getProductUrl } from "@/shared/utils";
+import { getUrls } from "@/shared/newUtils";
 import Ripples from "../Ripples.astro";
 
-import { getI18NGlobal, getI18NProducts, getValueFromKey } from "@/i18n";
+import { getI18NGlobal, getValueFromKey } from "@/i18n";
 const { currentLocale } = Astro;
-const i18n = getI18NProducts({ currentLocale });
-
-const t = (key: string) => {
-  return getValueFromKey(key, i18n);
-};
 
 const i18n_global = getI18NGlobal({ currentLocale });
 const t_global = (key: string) => {
   return getValueFromKey(key, i18n_global);
 };
 
-
-const tvs = getCategory({
-  id: "tvs",
+const tvs = await getUrls({
+  currentLocale: currentLocale || "es",
+  category_id: "tvs",
+  table: "products",
 });
-
-const urls = tvs.children.map((item) => {
-  return getProductUrl ({
-    category: tvs.name,
-    product: item.name,
-    currentLocale: currentLocale || 'es',
-  });
-});
-
-
-
 ---
 
 <section class="relative mt-12 overflow-hidden">
@@ -76,9 +61,7 @@ const urls = tvs.children.map((item) => {
     >
       <span class=""> Interbras Tvs </span>
       <span class="bg-white rounded-xl ml-3 px-3 text-neutral-800">
-        {
-          t_global('home.tvs.sizes')
-        }
+        {t_global("home.tvs.sizes")}
       </span>
     </h3>
 
@@ -86,12 +69,12 @@ const urls = tvs.children.map((item) => {
       class="gap-2 flex mx-auto w-full max-w-3xl justify-center mt-4 flex-wrap"
     >
       {
-        tvs.children.map((item) => (
+        tvs.map((item) => (
           <a
-            href={urls[tvs.children.indexOf(item)]}
+            href={item.url}
             class=" hover:bg-neutral-200 border-neutral-300 transition-colors  px-2  py-1 bg-neutral-300 rounded-lg text-nowrap border"
           >
-            {t(item.name)}
+            {item.name}
           </a>
         ))
       }
@@ -110,6 +93,4 @@ const urls = tvs.children.map((item) => {
       opacity: 1;
     }
   }
-
-
 </style>

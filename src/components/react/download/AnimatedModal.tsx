@@ -9,7 +9,7 @@ import React, {
   useRef,
   useState
 } from 'react'
-import { cn } from '@/shared/utils'
+import { cn } from '@/shared/tailwind'
 
 interface ModalContextType {
   open: boolean
@@ -36,7 +36,7 @@ export const useModal = () => {
   return context
 }
 
-export function Modal ({ children }: { children: React.ReactNode }) {
+export function Modal({ children }: { children: React.ReactNode }) {
   return <ModalProvider>{children}</ModalProvider>
 }
 
@@ -54,7 +54,7 @@ export const ModalTrigger = ({
         className
       )}
       onClick={() => setOpen(!open)
-        
+
       }
     >
       {children}

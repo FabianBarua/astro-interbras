@@ -1,9 +1,5 @@
 ---
-// import { getUrlCategoryById } from "@/shared/utils";
-import { db } from "@root/db/config";
 import SquareProductCard from "./home/SquareProductCard.astro";
-import { Category } from "@root/db/schema";
-import { inArray } from "drizzle-orm";
 import { getUrls } from "@/shared/newUtils";
 
 const getDelay = (
@@ -294,8 +290,8 @@ const productsFINAL = initialProducts.map((productColumn) => {
     return {
       name: productRow.name,
       url: {
-        id: catUrls.find((cat) => cat.name === productRow.name)?.id,
-        url: catUrls.find((cat) => cat.name === productRow.name)?.url,
+        id: catUrls.find((cat) => cat.id === productRow.name)?.id,
+        url: catUrls.find((cat) => cat.id === productRow.name)?.url,
       },
       photo: productRow.photo,
       isMagic: productRow.isMagic,
@@ -328,7 +324,7 @@ const allBgColors = [
         >
           {productColumn.map((productRow, RowIndex) => (
             <SquareProductCard
-              href={productRow?.url?.url ?? "/"}
+              href={productRow?.url?.url ?? "/asd"}
               src={productRow.photo}
               alt={productRow.name}
               isMagic={productRow.isMagic}

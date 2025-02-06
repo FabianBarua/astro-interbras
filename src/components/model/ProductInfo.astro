@@ -1,6 +1,5 @@
 ---
 import { getI18NGlobal, getI18NProducts, getValueFromKey } from "@/i18n";
-import type { Info } from "@/shared/utils";
 
 const { currentLocale } = Astro;
 const i18n = getI18NProducts({ currentLocale });
@@ -10,7 +9,11 @@ const i18n2 = getI18NGlobal({ currentLocale });
 const t2 = (key:string) => getValueFromKey(key, i18n2 );
 
 interface Props {
-  info : Info
+  info : {
+    review: string;
+    included: string | null;
+    specs: string;
+  }
 }	
 
 const { info } = Astro.props;
@@ -30,7 +33,7 @@ const { info } = Astro.props;
 
 
         <div  class=" flex-1 leading-5 flex flex-col gap-2">
-            {t(info.review).split('\n').map((item:string) => (
+            {info.review.split('\n').map((item:string) => (
                 <p class="">
                         <span>
                         {item}
@@ -50,7 +53,7 @@ const { info } = Astro.props;
                 {t2('productPage.whatAreIncluded')}
             </h4>
             <p class="px-4 lg:px-0 flex-1">
-                {t(info.included).split('\n').map((item:string) => (
+                {info.included.split('\n').map((item:string) => (
                     <span>
                     {item}
                     <br />
@@ -70,7 +73,7 @@ const { info } = Astro.props;
                 {t2('productPage.specs')}
             </h4>
             <p class="px-4 lg:px-0 flex-1">
-                {t(info.specs).split('\n').map((item:string) => (
+                {info.specs.split('\n').map((item:string) => (
                     <span>
                     {item}
                     <br />

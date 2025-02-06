@@ -1,5 +1,5 @@
 ---
-import { cn } from "@/shared/newUtils";
+import { cn } from "@/shared/tailwind";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const { currentLocale } = Astro;
@@ -91,7 +91,7 @@ const airFryers = [
             )}
           >
             <div class=" relative  text-white w-full">
-              <div class=" w-full h-full bg-black absolute top-0 right-0 blur-2xl z-[-1] "></div>
+              <div class=" w-full h-full bg-black absolute top-0 right-0 blur-2xl z-[-1] " />
 
               <p class="sm:text-base text-xs leading-3 sm:leading-5 text-balance ">
                 {item.description}

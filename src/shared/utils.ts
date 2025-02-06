@@ -110,8 +110,6 @@ export const getProductsByCategory = ({ id }: { id: string }): Category => {
   return products;
 };
 
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
 import {
   aires,
   airfryer,
@@ -131,9 +129,6 @@ import {
 } from "./data";
 import { getI18NProducts, getValueFromKey } from "@/i18n";
 
-export function cn(...inputs: ClassValue[]): string {
-  return twMerge(clsx(inputs));
-}
 
 export function convertToSlug(text: string) {
   return text
