@@ -28,7 +28,13 @@
     "pinkCamouflage": "Rosa camuflado",
     "purple": "Purpura Galaxia",
     "blueCamouflage": "Azul camuflado",
-    "rosePink": "Rosa Pink"
+    "rosePink": "Rosa Pink",
+    "blue" : "Azul",
+    "blueSpider": "Azul araña",
+    "redSpider" : "Rojo araña",
+    "pinkButterfly" : "Rosa Mariposa",
+    "redBlue" : "Rojo y Azul",
+    "greenBlack" : "Verde y Negro"
   },
   "airfryer": {
     "id": "airfryer",
