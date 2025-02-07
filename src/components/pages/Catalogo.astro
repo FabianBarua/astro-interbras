@@ -76,6 +76,10 @@ export interface GroupedByCategory {
 const groupedByCategory: GroupedByCategory = {};
 
 catalog.forEach((item) => {
+  if (!item.catalog?.show) {
+    return;
+  }
+
   const categoryID = item?.category?.id || "noCategory";
 
   const CategoryName = item?.category?.name
@@ -94,7 +98,7 @@ catalog.forEach((item) => {
 
   const name = item?.catalog?.name || t_catalog("noName");
   const price = item?.catalog?.price || t_catalog("noPrice");
-  const show = item?.catalog?.status_id === 1 || false;
+  const show = item?.catalog?.show === true || false;
   const registered = item?.product?.id ? true : false;
   const originalName = item?.product?.name
     ? t(item?.product?.name)
@@ -349,4 +353,3 @@ const orderedProducts: GroupedByCategory = {
     }
   }
 </style>
-

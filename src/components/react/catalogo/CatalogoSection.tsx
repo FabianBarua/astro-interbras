@@ -139,12 +139,12 @@ export const CatalogoSection = (
                                                                 <h3 className="text-2xl  font-medium line-clamp-3 leading-6">
                                                                     {product.originalName}
                                                                 </h3>
-                                                                <ul className=" flex mt-2 gap-1 font-light">
-                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300">
-                                                                        SKU {product.code}
+                                                                <ul className=" flex mt-2 gap-1 font-light text-nowrap">
+                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300 line-clamp">
+                                                                        COD {product.code}
                                                                     </span>
 
-                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300">
+                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300 line-clamp-1">
                                                                         {
                                                                             product.productPerBox
                                                                         } {t_catalog("perBox")}
