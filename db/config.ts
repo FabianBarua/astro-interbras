@@ -4,6 +4,7 @@ import { loadEnv } from "vite";
 const { NODE_ENV, DATABASE_URL, DATABASE_AUTH_TOKEN } = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), "");
 
 const isDev = () => {
+  return false
   return NODE_ENV === 'development';
 }
 

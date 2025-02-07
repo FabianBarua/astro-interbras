@@ -90,7 +90,7 @@ export const CatalogoSection = (
                                                 return (
                                                     <li
                                                         key={product.productCode + '-' + product.code}
-                                                        className={`bg-[#f2f2f293] p-5 relative min-h-72 h-min rounded-3xl`}
+                                                        className={`bg-[#f2f2f293] p-5 relative h-min rounded-3xl`}
                                                     >
                                                         <div className="flex gap-4">
                                                             {product.registered && (
@@ -104,7 +104,7 @@ export const CatalogoSection = (
                                                                         <h3 className="text-xl font-medium">
                                                                             {t_catalog("specs")}
                                                                         </h3>
-                                                                        <ul>
+                                                                        <ul className="">
                                                                             {product.info.specs
                                                                                 ?.split("\n")
                                                                                 .slice(0, 7)
