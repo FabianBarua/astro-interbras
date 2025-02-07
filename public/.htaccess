@@ -9,11 +9,11 @@ DirectoryIndex index.html
 
 # Evitar caché de /pdf, /es/pdf, /pt/pdf
 <IfModule mod_headers.c>
-    <FilesMatch "^(/pdf|/es/pdf|/pt/pdf)$">
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-        Header set Pragma "no-cache"
-        Header set Expires "0"
-    </FilesMatch>
+    <FilesMatch "^/(pdf|es/pdf|pt/pdf)(?!.*\.(jpg|jpeg|png|gif|svg|webp))">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
 </IfModule>
 
 ErrorDocument 404 /404.html
