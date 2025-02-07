@@ -118,7 +118,7 @@
     "children": {
       "1": {
         "id": "itb-12000iv",
-        "name": "ITB 12000IV Inverter (Brasil 60Hz)" ,
+        "name": "ITB 12000IV Inverter (Brasil 60Hz)",
         "popular": false,
         "info": {
           "review": "O ar condicionado ITB 12000IV de 12000 BTU é perfeito para manter sua casa fresca e confortável o ano todo.\nGraças à sua tecnologia Inverter, ajusta o uso de energia para máxima eficiência, ajudando a reduzir custos.",
@@ -465,8 +465,8 @@
     "name": "Cozinhas",
     "description": "Inovação compacta para sua cozinha na mesa.",
     "shortDescription": "Inovação compacta.",
-    "children": {"C10":
-      {
+    "children": {
+      "C10": {
         "id": "C10",
         "name": "Cozinha elétrica C10",
         "popular": false,
@@ -486,8 +486,7 @@
           }
         ]
       },
-      "C20":
-      {
+      "C20": {
         "id": "C20",
         "name": "Cozinha elétrica C20",
         "popular": false,
@@ -507,8 +506,7 @@
           }
         ]
       },
-      "C30":
-      {
+      "C30": {
         "id": "C30",
         "name": "Cozinha elétrica C30",
         "popular": false,
@@ -1058,7 +1056,6 @@
       }
     }
   },
-
   "hoverboards": {
     "id": "hoverboards",
     "name": "Hoverboards",
@@ -1228,6 +1225,265 @@
         ]
       }
     }
+  },
+  "triciclos": {
+    "id": "triciclos",
+    "name": "Triciclos",
+    "description": "Triciclos para crianças, com designs divertidos e cores chamativas para que os pequenos desfrutem de um passeio seguro e confortável.",
+    "shortDescription": "Triciclos para crianças",
+    "children": {
+      "65-N1": {
+        "id": "65-N1",
+        "name": "Triciclo 6.5-N1",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N2": {
+        "id": "65-N2",
+        "name": "Triciclo 6.5-N2",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N4": {
+        "id": "65-N4",
+        "name": "Triciclo 6.5-N4",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N8": {
+        "id": "65-N8",
+        "name": "Triciclo 6.5-N8",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N11": {
+        "id": "65-N11",
+        "name": "Triciclo 6.5-N11",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N13": {
+        "id": "65-N13",
+        "name": "Triciclo 6.5-N13",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N14": {
+        "id": "65-N14",
+        "name": "Triciclo 6.5-N14",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N29": {
+        "id": "65-N29",
+        "name": "Triciclo 6.5-N29",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N30": {
+        "id": "65-N30",
+        "name": "Triciclo 6.5-N30",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N40": {
+        "id": "65-N40",
+        "name": "Triciclo 6.5-N40",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N9": {
+        "id": "65-N9",
+        "name": "Triciclo 6.5-N9",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N10": {
+        "id": "65-N10",
+        "name": "Triciclo 6.5-N10",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N12": {
+        "id": "65-N12",
+        "name": "Triciclo 6.5-N12",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "65-N36": {
+        "id": "65-N36",
+        "name": "Triciclo 6.5-N36",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N1": {
+        "id": "80-N1",
+        "name": "Triciclo 8.0-N1",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N2": {
+        "id": "80-N2",
+        "name": "Triciclo 8.0-N2",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N4": {
+        "id": "80-N4",
+        "name": "Triciclo 8.0-N4",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N8": {
+        "id": "80-N8",
+        "name": "Triciclo 8.0-N8",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N11": {
+        "id": "80-N11",
+        "name": "Triciclo 8.0-N11",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N13": {
+        "id": "80-N13",
+        "name": "Triciclo 8.0-N13",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N14": {
+        "id": "80-N14",
+        "name": "Triciclo 8.0-N14",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N29": {
+        "id": "80-N29",
+        "name": "Triciclo 8.0-N29",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N30": {
+        "id": "80-N30",
+        "name": "Triciclo 8.0-N30",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N40": {
+        "id": "80-N40",
+        "name": "Triciclo 8.0-N40",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N9": {
+        "id": "80-N9",
+        "name": "Triciclo 8.0-N9",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N10": {
+        "id": "80-N10",
+        "name": "Triciclo 8.0-N10",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N12": {
+        "id": "80-N12",
+        "name": "Triciclo 8.0-N12",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      },
+      "80-N36": {
+        "id": "80-N36",
+        "name": "Triciclo 8.0-N36",
+        "info": {
+          "review": "Excelente opção para os mais pequenos. Oferece uma experiência de passeio confortável e segura, com um design atraente e resistente. Ideal para quem busca durabilidade e facilidade de uso, garantindo diversão sem preocupações.",
+          "included": null,
+          "specs": "Estrutura de aço carbono: Durabilidade e resistência.\nCarga máxima de 120 kg: Perfeito para qualquer usuário.\nBateria de 36V 3.0Ah: Energia de longa duração.\nMotor de 350W: Potência confiável em cada trajeto.\nAlcance de 9-10 km: Percursos eficientes sem preocupações.\nTroca de velocidade de 3 níveis: Ajuste entre baixo, médio e alto conforme a necessidade."
+        }
+      }
+    }
   }
-
 }
