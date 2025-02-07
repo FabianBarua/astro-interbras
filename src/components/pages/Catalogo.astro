@@ -55,6 +55,7 @@ export interface ProductData {
   name: string;
   productCode: string | null;
   price: string;
+  color: string;
   show: boolean;
   productPerBox: number;
   volt: string | null;
@@ -116,11 +117,14 @@ catalog.forEach((item) => {
 
   const photo = item?.photo?.url || "noPhoto";
 
+  const color = t(item?.color?.color || "") || "noColor";
+
   const product: ProductData = {
     code,
     productCode: item?.product?.id || null,
     name,
     price,
+    color,
     show,
     productPerBox: item.catalog?.productPerBox || 1,
     registered,

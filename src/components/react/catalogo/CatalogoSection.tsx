@@ -3,10 +3,8 @@ import { getI18NCatalog, getValueFromKey } from "@/i18n";
 import { useState } from "react";
 import { Filters } from "./Filters";
 import { motion } from "framer-motion";
+import { DefaultList, TriciclosList } from "./list";
 
-const formatPriceUSD = (price: Number) => {
-    return price.toFixed(2).toString().replace('.', ',');
-}
 
 export const CatalogoSection = (
     {
@@ -73,97 +71,20 @@ export const CatalogoSection = (
                                             </div>
                                         )}
                                     </div>
-                                    <ul
-                                        className={`
-                                        flex-1 bg-white text-black m-4 rounded-t-[50px] rounded-b-3xl grid grid-cols-2 p-3 gap-2  
-                                        [&>*:nth-child(1)]:rounded-tl-[50px] [&>*:nth-child(2)]:rounded-tr-[50px]
-                                        
-                                        `}
-                                    >
-                                        {products
-                                            .sort((a, b) =>
-                                                (a.productCode || "").localeCompare(b.productCode || "")
-                                            )
-                                            .map((product) => {
-                                                if (!product.show) return null;
+                                    {
+                                        category === "triciclos" ?
+                                            <TriciclosList
+                                                products={products}
+                                                t_catalog={t_catalog}
+                                            /> :
+                                            <DefaultList
+                                                products={products}
+                                                t_catalog={t_catalog}
+                                            />
+                                    }
 
-                                                return (
-                                                    <li
-                                                        key={product.productCode + '-' + product.code}
-                                                        className={`bg-[#f2f2f293] p-5 relative h-min rounded-3xl`}
-                                                    >
-                                                        <div className="flex gap-4">
-                                                            {product.registered && (
-                                                                <>
-                                                                    <img
-                                                                        className="w-52 h-44  rounded-3xl rounded-tl-[50px] p-2 object-contain mx-auto"
-                                                                        src={product.photo || ""}
-                                                                        alt=""
-                                                                    />
-                                                                    <div className="flex-1">
-                                                                        <h3 className="text-xl font-medium">
-                                                                            {t_catalog("specs")}
-                                                                        </h3>
-                                                                        <ul className="">
-                                                                            {product.info.specs
-                                                                                ?.split("\n")
-                                                                                .slice(0, 7)
-                                                                                .map((spec: string, i: number) => {
-                                                                                    return <li className="text-sm" key={i}
-                                                                                    >{spec}</li>;
-                                                                                })}
-                                                                        </ul>
-                                                                    </div>
-                                                                </>
-                                                            )}
-                                                        </div>
 
-                                                        <div className="flex  mt-4 px-2 gap-3">
-                                                            <div className=" justify-center flex flex-col items-center h-min my-auto ">
-                                                                <h3 className="text-xl bg-interbrasGreen-500 text-white px-3 py-1 rounded-tr-xl rounded-bl-xl h-min text-nowrap">
-                                                                    USD {
-                                                                        formatPriceUSD(Number(product.price))
-                                                                    }
-                                                                </h3>
 
-                                                                {product.volt && (
-                                                                    <div className="bg-interbrasGreen-100  h-min text-interbrasGreen-500 py-[2px] rounded-tr-xl rounded-bl-xl text-xl flex-1 w-full text-center mt-1 ">
-                                                                        <p>{product.volt}</p>
-                                                                    </div>
-                                                                )}
-                                                            </div>
-
-                                                            <div className=" border-l border-2 border-black/5" />
-
-                                                            <div className=" flex flex-col justify-center">
-                                                                <h3 className="text-2xl  font-medium line-clamp-3 leading-6">
-                                                                    {product.originalName}
-                                                                </h3>
-                                                                <ul className=" flex mt-2 gap-1 font-light text-nowrap">
-                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300 line-clamp">
-                                                                        COD {product.code}
-                                                                    </span>
-
-                                                                    <span className=" px-2 bg-interbrasGreen-900 rounded-lg text-interbrasGreen-300 line-clamp-1">
-                                                                        {
-                                                                            product.productPerBox
-                                                                        } {t_catalog("perBox")}
-                                                                    </span>
-
-                                                                </ul>
-
-                                                                {product.info.included && (
-                                                                    <h4 className=" leading-5">
-                                                                        <strong>{t_catalog("included")}:</strong>
-                                                                        {product.info.included}
-                                                                    </h4>
-                                                                )}
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                );
-                                            })}
-                                    </ul>
                                 </section>
                             );
                         })
