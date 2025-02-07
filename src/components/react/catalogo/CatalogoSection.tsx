@@ -1,20 +1,24 @@
-import type { grouped } from "@/components/pages/Catalogo.astro";
+import type { GroupedByCategory } from "@/components/pages/Catalogo.astro";
 import { getI18NCatalog, getValueFromKey } from "@/i18n";
 import { useState } from "react";
 import { Filters } from "./Filters";
 import { motion } from "framer-motion";
+
+const formatPriceUSD = (price: Number) => {
+    return price.toFixed(2).toString().replace('.', ',');
+}
 
 export const CatalogoSection = (
     {
         groupedByCategory,
         currentLocale
     }: {
-        groupedByCategory: grouped,
+        groupedByCategory: GroupedByCategory,
         currentLocale: string
     }
 ) => {
 
-    const [selectedProducts, setSelectedProducts] = useState<grouped>(groupedByCategory);
+    const [selectedProducts, setSelectedProducts] = useState<GroupedByCategory>(groupedByCategory);
 
     const i18n_catalog = getI18NCatalog({ currentLocale });
     const t_catalog = (key: string) => getValueFromKey(key, i18n_catalog);
@@ -115,13 +119,15 @@ export const CatalogoSection = (
                                                         </div>
 
                                                         <div className="flex  mt-4 px-2 gap-3">
-                                                            <div className=" justify-center flex flex-col items-center ">
+                                                            <div className=" justify-center flex flex-col items-center h-min my-auto ">
                                                                 <h3 className="text-xl bg-interbrasGreen-500 text-white px-3 py-1 rounded-tr-xl rounded-bl-xl h-min text-nowrap">
-                                                                    USD {product.price}
+                                                                    USD {
+                                                                        formatPriceUSD(Number(product.price))
+                                                                    }
                                                                 </h3>
 
                                                                 {product.volt && (
-                                                                    <div className="bg-interbrasGreen-100  text-interbrasGreen-500 py-[2px] rounded-tr-xl rounded-bl-xl text-xl flex-1 w-full text-center mt-1 ">
+                                                                    <div className="bg-interbrasGreen-100  h-min text-interbrasGreen-500 py-[2px] rounded-tr-xl rounded-bl-xl text-xl flex-1 w-full text-center mt-1 ">
                                                                         <p>{product.volt}</p>
                                                                     </div>
                                                                 )}

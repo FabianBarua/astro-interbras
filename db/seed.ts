@@ -1,9 +1,7 @@
 import { loadEnv } from "vite";
 import { db } from "./config";
 import { Catalog, Category, Color, Photo, Product, Status, Variant, Volt } from "./schema";
-
-        
-        
+ 
 const ALL_VOLT = [{"id":1,"name":"120V"},{"id":2,"name":"220V"},{"id":3,"name":"Bivolt"},{"id":4,"name":null}]
 
 const ALL_STATUS = [{"id":1,"name":"status.available"},{"id":2,"name":"status.unavailable"}]

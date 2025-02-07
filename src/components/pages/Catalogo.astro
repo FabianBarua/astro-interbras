@@ -44,30 +44,40 @@ const catalog = await db
     )
   );
 
-export interface grouped {
+export interface ProductInfo {
+  review: string;
+  included: string | null;
+  specs: string;
+}
+
+export interface ProductData {
+  code: string;
+  name: string;
+  productCode: string | null;
+  price: string;
+  show: boolean;
+  productPerBox: number;
+  volt: string | null;
+  registered: boolean;
+  originalName: string;
+  info: ProductInfo;
+  photo: string | undefined;
+}
+
+export interface GroupedByCategory {
   [key: string]: {
-    products: {
-      code: string;
-      name: string;
-      productCode: string | null;
-      price: string;
-      show: boolean;
-      productPerBox: number;
-      volt: string | null;
-      registered: boolean;
-      originalName: string;
-      info: { review: string; included: string | null; specs: string };
-      photo: string | undefined;
-    }[];
+    products: ProductData[];
     categoryName: string;
     categoryDescription: string;
     categoryShortDescription: string;
   };
 }
 
-const groupedByCategory: grouped = {};
+const groupedByCategory: GroupedByCategory = {};
 
 catalog.forEach((item) => {
+  const categoryID = item?.category?.id || "noCategory";
+
   const CategoryName = item?.category?.name
     ? t(item.category.name)
     : t_catalog("noCategory");
@@ -102,7 +112,7 @@ catalog.forEach((item) => {
 
   const photo = item?.photo?.url || "noPhoto";
 
-  const product = {
+  const product: ProductData = {
     code,
     productCode: item?.product?.id || null,
     name,
@@ -120,17 +130,42 @@ catalog.forEach((item) => {
     photo,
   };
 
-  if (!groupedByCategory[CategoryName]) {
-    groupedByCategory[CategoryName] = {
+  if (!groupedByCategory[categoryID]) {
+    groupedByCategory[categoryID] = {
       products: [product],
       categoryName: CategoryName,
       categoryDescription: CategoryDescription,
       categoryShortDescription: CategoryShortDescription,
     };
   } else {
-    groupedByCategory[CategoryName].products.push(product);
+    groupedByCategory[categoryID].products.push(product);
   }
 });
+
+// Orden de categorías solicitado
+const categoryOrder = [
+  "tvs",
+  "aires",
+  "scooters",
+  "hoverboards",
+  "triciclos",
+  "airfryer",
+];
+
+const orderedProducts: GroupedByCategory = {
+  ...categoryOrder.reduce((acc: GroupedByCategory, category: string) => {
+    if (groupedByCategory[category]) {
+      acc[category] = groupedByCategory[category];
+    }
+    return acc;
+  }, {}),
+  ...Object.keys(groupedByCategory)
+    .filter((category) => !categoryOrder.includes(category))
+    .reduce((acc: GroupedByCategory, category: string) => {
+      acc[category] = groupedByCategory[category];
+      return acc;
+    }, {}),
+};
 ---
 
 <div class="flex">
@@ -201,7 +236,7 @@ catalog.forEach((item) => {
 <HeroProvider client:only>
   <CatalogoSection
     client:only
-    groupedByCategory={groupedByCategory}
+    groupedByCategory={orderedProducts}
     currentLocale={currentLocale || "es"}
   />
 </HeroProvider>
@@ -314,3 +349,4 @@ catalog.forEach((item) => {
     }
   }
 </style>
+

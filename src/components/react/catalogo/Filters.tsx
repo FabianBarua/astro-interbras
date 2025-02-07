@@ -1,10 +1,10 @@
-import type { grouped } from "@/components/pages/Catalogo.astro";
+import type { GroupedByCategory } from "@/components/pages/Catalogo.astro";
 import { Card, Input } from "@heroui/react";
 import React, { useEffect } from "react";
 import { OpenSelect } from "./OpenSelect";
 import { useDebouncedCallback } from 'use-debounce';
 
-const categories = (grouped: grouped) => {
+const categories = (grouped: GroupedByCategory) => {
     return Object.keys(grouped).map((category) => {
         return {
             key: category,
@@ -13,7 +13,7 @@ const categories = (grouped: grouped) => {
     });
 }
 
-const all_voltages = (grouped: grouped) => {
+const all_voltages = (grouped: GroupedByCategory) => {
     const voltages = new Set<string>();
     Object.keys(grouped).map((category) => {
         return grouped[category].products.map((product) => {
@@ -30,9 +30,9 @@ export const Filters = (
         groupedByCategory,
         setSelectedProducts,
     }: {
-        groupedByCategory: grouped;
-        selectedProducts: grouped;
-        setSelectedProducts: React.Dispatch<React.SetStateAction<grouped>>;
+        groupedByCategory: GroupedByCategory;
+        selectedProducts: GroupedByCategory;
+        setSelectedProducts: React.Dispatch<React.SetStateAction<GroupedByCategory>>;
     }
 ) => {
 
@@ -59,7 +59,7 @@ export const Filters = (
 
     const filter = () => {
         // by voltage
-        const selectedByVoltage = Object.keys(groupedByCategory).reduce((acc: grouped, category) => {
+        const selectedByVoltage = Object.keys(groupedByCategory).reduce((acc: GroupedByCategory, category) => {
             const products = groupedByCategory[category].products.filter((product) => {
                 return voltagesSelected.has(product.volt || 'null');
             });
@@ -73,7 +73,7 @@ export const Filters = (
         }, {});
 
         // by category
-        const selectedByCategory = Object.keys(selectedByVoltage).reduce((acc: grouped, category) => {
+        const selectedByCategory = Object.keys(selectedByVoltage).reduce((acc: GroupedByCategory, category) => {
             if (selectedKeys.has(category)) {
                 acc[category] = selectedByVoltage[category];
             }
@@ -86,7 +86,7 @@ export const Filters = (
             return;
         }
 
-        const searchFiltered = Object.keys(selectedByCategory).reduce((acc: grouped, category) => {
+        const searchFiltered = Object.keys(selectedByCategory).reduce((acc: GroupedByCategory, category) => {
             const products = selectedByCategory[category].products.filter((product) => {
                 return product.originalName.toLowerCase().includes(search?.toLowerCase()) && product.show
             });
