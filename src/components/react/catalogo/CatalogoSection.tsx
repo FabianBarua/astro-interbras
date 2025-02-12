@@ -107,7 +107,7 @@ export const CatalogoSection = (
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               id="catalogScroll"
-              className="mx-auto overflow-auto w-screen h-0 xl:h-auto"
+              className="mx-auto overflow-auto h-0 xl:h-auto"
             >
               <div id="catalog" className="flex flex-col gap-8 w-[1360px] mx-auto">
                 {Object.keys(selectedProducts).map((category, i) => {
