@@ -1,5 +1,4 @@
-import type { ProductData } from "@/components/pages/Catalogo.astro";
-import { useMemo } from "react";
+import type { ProductData } from './CatalogoSection';
 
 const formatPriceUSD = (price: Number) => {
     return price.toFixed(2).toString().replace('.', ',');
@@ -128,119 +127,73 @@ const TricicloCard = ({ product }: { product: Joined }) => {
     )
 }
 
-export const TriciclosList = (
-    {
-        products,
-        t_catalog
-    }: IDefaultList
-) => {
-
-
-    const Joined: Joined[] = useMemo(() => [], [])
-    const Prices: { price: string, size: string }[] = useMemo(() => [], [])
+export const TriciclosList = ({ products, t_catalog }: IDefaultList) => {
+    const Joined: Joined[] = [];
+    const Prices: { price: string, size: string }[] = [];
 
     products.forEach((product) => {
-        product.originalName.split("-")[1]
-        const index = Joined.findIndex((p) =>
-            p.originalName.split("-")[1] === product.originalName.split("-")[1])
+        const index = Joined.findIndex(
+            (p) => p.originalName.split("-")[1] === product.originalName.split("-")[1]
+        );
 
-        const size = product.originalName.includes("6.5") ? "6.5" : "8"
+        const size = product.originalName.includes("6.5") ? "6.5" : "8";
 
-        // add size & price to prices if not already there
-        // {price: 100, size: 6.5}
-        const priceIndex = Prices.findIndex((p) => p.size === size)
+        const priceIndex = Prices.findIndex((p) => p.size === size);
         if (priceIndex === -1) {
-            Prices.push({
-                price: product.price,
-                size: size
-            })
+            Prices.push({ price: product.price, size });
         }
 
         if (index === -1) {
-            Joined.push({
-                ...product,
-                sizes: [size]
-            })
+            Joined.push({ ...product, sizes: [size] });
         } else {
-            Joined[index].sizes.push(size)
+            Joined[index].sizes.push(size);
         }
-
-    })
+    });
 
     return (
-
         <>
-
-            <div
-                className="flex-1 bg-white text-black m-4 rounded-[40px] p-3 gap-2  "
-            >
-
-                <ul className=" flex flex-wrap justify-center gap-2 ">
-                    {
-                        Joined
-                            .map((product) => {
-                                return (
-                                    <TricicloCard key={product.code} product={product} />
-                                )
-                            }
-                            )
-                    }
-
-                    <li className=" w-full p-2 flex justify-end gap-5">
-                        <div className=" flex-1 flex items-end flex-col">
-                            <h3 className="text-xl font-medium">
-                                Triciclos
-                            </h3>
-                            <p className=" w-72 my-2 text-gray-500 leading-5 text-right">
-                                {
-                                    // explica que los que tienen la etiqueta 6.5 y 8 corresponden a los precios de aca abajo
-                                }
+            <div className="flex-1 bg-white text-black m-4 rounded-[40px] p-3 gap-2">
+                <ul className="flex flex-wrap justify-center gap-2">
+                    {Joined.map((product) => (
+                        <TricicloCard key={product.code} product={product} />
+                    ))}
+                    <li className="w-full p-2 flex justify-end gap-5">
+                        <div className="flex-1 flex items-end flex-col">
+                            <h3 className="text-xl font-medium">Triciclos</h3>
+                            <p className="w-72 my-2 text-gray-500 leading-5 text-right">
                                 Los enumerados con 6.5 y 8 corresponden a los precios de abajo
                             </p>
-                            <div className=" flex flex-col gap-1 justify-end items-end">
-                                {
-                                    Prices.map((p) => {
-                                        return (
-                                            <div className="flex gap-2 bg-interbrasGreen-200 pl-2 rounded-lg" key={p.size} >
-                                                <h4 className="text-lg">
-                                                    USD {formatPriceUSD(Number(p.price))}
-                                                </h4>
-                                                <h4 className="text-lg bg-interbrasGreen-500 text-white rounded-lg w-12 flex justify-center items-center">
-                                                    {p.size}''
-                                                </h4>
-                                            </div>
-                                        )
-                                    })
-                                }
+                            <div className="flex flex-col gap-1 justify-end items-end">
+                                {Prices.map((p) => (
+                                    <div
+                                        className="flex gap-2 bg-interbrasGreen-200 pl-2 rounded-lg"
+                                        key={p.size}
+                                    >
+                                        <h4 className="text-lg">USD {formatPriceUSD(Number(p.price))}</h4>
+                                        <h4 className="text-lg bg-interbrasGreen-500 text-white rounded-lg w-12 flex justify-center items-center">
+                                            {p.size}''
+                                        </h4>
+                                    </div>
+                                ))}
                             </div>
-
                         </div>
-                        <div className=" h-full border">
-
-                        </div>
-                        <div className=" w-fit ">
-                            <h3 className="text-xl font-medium">
-                                {t_catalog("specs")}
-                            </h3>
-                            <ul className=" max-w-md">
+                        <div className="h-full border"></div>
+                        <div className="w-fit">
+                            <h3 className="text-xl font-medium">{t_catalog("specs")}</h3>
+                            <ul className="max-w-md">
                                 {products[0].info.specs
                                     ?.split("\n")
                                     .slice(0, 7)
-                                    .map((spec: string, i: number) => {
-                                        return <li className="text-sm text-wrap" key={i}
-                                        >{spec}</li>;
-                                    })}
+                                    .map((spec: string, i: number) => (
+                                        <li className="text-sm text-wrap" key={i}>
+                                            {spec}
+                                        </li>
+                                    ))}
                             </ul>
                         </div>
                     </li>
-
                 </ul>
-
-
             </div>
-
         </>
-
-    )
-
+    );
 }
