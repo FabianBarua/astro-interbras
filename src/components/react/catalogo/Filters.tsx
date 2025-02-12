@@ -1,4 +1,4 @@
-import type { GroupedByCategory } from "@/components/pages/Catalogo.astro";
+import type { GroupedByCategory } from "./CatalogoSection";
 import { Card, Input } from "@heroui/react";
 import React, { useEffect } from "react";
 import { OpenSelect } from "./OpenSelect";
@@ -16,7 +16,7 @@ const categories = (grouped: GroupedByCategory) => {
 const all_voltages = (grouped: GroupedByCategory) => {
     const voltages = new Set<string>();
     Object.keys(grouped).map((category) => {
-        return grouped[category].products.map((product) => {
+        return grouped[category].products.map((product: { volt: any; }) => {
             if (!voltages.has(product.volt || 'null')) {
                 voltages.add(product.volt || 'null');
             }

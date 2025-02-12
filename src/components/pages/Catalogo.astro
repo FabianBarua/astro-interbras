@@ -122,6 +122,12 @@ const t_catalog = (key: string) => getValueFromKey(key, i18n_catalog);
 
   async function convertir() {
     const catalog = document.getElementById("catalog");
+
+    if (!catalog) {
+      alert("No se ha encontrado el catalogo o no se ha cargado correctamente");
+      return;
+    }
+
     catalog.classList.remove("hidden");
 
     const loader = document.getElementById("loader");
@@ -168,7 +174,14 @@ const t_catalog = (key: string) => getValueFromKey(key, i18n_catalog);
     const blob = new Blob([pdfBytes], { type: "application/pdf" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "catalogo.pdf";
+
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    link.download = `Catalogo Interbras ${day}-${month}-${year}.pdf`;
+
     link.click();
 
     loader.classList.add("hidden");

@@ -31,7 +31,7 @@ export const DefaultList = ({
                     return (
                         <li
                             key={product.productCode + '-' + product.code}
-                            className={`bg-[#f2f2f293] p-5 relative  flex-1 justify-between flex flex-col rounded-3xl `}
+                            className={`bg-[#f2f2f293] p-5 relative  justify-between flex  flex-1 max-h-[28rem] flex-col rounded-3xl `}
                         >
                             <div className="flex gap-4">
                                 {product.registered && (
