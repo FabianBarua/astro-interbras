@@ -1,4 +1,5 @@
 import { int, sqliteTable, text, real } from "drizzle-orm/sqlite-core";
+export * from './schemaAuth';
 
 export const Category = sqliteTable("category", {
   id: text().primaryKey().notNull(),
@@ -55,3 +56,16 @@ export const Photo = sqliteTable("photo", {
   url: text().notNull(),
   order: int().notNull(),
 });
+
+export const Languages = sqliteTable("languages", {
+  id: text().primaryKey().notNull(),
+  name: text().notNull(),
+});
+
+export const Internationalization = sqliteTable("internationalization", {
+  id: int().primaryKey({ autoIncrement: true }).notNull(),
+  key : text().notNull(),
+  value: text(),
+  lang: text().notNull().references(() => Languages.id, {onDelete: "set null", onUpdate:'cascade'}).notNull(),
+} );
+
