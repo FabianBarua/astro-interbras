@@ -113,6 +113,78 @@
           "review": "O X-Patinete Eletrico Cross Pro da Interbras combina tecnologia avançada e design robusto para oferecer uma experiência de condução superior. \nCom um motor de 500W, atinge uma velocidade máxima de 45 km/h, permitindo deslocamentos rápidos e eficientes.\nSua bateria de 48V 12.5Ah oferece uma autonomia estendida de até 50 km, ideal para longas distâncias.\nEquipado com suspensão dianteira e traseira, garante uma viagem confortável e segura em qualquer terreno.",
           "specs": "Velocidade máxima: 45 km/h\nMotor: 500W\nBateria: 48V 12.5Ah\nAplicativo móvel: Minirobot App\nSuspensão: Dianteira + traseira\nPneus: 10 polegadas\nAutonomia: 45-50 km\nResistência à água: IP54\nIluminação LED: Segurança noturna melhorada"
         }
+      },
+      "GT": {
+        "id": "GT",
+        "name": "Scooter GT",
+        "popular": true,
+        "info": {
+          "review": "O Scooter GT oferece uma experiência de condução potente e estável, ideal para a cidade e terrenos mistos.",
+          "included": "Scooter GT\nCarregador\nManual do usuário\nKit de ferramentas",
+          "specs": "Motor: 1000W\nBateria: 52V 18Ah\nAutonomia: 50 km\nVelocidade máxima: 45 km/h"
+        },
+        "variants": [
+          {
+            "id": "GT",
+            "name": "GT",
+            "color": "colors.black",
+            "photos": ["/produtos/scooters/GT.webp"]
+          }
+        ]
+      },
+      "GT-S": {
+        "id": "GT-S",
+        "name": "Scooter GT-S",
+        "popular": false,
+        "info": {
+          "review": "O modelo GT-S é a versão esportiva do GT, com um design aerodinâmico e maior potência.",
+          "included": "Scooter GT-S\nCarregador rápido\nChave de segurança\nManual",
+          "specs": "Motor: 1200W\nBateria: 60V 20Ah\nAutonomia: 60 km\nVelocidade máxima: 50 km/h"
+        },
+        "variants": [
+          {
+            "id": "GT-S",
+            "name": "GT-S",
+            "color": "colors.black",
+            "photos": ["/produtos/scooters/GT-S.webp"]
+          }
+        ]
+      },
+      "TITAN": {
+        "id": "TITAN",
+        "name": "Scooter TITAN",
+        "popular": true,
+        "info": {
+          "review": "O Scooter TITAN combina potência e design robusto para oferecer uma condução extrema.",
+          "included": "Scooter TITAN\nCarregador ultrarrápido\nAssento removível\nKit de ferramentas",
+          "specs": "Motor: 2000W\nBateria: 72V 25Ah\nAutonomia: 70 km\nVelocidade máxima: 65 km/h"
+        },
+        "variants": [
+          {
+            "id": "TITAN",
+            "name": "TITAN",
+            "color": "colors.black",
+            "photos": ["/produtos/scooters/TITAN.webp"]
+          }
+        ]
+      },
+      "XTREME": {
+        "id": "XTREME",
+        "name": "Scooter XTREME",
+        "popular": false,
+        "info": {
+          "review": "O modelo XTREME foi projetado para os amantes de velocidade e aventura.",
+          "included": "Scooter XTREME\nCarregador reforçado\nAmortecedores de alto impacto\nKit de luzes LED",
+          "specs": "Motor: 2500W\nBateria: 84V 30Ah\nAutonomia: 80 km\nVelocidade máxima: 75 km/h"
+        },
+        "variants": [
+          {
+            "id": "XTREME",
+            "name": "XTREME",
+            "color": "colors.black",
+            "photos": ["/produtos/scooters/XTREME.webp"]
+          }
+        ]
       }
     }
   },
