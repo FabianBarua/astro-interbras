@@ -51,5 +51,12 @@ export const getI18NProducts = ({
 };
 
 export const getValueFromKey = (key: string, obj: any) => {
-  return key.split(".").reduce((o, i) => o[i], obj);
+  let value = "no-translated";
+  try {
+    value =  key.split(".").reduce((o, i) => o[i], obj);
+  } catch (error) {
+    console.error("Error getting value from key", key);
+  }
+  return value;
+
 };

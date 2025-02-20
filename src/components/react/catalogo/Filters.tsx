@@ -57,6 +57,11 @@ export const Filters = (
         filter();
     }, [selectedKeys, voltagesSelected, search]);
 
+
+    if (!groupedByCategory) {
+        return null;
+    }
+
     const filter = () => {
         // by voltage
         const selectedByVoltage = Object.keys(groupedByCategory).reduce((acc: GroupedByCategory, category) => {
@@ -152,8 +157,7 @@ export const Filters = (
 
                         selectedKeys={voltagesSelected}
                         setSelectedKeys={setVoltagesSelected}
-                    />
-
+                    /> 
                 </div>
             </Card >
 

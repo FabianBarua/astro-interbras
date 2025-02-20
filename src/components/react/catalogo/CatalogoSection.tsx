@@ -57,7 +57,11 @@ export const CatalogoSection = (
     useEffect(() => {
       const init = async () => {
         const f = await fetch("https://interbras-dashboard.vercel.app/api/catalog/latest");
+
         const data = await f.json() as GroupedByCategory;
+
+        console.log(data);
+
         setGroupedByCategory(data);
         setSelectedProducts(data);
         

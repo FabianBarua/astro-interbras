@@ -5,7 +5,6 @@ const { NODE_ENV, DATABASE_URL, DATABASE_AUTH_TOKEN } = loadEnv(process.env.NODE
 
 const isDev = () => {
   return false
-  return NODE_ENV === 'development';
 }
 
 const db_prod = ()=>

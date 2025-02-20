@@ -76,7 +76,7 @@ export const OpenSelect =
                                                     <ListboxItem
                                                         aria-label={category.label}
                                                         key={category.key}
-                                                        value={category.key}>
+                                                        textValue={category.key}>
                                                         {category.label}
                                                     </ListboxItem>
                                                 ))

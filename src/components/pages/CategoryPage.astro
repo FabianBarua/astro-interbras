@@ -73,7 +73,7 @@ products.forEach((product) => {
                   transition:name={`photo-0-${product.name}`}
                   src={product.variants[0].photos[0].url}
                   alt={t(product.name)}
-                  class="w-32 h-32 rounded-lg"
+                  class="w-32 h-32 rounded-lg object-contain"
                 />
                 <h2 class="text-black text-lg line-clamp-1 mt-2">
                   {t(product.name)}
