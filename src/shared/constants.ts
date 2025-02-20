@@ -6,3 +6,7 @@ export const isApple: () => boolean = () => {
   export const ScooterAndroidUrl = 'https://github.com/kingston-developer/interbrasApps/raw/main/scooter-interbras.apk'
   export const ScooterIosUrl = 'https://apps.apple.com/es/app/id1509887773'
   
+  export const scooterTitanAndExtremeUrls = {
+    android: 'https://play.google.com/store/apps/details?id=com.loby.balance.car.google&hl=pt',
+    ios: 'https://apps.apple.com/br/app/minirobot/id1098535221'
+  }

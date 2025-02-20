@@ -1,5 +1,5 @@
 import { getI18NGlobal, getValueFromKey } from '@/i18n'
-import { ScooterAndroidUrl, ScooterIosUrl } from '@/shared/constants'
+import { ScooterAndroidUrl, ScooterIosUrl, scooterTitanAndExtremeUrls } from '@/shared/constants'
 import React, { useState, useEffect } from 'react'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger, useModal } from '@/components/react/download/AnimatedModal'
 import { AvatarCircles } from '@/components/react/download/AvatarCircles'
@@ -187,7 +187,35 @@ export const AppsSectionChild = ({ lang }: AppsSectionProps) => {
           )
         }
       ]
-    }
+    },
+    {
+      name: 'Scooters Interbras - 2',
+      models: ['Extreme', 'Titan'],
+      avatarUrls: ['/downloads/apple-icon.png', '/downloads/google-icon.png'],
+      pricipalIcon: '/home/slideSection/3.svg',
+      files: [
+        () => {
+          return (
+            <DownloadModalCard
+              lang={lang}
+              name={
+                t('downloads.files.scooter105y85.1')
+              } models={['10.5', '8.5 pro']} imageCard='/downloads/google-icon.png' url={scooterTitanAndExtremeUrls.android}
+            />
+          )
+        },
+        () => {
+          return (
+            <DownloadModalCard
+              lang={lang}
+              name={
+                t('downloads.files.scooter105y85.2')
+              } models={['10.5', '8.5 pro']} imageCard='/downloads/apple-icon.png' url={scooterTitanAndExtremeUrls.ios}
+            />
+          )
+        }
+      ]
+    },
   ]
   const [selected, setSelected] = useState<FilesProps | null>(null)
 
