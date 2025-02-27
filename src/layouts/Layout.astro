@@ -24,11 +24,28 @@ const i18n_global = getI18NGlobal({ currentLocale });
 const t_global = (key: string) => {
   return getValueFromKey(key, i18n_global);
 };
+
+const pagesWithoutCache = ["/pdf", "/es/pdf", "/pt/pdf"];
+
+const { pathname } = Astro.url;
 ---
 
 <!doctype html>
 <html lang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}>
   <head>
+    {
+      pagesWithoutCache.includes(pathname) ? (
+        <>
+          <meta
+            http-equiv="Cache-Control"
+            content="no-store, no-cache, must-revalidate, max-age=0"
+          />
+          <meta http-equiv="Pragma" content="no-cache" />
+          <meta http-equiv="Expires" content="0" />
+        </>
+      ) : null
+    }
+
     <!-- Google Tag Manager -->
     <script is:inline>
       document.addEventListener(
