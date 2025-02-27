@@ -119,9 +119,9 @@
         "name": "Scooter GT",
         "popular": true,
         "info": {
-          "review": "El Scooter GT es una máquina de alto rendimiento, diseñada para aquellos que buscan velocidad y potencia sin compromisos. Con una velocidad máxima de 90 km/h, este scooter está preparado para alcanzar grandes distancias a gran velocidad, ideal para trayectos largos y aventureros. Su motor de 8000W (2x4000W) ofrece una potencia increíble, lo que garantiza un rendimiento superior incluso en los terrenos más desafiantes. La batería de 60V 30Ah permite una autonomía de hasta 50 km, lo que lo hace perfecto para viajes urbanos largos o escapadas fuera de la ciudad. Su diseño robusto y la calidad de sus componentes aseguran una experiencia de conducción cómoda y segura, mientras que sus neumáticos de alta resistencia y suspensión avanzada proporcionan estabilidad y control en todo momento. El Scooter GT es la elección ideal para quienes buscan una experiencia de conducción potente, rápida y sin limitaciones.",
+          "review": "El Scooter GT es una máquina de alto rendimiento, diseñada para aquellos que buscan velocidad y potencia sin compromisos. Con una velocidad máxima de 80 km/h, este scooter está preparado para alcanzar grandes distancias a gran velocidad, ideal para trayectos largos y aventureros. Su motor de 8000W (2x4000W) ofrece una potencia increíble, lo que garantiza un rendimiento superior incluso en los terrenos más desafiantes. La batería de 60V 30Ah permite una autonomía de hasta 80 km, lo que lo hace perfecto para viajes urbanos largos o escapadas fuera de la ciudad. Su diseño robusto y la calidad de sus componentes aseguran una experiencia de conducción cómoda y segura, mientras que sus neumáticos de alta resistencia y suspensión avanzada proporcionan estabilidad y control en todo momento. Con una capacidad máxima de 150 kg, el Scooter GT es la elección ideal para quienes buscan una experiencia de conducción potente, rápida y sin limitaciones.",
           "included": null,
-          "specs": "Motor: 8000W (2x4000W)\nBatería: 60V 30Ah\nAutonomía: 50 km\nVelocidad máxima: 90 km/h\nLlave NFC\nFrenos ABS"
+          "specs": "Motor: 8000W (2x4000W)\nBatería: 60V 30Ah\nAutonomía: 80 km\nVelocidad máxima: 80 km/h\nCapacidad máxima: 150 kg\nLlave NFC\nFrenos ABS"
         },
         "variants": [
           {
@@ -137,9 +137,9 @@
         "name": "Scooter GT-S",
         "popular": false,
         "info": {
-          "review": "El Scooter GT-S es la versión más avanzada y potente de la línea GT, diseñado para quienes buscan la máxima velocidad y rendimiento. Con una velocidad máxima de 120 km/h, este scooter está hecho para los entusiastas de la velocidad y la adrenalina. Su motor de 8000W (2x4000W) proporciona una potencia excepcional que te permite conquistar cualquier terreno con facilidad y rapidez. La batería de 72V 40Ah ofrece una autonomía extendida de hasta 70 km, permitiendo recorrer largas distancias sin preocupaciones. Su diseño aerodinámico y sus componentes de alta calidad garantizan una experiencia de conducción fluida y cómoda, mientras que sus neumáticos robustos y su sistema de suspensión avanzada proporcionan estabilidad y seguridad en todo momento. El GT-S es el scooter definitivo para quienes buscan una experiencia de conducción extrema y sin limitaciones.",
+          "review": "El Scooter GT-S es la versión más avanzada y potente de la línea GT, diseñado para quienes buscan la máxima velocidad y rendimiento. Con una velocidad máxima de 120 km/h, este scooter está hecho para los entusiastas de la velocidad y la adrenalina. Su motor de 8000W (2x4000W) proporciona una potencia excepcional que te permite conquistar cualquier terreno con facilidad y rapidez. La batería de 72V 40Ah ofrece una autonomía extendida de hasta 100 km, permitiendo recorrer largas distancias sin preocupaciones. Su diseño aerodinámico y sus componentes de alta calidad garantizan una experiencia de conducción fluida y cómoda, mientras que sus neumáticos robustos **semi-slick** y su sistema de suspensión avanzada proporcionan estabilidad y seguridad en todo momento. El GT-S es el scooter definitivo para quienes buscan una experiencia de conducción extrema y sin limitaciones.",
           "included": null,
-          "specs": "Motor: 8000W (2x4000W)\nBatería: 72V 40Ah\nAutonomía: 70 km\nVelocidad máxima: 120 km/h\nLlave NFC\nFrenos ABS"
+          "specs": "Motor: 8000W (2x4000W)\nBatería: 72V 40Ah\nAutonomía: 100 km\nVelocidad máxima: 120 km/h\nCapacidad máxima: 150 kg\nRuedas: Semi-slick\nLlave NFC\nFrenos ABS"
         },
         "variants": [
           {
@@ -155,9 +155,9 @@
         "name": "Scooter TITAN",
         "popular": true,
         "info": {
-          "review": "El Scooter TITAN combina una increíble potencia con un diseño robusto para ofrecer una experiencia de conducción única. Con su motor de 2000W, es capaz de afrontar tanto trayectos urbanos como caminos más desafiantes. Su velocidad máxima de 40 km/h permite alcanzar destinos rápidamente, mientras que su batería de 48V 13Ah asegura una autonomía de 35 a 40 km, ideal para quienes necesitan un transporte rápido y fiable. Además, su estructura resistente y su sistema de suspensión avanzado garantizan una conducción cómoda, incluso en terrenos irregulares. El Scooter TITAN es la opción perfecta para quienes buscan versatilidad, rendimiento y durabilidad en un solo vehículo. Ya sea para tu día a día o para escapadas de aventura, este scooter está preparado para lo que sea.",
+          "review": "El Scooter TITAN combina una excelente potencia con un diseño robusto para ofrecer una experiencia de conducción única. Con su motor de 500W, es ideal para trayectos urbanos, ofreciendo una velocidad máxima de 45 km/h para desplazamientos rápidos y eficientes. Su batería de 48V 13Ah proporciona una autonomía de 35 a 40 km, asegurando un transporte confiable. Además, cuenta con suspensión delantera y trasera para una conducción cómoda y neumáticos de 10 pulgadas que mejoran la estabilidad. Su resistencia al agua IP54 lo hace apto para diversas condiciones climáticas. Con conectividad a la aplicación Minirobot, el TITAN se convierte en la opción perfecta para quienes buscan tecnología, rendimiento y confort en un solo vehículo.",
           "included": null,
-          "specs": "Motor: 2000W\nBatería: 48V 13Ah\nAutonomía: 35-40 km\nVelocidad máxima: 40 km/h"
+          "specs": "Motor: 500W\nBatería: 48V 13Ah\nAutonomía: 35-40 km\nVelocidad máxima: 45 km/h\nSuspensión: Delantera + Trasera\nNeumáticos: 10 pulgadas\nResistencia al agua: IP54\nApp: Minirobot"
         },
         "variants": [
           {
@@ -173,9 +173,9 @@
         "name": "Scooter XTREME",
         "popular": false,
         "info": {
-          "review": "El Scooter XTREME está diseñado especialmente para los amantes de la velocidad y la aventura, combinando potencia y estilo en cada detalle. Con su motor de 2500W, este scooter es capaz de alcanzar velocidades impresionantes, llegando a un máximo de 50 km/h, lo que lo convierte en una opción ideal para quienes buscan un rendimiento sobresaliente en todo tipo de trayectos urbanos o de aventura. Su batería de 48V 14Ah ofrece una autonomía de hasta 50 km, permitiéndote recorrer largas distancias sin preocuparte por recargar a cada momento. Además, su diseño aerodinámico no solo resalta por su atractivo visual, sino que también optimiza la eficiencia energética. Equipado con una suspensión avanzada, el XTREME asegura una conducción cómoda y estable, incluso en terrenos irregulares, y con sus neumáticos de alta calidad, podrás disfrutar de un viaje seguro y placentero. Este scooter es la elección perfecta para quienes desean explorar la ciudad con velocidad y disfrutar de un vehículo con la capacidad de afrontar desafíos más exigentes.",
+          "review": "El Scooter XTREME está diseñado especialmente para los amantes de la velocidad y la aventura, combinando potencia y estilo en cada detalle. Con su motor doble de 800W, alcanzando un total de 1600W, este scooter es capaz de llegar a una velocidad máxima de 50 km/h, convirtiéndose en una opción ideal para quienes buscan un rendimiento sobresaliente en trayectos urbanos o de aventura. Su batería de 48V 15Ah ofrece una autonomía de hasta 50 km, permitiéndote recorrer largas distancias sin preocuparte por recargar constantemente. Además, cuenta con una suspensión delantera y trasera que asegura una conducción cómoda y estable, incluso en terrenos irregulares. Con neumáticos de 10 pulgadas y una capacidad de carga de 150 kg, el XTREME es robusto y confiable. Su resistencia al agua IPX54 y su batería con certificación IPX7 lo hacen aún más duradero ante diversas condiciones climáticas. Además, es compatible con la aplicación Minirobot para un control más inteligente y eficiente.",
           "included": null,
-          "specs": "Motor: 2500W\nBatería: 48V 14Ah\nAutonomía: 50 km\nVelocidad máxima: 50 km/h"
+          "specs": "Motor: Doble de 800W, total 1600W\nBatería: 48V 15Ah\nAutonomía: 50 km\nVelocidad máxima: 50 km/h\nSuspensión: Delantera + Trasera\nNeumáticos: 10 pulgadas\nCapacidad de carga: 150 kg\nResistencia al agua: IPX54\nBatería resistente al agua: IPX7\nApp: Minirobot"
         },
         "variants": [
           {
