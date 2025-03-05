@@ -27,7 +27,11 @@ const t_global = (key: string) => {
 
 const pagesWithoutCache = ["/pdf", "/es/pdf", "/pt/pdf"];
 
-const { pathname } = Astro.url;
+const URL = Astro.url;
+
+const firstPath = URL.pathname.split("/")[1];
+const secondPath = URL.pathname.split("/")[2];
+const pathname = "/" + firstPath + "/" + secondPath;
 ---
 
 <!doctype html>
