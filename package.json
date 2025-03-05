@@ -16,6 +16,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/react": "^3.6.2",
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.0",
     "@fabianbarua/react-photo-view": "^1.2.7",
     "@heroui/react": "^2.6.14",

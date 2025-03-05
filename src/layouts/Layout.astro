@@ -37,6 +37,8 @@ const pathname = "/" + firstPath + "/" + secondPath;
 <!doctype html>
 <html lang={currentLocale === "pt" ? "pt-BR" : currentLocale || "es"}>
   <head>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     {
       pagesWithoutCache.includes(pathname) ? (
         <>
