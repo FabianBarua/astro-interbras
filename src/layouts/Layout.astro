@@ -25,13 +25,13 @@ const t_global = (key: string) => {
   return getValueFromKey(key, i18n_global);
 };
 
-const pagesWithoutCache = ["/pdf", "/es/pdf", "/pt/pdf"];
+const pagesWithoutCache = ["pdf", "es/pdf", "pt/pdf"];
 
 const URL = Astro.url;
 
-const firstPath = URL.pathname.split("/")[1];
-const secondPath = URL.pathname.split("/")[2];
-const pathname = "/" + firstPath + "/" + secondPath;
+const pathnames = URL.pathname.split("/").filter((path) => path !== "");
+const pathname = pathnames.join("/");
+const isPageWithoutCache = pagesWithoutCache.includes(pathname);
 ---
 
 <!doctype html>
@@ -39,18 +39,16 @@ const pathname = "/" + firstPath + "/" + secondPath;
   <head>
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    {
-      pagesWithoutCache.includes(pathname) ? (
-        <>
+    {isPageWithoutCache && (
           <meta
-            http-equiv="Cache-Control"
-            content="no-store, no-cache, must-revalidate, max-age=0"
-          />
-          <meta http-equiv="Pragma" content="no-cache" />
-          <meta http-equiv="Expires" content="0" />
-        </>
-      ) : null
-    }
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate, max-age=0"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    )}
+
+
 
     <!-- Google Tag Manager -->
     <script is:inline>
