@@ -535,7 +535,25 @@
           "included": null,
           "specs": "Potencia: 800W\nIndicadores: Encendido y Listo\nTamaño: Compacta y Fácil de Guardar\nFuncionalidad: 4 en 1: grill, sándwich, nutty y waffle"
         }
+      },
+      "H10": {
+        "id": "H10",
+        "name": "Parrilla Grill Eléctrica H10",
+        "info": {
+          "review": "La Parrilla Grill Eléctrica H10 de Interbras es perfecta para quienes desean una cocción saludable y rápida. Reduce hasta un 50% de grasa gracias a su diseño inclinado, manteniendo el sabor y la textura de tus alimentos favoritos.",
+          "included": null,
+          "specs": "Potencia: 750W\nReducción de Grasa: 50% Menos Grasa\nDiseño: Compacta y Fácil de Guardar"
+        }
+      },
+      "H20": {
+      "id": "H20",
+      "name": "Parrilla Grill Eléctrica H20",
+      "info": {
+        "review": "La Parrilla Grill Eléctrica H20 de Interbras combina potencia y practicidad para una cocción más eficiente. Gracias a sus 1000W, calienta más rápido y sigue ofreciendo una reducción del 50% de grasa, ideal para quienes buscan una alimentación más saludable.",
+        "included": null,
+        "specs": "Potencia: 1000W\nReducción de Grasa: 50% Menos Grasa\nDiseño: Compacta y Fácil de Guardar"
       }
+    }
     }
   },
   "cocinas": {
