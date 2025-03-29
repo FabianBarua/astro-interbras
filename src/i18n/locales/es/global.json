@@ -148,8 +148,10 @@
     "selectFile": "Selecciona el archivo",
     "files": {
       "scooter105y85": {
-        "1": "Archivo .Apk",
-        "2": "App para Iphone"
+        "1": "App para Android",
+        "2": "App para Iphone",
+        "3": "App para Iphone - Lenzod",
+        "4": "App para Android - Lenzod"
       }
     }
   }

@@ -1,5 +1,5 @@
 import { getI18NGlobal, getValueFromKey } from '@/i18n'
-import { ScooterAndroidUrl, ScooterIosUrl, scooterTitanAndXtremeUrls } from '@/shared/constants'
+import { ScooterAndroidUrl, ScooterIosUrl, scooterTitanAndXtremeUrls, scooterLenzod } from '@/shared/constants'
 import React, { useState, useEffect } from 'react'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger, useModal } from '@/components/react/download/AnimatedModal'
 import { AvatarCircles } from '@/components/react/download/AvatarCircles'
@@ -144,6 +144,7 @@ export const AppsSection = ({ lang }: AppsSectionProps) => {
 export const AppsSectionChild = ({ lang }: AppsSectionProps) => {
 
   interface FilesProps {
+    id: string
     name: string
     models: string[]
     avatarUrls: string[]
@@ -161,6 +162,7 @@ export const AppsSectionChild = ({ lang }: AppsSectionProps) => {
 
   const files = [
     {
+      id: '1',
       name: 'Scooters Interbras',
       models: ['10.5', '8.5 pro'],
       avatarUrls: ['/downloads/apple-icon.png', '/downloads/google-icon.png'],
@@ -185,10 +187,31 @@ export const AppsSectionChild = ({ lang }: AppsSectionProps) => {
               } models={['10.5', '8.5 pro']} imageCard='/downloads/apple-icon.png' url={ScooterIosUrl}
             />
           )
-        }
+        },
+        () => {
+          return (
+            <DownloadModalCard
+              lang={lang}
+              name={
+                t('downloads.files.scooter105y85.4')
+              } models={['10.5', '8.5 pro']} imageCard='/downloads/lenzod-icon.png' url={scooterLenzod.android}
+            />
+          )
+        },
+        () => {
+          return (
+            <DownloadModalCard
+              lang={lang}
+              name={
+                t('downloads.files.scooter105y85.3')
+              } models={['10.5', '8.5 pro']} imageCard='/downloads/lenzod-icon.png' url={scooterLenzod.ios}
+            />
+          )
+        },
       ]
     },
     {
+      id: '2',
       name: 'Scooters Interbras - 2',
       models: ['Xtreme', 'Titan'],
       avatarUrls: ['/downloads/apple-icon.png', '/downloads/google-icon.png'],
@@ -219,15 +242,41 @@ export const AppsSectionChild = ({ lang }: AppsSectionProps) => {
   ]
   const [selected, setSelected] = useState<FilesProps | null>(null)
 
-  const { setOpen } = useModal()
+  const { setOpen, open } = useModal()
 
   useEffect(() => {
+
+    const params = new URLSearchParams(window.location.search)
+
     if (selected != null) {
       setOpen(true)
+      params.set('id', String(selected.id))
+      window.history.replaceState({}, '', `${window.location.pathname}?${params}`)
     }
+
   }, [selected])
 
+  useEffect(() => {
+    // get params
+    const params = new URLSearchParams(window.location.search)
+    const id = params.get('id')
+    const file = files.find((file) => file.id === id)
+    
+    if (file) {
+      setSelected(file)
+    } else {
+      setSelected(null)
+      params.delete('id')
+      window.history.replaceState({}, '', window.location.pathname)
+    }
+  },[])
 
+  const handleClose = () => {
+    setSelected(null)
+    const params = new URLSearchParams(window.location.search)
+    params.delete('id')
+    window.history.replaceState({}, '', `${window.location.pathname}?${params}`)
+  }
 
   return (
     <>
@@ -252,12 +301,14 @@ export const AppsSectionChild = ({ lang }: AppsSectionProps) => {
           ))
         }
 
-        <ModalBody>
+        <ModalBody
+         onClose={handleClose}
+        >
           <ModalContent>
             <h4 className='text-lg md:text-2xl text-neutral-600 font-bold text-center  my-4 lg:my-6'>
               {t('downloads.download')} {selected?.name}
             </h4>
-          </ModalContent>
+          </ModalContent >
           <div className=' h-full flex-1 px-5 flex flex-col gap-2 lg:justify-start justify-center'>
             {
               selected?.files.map((File, index) => (
